@@ -6,4 +6,6 @@ if not manager1.open("settings.json"):
 print(f"settings1: {manager1.settings.organization_name}")
 
 manager2 = settings_manager()
+if not manager1.open("settings1.json"):
+    print("Настройки не загружены!")
 print(f"settings2: {manager2.settings.organization_name}")

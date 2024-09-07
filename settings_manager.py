@@ -39,10 +39,10 @@ class settings_manager:
                 self.__settings = self.__default_setting()
                 raise FileNotFoundError(f"Файл {self.__file_name} не найден в текущем или дочерних каталогах.")
             
-            print(full_name)
+            # print(full_name)
             with open(full_name, encoding="utf-8") as stream:
                 data = json.load(stream)
-                print(data)
+                # print(data)
                 self.convert(data)
 
             return True
