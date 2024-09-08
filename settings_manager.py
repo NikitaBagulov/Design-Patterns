@@ -2,11 +2,7 @@ import json
 import os
 from settings import settings
 
-def find_file(filename, search_path=os.curdir):
-    for root, dirs, files in os.walk(search_path):
-        if filename in files:
-            return os.path.join(root, filename)
-    return None
+
 
 class settings_manager:
     __file_name = "settings.json"
@@ -34,13 +30,13 @@ class settings_manager:
             self.__file_name = file_name
 
         try:
-            full_name = find_file(self.__file_name)
-            if not full_name:
+            full_path = self.__get_file_path(self.__file_name)
+            if not full_path:
                 self.__settings = self.__default_setting()
                 raise FileNotFoundError(f"Файл {self.__file_name} не найден в текущем или дочерних каталогах.")
             
             # print(full_name)
-            with open(full_name, encoding="utf-8") as stream:
+            with open(full_path, encoding="utf-8") as stream:
                 data = json.load(stream)
                 # print(data)
                 self.convert(data)
@@ -64,3 +60,11 @@ class settings_manager:
         data.bik = "123456789"
         data.ownership_type = "Частн"
         return data
+    
+    @staticmethod
+    def __get_file_path(filename, search_path=os.curdir):
+        for root, dirs, files in os.walk(search_path):
+            full_path = os.path.join(root, filename)
+            if os.path.isfile(full_path):
+                return full_path
+        return None
