@@ -1,5 +1,5 @@
 from src.abstract_model import abstract_model
-from src.custom_exceptions import ArgumentException, ConversionException
+from src.utils.validator import Validator
 
 class range_model(abstract_model):
     __name: str = ""
@@ -12,10 +12,8 @@ class range_model(abstract_model):
     
     @name.setter
     def name(self, value: str):
-        if not isinstance(value, str):
-            raise ArgumentException("name", "Должно быть строкой")
-        if len(value.strip()) == 0:
-            raise ArgumentException("name", "Не должно быть пустым")
+        Validator.validate_type(value, str, "name")
+        Validator.validate_non_empty(value, "name")
         self.__name = value.strip()
 
     @property
@@ -23,10 +21,8 @@ class range_model(abstract_model):
         return self.__base_unit
 
     def set_base_unit(self, base_unit: 'range_model', conversion_factor: int):
-        if not isinstance(base_unit, range_model):
-            raise ArgumentException("base_unit", "Базовая единица должна быть типа range_model")
-        if not isinstance(conversion_factor, int) or conversion_factor <= 0:
-            raise ConversionException(f"Коэффициент пересчета должен быть положительным, а получено: {conversion_factor}")
+        Validator.validate_type(base_unit, range_model, "base_unit") 
+        Validator.validate_positive_integer(conversion_factor, "conversion_factor")
         self.__base_unit = base_unit
         self.__conversion_factor = conversion_factor
 

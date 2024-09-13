@@ -2,7 +2,8 @@ import json
 import os
 from src.models.settings import settings
 from src.abstract_logic import abstract_logic
-from src.custom_exceptions import ArgumentException, NotFoundException, ConversionException
+from src.utils.validator import Validator
+from src.custom_exceptions import ConversionException, NotFoundException, ArgumentException, LengthException
 
 class settings_manager(abstract_logic):
     __file_name = "settings.json"
@@ -22,13 +23,12 @@ class settings_manager(abstract_logic):
             if hasattr(self.__settings, key):
                 try:
                     setattr(self.__settings, key, value)
-                except (ArgumentException, ValueError) as e:
+                except (ValueError) as e:
                     self.set_exception(e)
                     raise ConversionException("Ошибка при конвертации данных.") from e
 
     def open(self, file_name: str = ""):
-        if not isinstance(file_name, str):
-            raise ArgumentException("file_name", "Некорректно передан параметр file_name!")
+        Validator.validate_non_empty(file_name, "file_name")  # Проверяем, что file_name не пуст
 
         if file_name != "":
             self.__file_name = file_name
@@ -61,13 +61,20 @@ class settings_manager(abstract_logic):
     def __default_setting(self):
         data = settings()
         try:
+            Validator.validate_non_empty("Рога и копыта (default)", "organization_name")
+            Validator.validate_digits("380080920202", 12, "inn")
+            Validator.validate_digits("12345678901", 11, "account")
+            Validator.validate_digits("09876543211", 11, "corr_account")
+            Validator.validate_digits("123456789", 9, "bik")
+            Validator.validate_length("Частн", 5, "ownership_type")
+
             data.organization_name = "Рога и копыта (default)"
             data.inn = "380080920202"
             data.account = "12345678901"
             data.corr_account = "09876543211"
             data.bik = "123456789"
             data.ownership_type = "Частн"
-        except ArgumentException as e:
+        except (ValueError, ArgumentException, LengthException) as e:
             self.set_exception(e)
             raise ConversionException("Ошибка при установке значений по умолчанию.") from e
         return data

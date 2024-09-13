@@ -1,4 +1,4 @@
-from src.custom_exceptions import LengthException, DigitsException
+from src.utils.validator import Validator
 
 class settings:
     def __init__(self):
@@ -15,8 +15,8 @@ class settings:
     
     @organization_name.setter
     def organization_name(self, value: str):
-        if not isinstance(value, str) or len(value) > 255:
-            raise LengthException("organization_name", 255)
+        Validator.validate_non_empty(value, "organization_name")
+        Validator.validate_length(value, 255, "organization_name")
         self.__organization_name = value
 
     @property
@@ -25,8 +25,7 @@ class settings:
     
     @inn.setter
     def inn(self, value: str):
-        if not value.isdigit() or len(value) != 12:
-            raise DigitsException("ИНН", 12)
+        Validator.validate_digits(value, 12, "ИНН")
         self.__inn = value
 
     @property
@@ -35,8 +34,7 @@ class settings:
     
     @account.setter
     def account(self, value: str):
-        if not value.isdigit() or len(value) != 11:
-            raise DigitsException("Счет", 11)
+        Validator.validate_digits(value, 11, "Счет")
         self.__account = value
 
     @property
@@ -45,8 +43,7 @@ class settings:
     
     @corr_account.setter
     def corr_account(self, value: str):
-        if not value.isdigit() or len(value) != 11:
-            raise DigitsException("Корреспондентский счет", 11)
+        Validator.validate_digits(value, 11, "Корреспондентский счет")
         self.__corr_account = value
 
     @property
@@ -55,8 +52,7 @@ class settings:
     
     @bik.setter
     def bik(self, value: str):
-        if not value.isdigit() or len(value) != 9:
-            raise DigitsException("БИК", 9)
+        Validator.validate_digits(value, 9, "БИК")
         self.__bik = value
 
     @property
@@ -65,6 +61,6 @@ class settings:
     
     @ownership_type.setter
     def ownership_type(self, value: str):
-        if not isinstance(value, str) or len(value) != 5:
-            raise LengthException("Форма собственности", 5)
+        Validator.validate_non_empty(value, "ownership_type")
+        Validator.validate_length(value, 5, "Форма собственности")
         self.__ownership_type = value

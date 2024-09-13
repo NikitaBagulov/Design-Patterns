@@ -1,5 +1,5 @@
 from src.abstract_model import abstract_model
-from src.custom_exceptions import LengthException, ArgumentException
+from src.utils.validator import Validator
 
 class warehouse_model(abstract_model):
     __name: str = ""
@@ -11,12 +11,8 @@ class warehouse_model(abstract_model):
 
     @name.setter
     def name(self, value: str):
-        try:
-            if len(value) > 50:
-                raise LengthException("name", 50)
-            self.__name = value.strip()
-        except LengthException as e:
-            raise ArgumentException("name", str(e)) from e
+        Validator.validate_length(value, 50, "name")
+        self.__name = value.strip()
 
     @property
     def address(self) -> str:
@@ -24,12 +20,8 @@ class warehouse_model(abstract_model):
 
     @address.setter
     def address(self, value: str):
-        try:
-            if len(value) > 100:
-                raise LengthException("address", 100)
-            self.__address = value.strip()
-        except LengthException as e:
-            raise ArgumentException("address", str(e)) from e
+        Validator.validate_length(value, 100, "address")
+        self.__address = value.strip()
 
     def set_compare_mode(self, other_object) -> bool:
         if other_object is None:

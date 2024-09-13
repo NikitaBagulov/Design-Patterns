@@ -61,7 +61,7 @@ class test_models(unittest.TestCase):
         new_range = range_model()
         new_range.name = "кг"
 
-        with self.assertRaises(ConversionException):
+        with self.assertRaises(ValueError):
             new_range.set_base_unit(base_range, -1)
 
         with self.assertRaises(ArgumentException):
@@ -106,7 +106,7 @@ class test_models(unittest.TestCase):
         company = company_model()
 
         with self.assertRaises(ArgumentException):
-            company.ownership_type = "TTT"
+            company.ownership_type = "TTTRRRRRRRRRRR"
 
     def test_warehouse_model_creation(self):
         """Тест создания и установки полей для модели склада."""

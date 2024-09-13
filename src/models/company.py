@@ -1,6 +1,6 @@
-from src.models.settings import settings
 from src.abstract_model import abstract_model
-from src.custom_exceptions import LengthException, ArgumentException
+from src.models.settings import settings
+from src.utils.validator import Validator
 
 class company_model(abstract_model):
     __inn: str = ""
@@ -14,12 +14,8 @@ class company_model(abstract_model):
 
     @inn.setter
     def inn(self, value: str):
-        try:
-            if not isinstance(value, str) or len(value) != 12 or not value.isdigit():
-                raise LengthException("ИНН", 12)
-            self.__inn = value
-        except LengthException as e:
-            raise ArgumentException("inn", str(e)) from e
+        Validator.validate_digits(value, 12, "ИНН")
+        self.__inn = value
 
     @property
     def bik(self) -> str:
@@ -27,12 +23,8 @@ class company_model(abstract_model):
 
     @bik.setter
     def bik(self, value: str):
-        try:
-            if not isinstance(value, str) or len(value) != 9 or not value.isdigit():
-                raise LengthException("БИК", 9)
-            self.__bik = value
-        except LengthException as e:
-            raise ArgumentException("bik", str(e)) from e
+        Validator.validate_digits(value, 9, "БИК")
+        self.__bik = value
 
     @property
     def account(self) -> str:
@@ -40,12 +32,8 @@ class company_model(abstract_model):
 
     @account.setter
     def account(self, value: str):
-        try:
-            if not isinstance(value, str) or len(value) != 11 or not value.isdigit():
-                raise LengthException("Счет", 11)
-            self.__account = value
-        except LengthException as e:
-            raise ArgumentException("account", str(e)) from e
+        Validator.validate_digits(value, 11, "Счет")
+        self.__account = value
 
     @property
     def ownership_type(self) -> str:
@@ -53,21 +41,15 @@ class company_model(abstract_model):
 
     @ownership_type.setter
     def ownership_type(self, value: str):
-        try:
-            if not isinstance(value, str) or len(value) != 5:
-                raise LengthException("Вид собственности", 5)
-            self.__ownership_type = value
-        except LengthException as e:
-            raise ArgumentException("ownership_type", str(e)) from e
+        Validator.validate_length(value, 5, "Форма собственности")
+        self.__ownership_type = value
 
     def load_from_settings(self, settings: settings):
-        try:
-            self.inn = settings.inn
-            self.bik = settings.bik
-            self.account = settings.account
-            self.ownership_type = settings.ownership_type
-        except ArgumentException as e:
-            print(f"Ошибка загрузки данных из настроек: {e}")
+        """Загружает данные компании из объекта настроек."""
+        self.inn = settings.inn
+        self.account = settings.account
+        self.bik = settings.bik
+        self.ownership_type = settings.ownership_type
 
     def set_compare_mode(self, other_object) -> bool:
         if other_object is None:
