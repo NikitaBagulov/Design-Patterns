@@ -1,10 +1,13 @@
+from src.custom_exceptions import LengthException, DigitsException
+
 class settings:
-    __organization_name = ""
-    __inn = ""
-    __account = ""
-    __corr_account = ""
-    __bik = ""
-    __ownership_type = ""
+    def __init__(self):
+        self.__organization_name = ""
+        self.__inn = ""
+        self.__account = ""
+        self.__corr_account = ""
+        self.__bik = ""
+        self.__ownership_type = ""
 
     @property
     def organization_name(self):
@@ -12,8 +15,8 @@ class settings:
     
     @organization_name.setter
     def organization_name(self, value: str):
-        if not isinstance(value, str):
-            raise TypeError("Некорректно передан параметр!")
+        if not isinstance(value, str) or len(value) > 255:
+            raise LengthException("organization_name", 255)
         self.__organization_name = value
 
     @property
@@ -22,8 +25,8 @@ class settings:
     
     @inn.setter
     def inn(self, value: str):
-        if not isinstance(value, str) or len(value) != 12 or not value.isdigit():
-            raise ValueError("ИНН должен содержать 12 цифр!")
+        if not value.isdigit() or len(value) != 12:
+            raise DigitsException("ИНН", 12)
         self.__inn = value
 
     @property
@@ -32,8 +35,8 @@ class settings:
     
     @account.setter
     def account(self, value: str):
-        if not isinstance(value, str) or len(value) != 11 or not value.isdigit():
-            raise ValueError("Счет должен содержать 11 цифр!")
+        if not value.isdigit() or len(value) != 11:
+            raise DigitsException("Счет", 11)
         self.__account = value
 
     @property
@@ -42,8 +45,8 @@ class settings:
     
     @corr_account.setter
     def corr_account(self, value: str):
-        if not isinstance(value, str) or len(value) != 11 or not value.isdigit():
-            raise ValueError("Корреспондентский счет должен содержать 11 цифр!")
+        if not value.isdigit() or len(value) != 11:
+            raise DigitsException("Корреспондентский счет", 11)
         self.__corr_account = value
 
     @property
@@ -52,8 +55,8 @@ class settings:
     
     @bik.setter
     def bik(self, value: str):
-        if not isinstance(value, str) or len(value) != 9 or not value.isdigit():
-            raise ValueError("БИК должен содержать 9 цифр!")
+        if not value.isdigit() or len(value) != 9:
+            raise DigitsException("БИК", 9)
         self.__bik = value
 
     @property
@@ -63,5 +66,5 @@ class settings:
     @ownership_type.setter
     def ownership_type(self, value: str):
         if not isinstance(value, str) or len(value) != 5:
-            raise ValueError("Вид собственности должен содержать 5 символов!")
+            raise LengthException("Форма собственности", 5)
         self.__ownership_type = value
