@@ -46,12 +46,10 @@ class settings_manager(abstract_logic):
             return True
         except (FileNotFoundError, json.JSONDecodeError) as e:
             self.set_exception(e)
-            print(f"Ошибка загрузки файла: {e}")
             self.__settings = self.__default_setting()
             return False
         except Exception as e:
             self.set_exception(e)
-            print(f"Неизвестная ошибка: {e}")
             return False
 
     @property

@@ -30,7 +30,7 @@ class Validator:
     def validate_non_empty(value: str, argument_name: str):
         """Проверяет, что строка не является пустой."""
         if not value.strip():
-            raise ValueError(f"Значение аргумента '{argument_name}' не должно быть пустым.")
+            raise ArgumentException(argument_name, "Значение аргумента не должно быть пустым")
 
     @staticmethod
     def validate_positive_integer(value: int, argument_name: str):
