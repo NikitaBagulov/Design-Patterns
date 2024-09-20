@@ -1,5 +1,6 @@
 import os
 import re
+from src.utils.validator import Validator
 
 def read_files_from_directory(directory: str, file_extension: str = '.md') -> list[str]:
     file_contents = []
@@ -38,14 +39,21 @@ def parse_ingredients(content: str, recipe_ingredients: list):
                 if len(parts) >= 3:
                     name = parts[1].strip()
                     quantity_unit = parts[2].strip()
-                    if name and quantity_unit and name != 'Ингредиенты' and not re.search(r'--+', name):
-                        quantity_unit_parts = quantity_unit.split()
-                        if len(quantity_unit_parts) >= 2:
-                            quantity = quantity_unit_parts[0]
-                            unit = ' '.join(quantity_unit_parts[1:])
-                            recipe_ingredients.append((name, quantity, unit))
-                        else:
-                            print(f"Error: {name}... {quantity_unit}")
+
+                    if re.search(r'----+', quantity_unit) or re.search(r'----+', name):
+                                            continue
+
+                    Validator.validate_non_empty(name, "Название ингредиента")
+                    Validator.validate_non_empty(quantity_unit, "Количество и единица измерения")
+                    
+                    quantity_unit_parts = quantity_unit.split()
+                    Validator.validate_quantity_unit_format(quantity_unit_parts, "Количество и единица измерения")
+                    quantity = quantity_unit_parts[0]
+                    unit = ' '.join(quantity_unit_parts[1:])
+                    
+                    # Валидация количества как положительного числа
+                    Validator.validate_positive_float(float(quantity), "Количество")
+                    recipe_ingredients.append((name, quantity, unit))
             elif not line.strip():
                 break
 

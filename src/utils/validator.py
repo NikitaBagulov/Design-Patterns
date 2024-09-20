@@ -56,4 +56,10 @@ class Validator:
         """Проверяет значение на соответствие ожидаемому и создает исключение, если это не так."""
         if value != expected_value:
             raise ArgumentException(field_name, f"Должно быть {expected_value}")
+        
+    @staticmethod
+    def validate_quantity_unit_format(quantity_unit_parts: list[str], argument_name: str):
+        """Проверяет, что строка содержит как минимум количество и единицу измерения."""
+        if len(quantity_unit_parts) < 2:
+            raise ArgumentException(argument_name, "Некорректный формат. Должно быть количество и единица измерения")
 
