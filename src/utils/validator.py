@@ -1,4 +1,4 @@
-from src.custom_exceptions import ArgumentException, LengthException, DigitsException, ConversionException
+from src.utils.custom_exceptions import ArgumentException, LengthException, DigitsException, ConversionException
 # from src.models.range import range_model
 
 class Validator:
@@ -38,6 +38,13 @@ class Validator:
         if not isinstance(value, int) or value <= 0:
             raise ValueError(f"Значение аргумента '{argument_name}' должно быть положительным целым числом.")
     
+    @staticmethod
+    def validate_positive_float(value: float, argument_name: str) -> None:
+        if not isinstance(value, (float, int)):
+            raise ValueError(f"Значение аргумента '{argument_name}' должно быть числом с плавающей запятой.")
+        if value <= 0:
+            raise ValueError(f"Значение аргумента '{argument_name}' должно быть положительным числом.")
+
     @staticmethod
     def validate_type(value, expected_type, field_name: str):
         """Проверяет тип значения и создает исключение, если тип не совпадает с ожидаемым."""

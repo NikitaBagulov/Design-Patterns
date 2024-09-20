@@ -1,12 +1,12 @@
 from src.abstract_model import abstract_model
-from src.models.nomenclature_group import nomenclature_group_model
+from src.models.group import group_model
 from src.models.range import range_model
 from src.utils.validator import Validator
 
 class nomenclature_model(abstract_model):
     __name: str = ""
     __full_name: str = ""
-    __group: nomenclature_group_model = None
+    __group: group_model = None
     __unit: range_model = None
 
     @property
@@ -28,12 +28,12 @@ class nomenclature_model(abstract_model):
         self.__full_name = value.strip()
 
     @property
-    def group(self) -> nomenclature_group_model:
+    def group(self) -> group_model:
         return self.__group
 
     @group.setter
-    def group(self, value: nomenclature_group_model):
-        Validator.validate_type(value, nomenclature_group_model, "group") 
+    def group(self, value: group_model):
+        Validator.validate_type(value, group_model, "group") 
         self.__group = value
 
     @property
