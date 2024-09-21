@@ -5,14 +5,11 @@ from src.settings_manager import settings_manager
 from src.utils.recipe_manager import recipe_manager
 
 class TestDataRepository(unittest.TestCase):
-
-    def setUp(self):
+    def test_data_created(self):
         self.reposity = data_reposity()
         self.manager = settings_manager()
         self.recipe_manager = recipe_manager()
         self.service = start_service(self.reposity, self.manager, self.recipe_manager)
-
-    def test_data_created(self):
         self.service.create()
 
         self.assertIn(data_reposity.nomenclature_key(), self.reposity.data)

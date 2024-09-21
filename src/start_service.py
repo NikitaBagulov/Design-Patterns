@@ -52,37 +52,7 @@ class start_service(abstract_logic):
         self.__reposity.data[data_reposity.range_key()] = list_units
 
     def __create_receipts(self):
-        ingredients_data = self.__recipe_manager.extract_ingredients()
-        steps_data = self.__recipe_manager.extract_steps()
-        servings_data = self.__recipe_manager.extract_servings()
-
-        recipes = []
-
-        for file_idx, ingredients in enumerate(ingredients_data):
-            recipe = recipe_model()
-            recipe.name = f"Рецепт {file_idx + 1}"
-            recipe.servings = servings_data[file_idx]
-
-            for ingredient in ingredients:
-                name, quantity, unit = ingredient
-                nomenclature_model_instance = nomenclature_model()
-                nomenclature_model_instance.name = name
-                nomenclature_model_instance.quantity = float(quantity)
-
-                range_model_instance = range_model()
-                range_model_instance.name = unit
-                nomenclature_model_instance.unit = range_model_instance
-
-                recipe.add_ingredient(nomenclature_model_instance)
-
-            for step_number, description in steps_data:
-                step = step_model()
-                step.step_number = step_number
-                step.description = description
-                recipe.add_step(step)
-
-            recipes.append(recipe)
-
+        recipes = self.__recipe_manager.load_all_recipes()
         self.__reposity.data[data_reposity.recipes_key()] = recipes
 
     def create(self):

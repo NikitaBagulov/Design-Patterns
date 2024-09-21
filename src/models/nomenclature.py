@@ -7,8 +7,7 @@ class nomenclature_model(abstract_model):
     __name: str = ""
     __full_name: str = ""
     __group: group_model = None
-    __unit: range_model = None
-    __quantity: float = 0.0
+
 
     @property
     def name(self) -> str:
@@ -37,23 +36,6 @@ class nomenclature_model(abstract_model):
         Validator.validate_type(value, group_model, "group") 
         self.__group = value
 
-    @property
-    def unit(self) -> range_model:
-        return self.__unit
-
-    @unit.setter
-    def unit(self, value: range_model):
-        Validator.validate_type(value, range_model, "unit") 
-        self.__unit = value
-
-    @property
-    def quantity(self) -> float:
-        return self.__quantity
-
-    @quantity.setter
-    def quantity(self, value: float):
-        Validator.validate_positive_float(value, "quantity")
-        self.__quantity = value
 
     def set_compare_mode(self, other_object) -> bool:
         super().set_compare_mode(other_object)

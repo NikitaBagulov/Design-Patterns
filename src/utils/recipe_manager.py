@@ -1,22 +1,39 @@
 import os
 import re
 from src.utils.validator import Validator
+from src.abstract_logic import abstract_logic
+from src.utils.custom_exceptions import NotFoundException, ArgumentException
 
-class recipe_manager:
+class recipe_manager(abstract_logic):
     def __init__(self, docs_directory: str = 'docs', file_extension: str = '.md'):
+        Validator.validate_not_none(docs_directory, "docs_directory")
+        Validator.validate_non_empty(docs_directory, "docs_directory")
+        Validator.validate_non_empty(file_extension, "file_extension")
         self.docs_directory = docs_directory
         self.file_extension = file_extension
 
     def read_files(self) -> list[str]:
-        """Чтение всех файлов с рецептами из директории."""
+        """Чтение всех файлов с рецептами из директории с тщательной проверкой ошибок."""
         file_contents = []
+        Validator.validate_exists(self.docs_directory, "Директория")
+        Validator.validate_is_directory(self.docs_directory, "Директория")
+
         for root, _, files in os.walk(self.docs_directory):
             for file in files:
-                if file.endswith(self.file_extension):
-                    file_path = os.path.join(root, file)
+                Validator.validate_file_extension(file, self.file_extension)
+                file_path = os.path.join(root, file)
+                Validator.validate_read_permission(file_path)
+                try:
                     with open(file_path, 'r', encoding='utf-8') as f:
                         content = f.read()
                         file_contents.append(content)
+                except FileNotFoundError:
+                    raise NotFoundException(f"Файл '{file_path}' не найден")
+                except PermissionError:
+                    raise PermissionError(f"Нет прав для чтения файла: {file_path}")
+                except Exception as ex:
+                    raise ArgumentException(file_path, f"Ошибка при чтении файла: {str(ex)}")
+
         return file_contents
 
     def extract_ingredients(self) -> list[list[tuple[str, str, str]]]:
@@ -128,3 +145,6 @@ class recipe_manager:
             all_recipes.append(recipe_data)
 
         return all_recipes
+    
+    def set_exception(self, ex: Exception):
+        self._inner_set_exception(ex)

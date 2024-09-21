@@ -1,12 +1,12 @@
 from src.abstract_model import abstract_model
 from src.utils.validator import Validator
-from src.models.nomenclature import nomenclature_model
+from src.models.ingredient import ingredient_model
 from src.models.step import step_model
 
 class recipe_model(abstract_model):
     __name: str = ""
     __servings: int = 1
-    __ingredients: list[nomenclature_model] = []
+    __ingredients: list[ingredient_model] = []
     __steps: list[step_model] = []
 
     @property
@@ -32,8 +32,8 @@ class recipe_model(abstract_model):
     def ingredients(self) -> list:
         return self.__ingredients
 
-    def add_ingredient(self, ingredient: nomenclature_model):
-        Validator.validate_type(ingredient, nomenclature_model, "ingredient")
+    def add_ingredient(self, ingredient: ingredient_model):
+        Validator.validate_type(ingredient, ingredient_model, "ingredient")
         self.__ingredients.append(ingredient)
 
     @property

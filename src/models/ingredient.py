@@ -1,20 +1,22 @@
 from src.abstract_model import abstract_model
+from src.models.nomenclature import nomenclature_model
+from src.models.range import range_model
 from src.utils.validator import Validator
 
 class ingredient_model(abstract_model):
-    __name: str = ""
+    __nomenclature: nomenclature_model = None
     __quantity: float = 0.0
-    __unit: str = ""
+    __unit: range_model = None
 
     @property
-    def name(self) -> str:
-        return self.__name
+    def nomenclature(self) -> nomenclature_model:
+        return self.__nomenclature
     
-    @name.setter
-    def name(self, value: str):
-        Validator.validate_type(value, str, "name")
-        Validator.validate_non_empty(value, "name")
-        self.__name = value.strip()
+    @nomenclature.setter
+    def nomenclature(self, value: nomenclature_model):
+        Validator.validate_type(value, nomenclature_model, "nomenclature")
+        Validator.validate_non_empty(value, "nomenclature")
+        self.__nomenclature = value
 
     @property
     def quantity(self) -> float:
@@ -35,11 +37,14 @@ class ingredient_model(abstract_model):
         Validator.validate_non_empty(value, "unit")
         self.__unit = value.strip()
 
+    @property
+    def unit(self) -> range_model:
+        return self.__unit
+
+    @unit.setter
+    def unit(self, value: range_model):
+        Validator.validate_type(value, range_model, "unit") 
+        self.__unit = value
+
     def set_compare_mode(self, other_object) -> bool:
         super().set_compare_mode(other_object)
-
-    def __repr__(self) -> str:
-        return (
-            f"<IngredientModel(name={self.__name}, "
-            f"quantity={self.__quantity}, unit={self.__unit})>"
-        )
