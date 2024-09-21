@@ -1,5 +1,5 @@
-from src.custom_exceptions import ArgumentException, LengthException, DigitsException, ConversionException
-# from src.models.range import range_model
+from src.utils.custom_exceptions import ArgumentException, LengthException, DigitsException, NotFoundException
+import os
 
 class Validator:
     @staticmethod
@@ -39,6 +39,13 @@ class Validator:
             raise ValueError(f"Значение аргумента '{argument_name}' должно быть положительным целым числом.")
     
     @staticmethod
+    def validate_positive_float(value: float, argument_name: str) -> None:
+        if not isinstance(value, (float, int)):
+            raise ValueError(f"Значение аргумента '{argument_name}' должно быть числом с плавающей запятой.")
+        if value <= 0:
+            raise ValueError(f"Значение аргумента '{argument_name}' должно быть положительным числом.")
+
+    @staticmethod
     def validate_type(value, expected_type, field_name: str):
         """Проверяет тип значения и создает исключение, если тип не совпадает с ожидаемым."""
         if not isinstance(value, expected_type):
@@ -49,4 +56,34 @@ class Validator:
         """Проверяет значение на соответствие ожидаемому и создает исключение, если это не так."""
         if value != expected_value:
             raise ArgumentException(field_name, f"Должно быть {expected_value}")
+        
+    @staticmethod
+    def validate_quantity_unit_format(quantity_unit_parts: list[str], argument_name: str):
+        """Проверяет, что строка содержит как минимум количество и единицу измерения."""
+        if len(quantity_unit_parts) < 2:
+            raise ArgumentException(argument_name, "Некорректный формат. Должно быть количество и единица измерения")
+        
+    @staticmethod
+    def validate_exists(path: str, field_name: str):
+        """Проверяет, существует ли указанный путь."""
+        if not os.path.exists(path):
+            raise NotFoundException(f"{field_name} '{path}' не найден")
+
+    @staticmethod
+    def validate_is_directory(path: str, field_name: str):
+        """Проверяет, является ли указанный путь директорией."""
+        if not os.path.isdir(path):
+            raise ArgumentException(field_name, "Указанный путь не является директорией")
+
+    @staticmethod
+    def validate_read_permission(path: str):
+        """Проверяет, есть ли права на чтение файла."""
+        if not os.access(path, os.R_OK):
+            raise PermissionError(f"Нет прав для чтения файла: {path}")
+
+    @staticmethod
+    def validate_file_extension(file: str, expected_extension: str):
+        """Проверяет, что файл имеет ожидаемое расширение."""
+        if not file.endswith(expected_extension):
+            raise ArgumentException(file, f"Файл должен иметь расширение '{expected_extension}'")
 

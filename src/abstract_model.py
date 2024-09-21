@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 import uuid
-from src.custom_exceptions import LengthException, ArgumentException
+from src.utils.custom_exceptions import LengthException, ArgumentException
 
 class abstract_model(ABC):
     __unique_code: str = uuid.uuid4()

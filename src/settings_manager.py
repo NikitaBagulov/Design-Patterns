@@ -3,7 +3,7 @@ import os
 from src.models.settings import settings
 from src.abstract_logic import abstract_logic
 from src.utils.validator import Validator
-from src.custom_exceptions import ConversionException, NotFoundException, ArgumentException, LengthException
+from src.utils.custom_exceptions import ConversionException, NotFoundException, ArgumentException, LengthException
 
 class settings_manager(abstract_logic):
     __file_name = "settings.json"
@@ -28,7 +28,7 @@ class settings_manager(abstract_logic):
                     raise ConversionException("Ошибка при конвертации данных.") from e
 
     def open(self, file_name: str = ""):
-        Validator.validate_non_empty(file_name, "file_name")  # Проверяем, что file_name не пуст
+        Validator.validate_non_empty(file_name, "file_name")
 
         if file_name != "":
             self.__file_name = file_name

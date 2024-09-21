@@ -21,7 +21,8 @@ class range_model(abstract_model):
         return self.__base_unit
 
     def set_base_unit(self, base_unit: 'range_model', conversion_factor: int):
-        Validator.validate_type(base_unit, range_model, "base_unit") 
+        if base_unit is not None:
+            Validator.validate_type(base_unit, range_model, "base_unit") 
         Validator.validate_positive_integer(conversion_factor, "conversion_factor")
         self.__base_unit = base_unit
         self.__conversion_factor = conversion_factor
@@ -30,11 +31,32 @@ class range_model(abstract_model):
     def conversion_factor(self) -> int:
         return self.__conversion_factor
 
+    @staticmethod
+    def default_unit_kg():
+        item = range_model()
+        item.name = "Килограмм"
+        item.set_base_unit(None, 1)
+        return item
+
+    @staticmethod
+    def default_unit_piece():
+        item = range_model()
+        item.name = "Штука"
+        item.set_base_unit(None, 1)
+        return item
+
+    @staticmethod
+    def default_unit_gram():
+        item = range_model()
+        item.name = "Грамм"
+        kg_unit = range_model.default_unit_kg()
+        item.set_base_unit(kg_unit, 1000)
+        return item
+
     def set_compare_mode(self, other_object) -> bool:
         if other_object is None:
             return False
         if not isinstance(other_object, range_model):
             return False
-        return (self.__name == other_object.__name and
-                self.__base_unit == other_object.__base_unit and
-                self.__conversion_factor == other_object.__conversion_factor)
+        return self.__name == other_object.__name
+                

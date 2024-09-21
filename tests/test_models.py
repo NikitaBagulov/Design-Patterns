@@ -4,7 +4,7 @@ from src.models.nomenclature import nomenclature_model
 from src.models.company import company_model
 from src.models.warehouse import warehouse_model
 from src.settings_manager import settings_manager
-from src.custom_exceptions import ArgumentException, ConversionException
+from src.utils.custom_exceptions import ArgumentException, ConversionException
 
 class test_models(unittest.TestCase):
 
