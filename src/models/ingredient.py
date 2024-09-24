@@ -1,4 +1,4 @@
-from src.abstract_model import abstract_model
+from src.core.abstract_model import abstract_model
 from src.models.nomenclature import nomenclature_model
 from src.models.range import range_model
 from src.utils.validator import Validator

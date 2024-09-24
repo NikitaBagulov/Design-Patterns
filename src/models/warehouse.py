@@ -1,4 +1,4 @@
-from src.abstract_model import abstract_model
+from src.core.abstract_model import abstract_model
 from src.utils.validator import Validator
 
 class warehouse_model(abstract_model):

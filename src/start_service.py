@@ -1,4 +1,4 @@
-from src.abstract_logic import abstract_logic
+from src.core.abstract_logic import abstract_logic
 from src.data_reposity import data_reposity
 from src.utils.validator import Validator
 from src.utils.recipe_manager import recipe_manager
@@ -41,8 +41,9 @@ class start_service(abstract_logic):
         self.__reposity.data[data_reposity.group_key()] = list    
 
     def __create_nomenclature(self):
-        ingredients = self.__recipe_manager.extract_ingredients()
-        self.__reposity.data[data_reposity.nomenclature_key()] = ingredients
+        list_nomenclature_str = self.__recipe_manager.extract_nomenclature()
+        nomenclature = nomenclature_model.create_nomenclature_list(list_nomenclature_str)
+        self.__reposity.data[data_reposity.nomenclature_key()] = nomenclature
 
     def __create_range(self):
         list_units = []

@@ -1,4 +1,4 @@
-from src.abstract_model import abstract_model
+from src.core.abstract_model import abstract_model
 from src.utils.validator import Validator
 from src.models.ingredient import ingredient_model
 from src.models.step import step_model

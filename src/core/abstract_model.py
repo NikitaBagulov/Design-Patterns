@@ -3,7 +3,7 @@ import uuid
 from src.utils.custom_exceptions import LengthException, ArgumentException
 
 class abstract_model(ABC):
-    __unique_code: str = uuid.uuid4()
+    __unique_code: str = uuid.uuid4().hex
     __name: str = ""
 
     @property
@@ -34,3 +34,6 @@ class abstract_model(ABC):
 
     def __eq__(self, value: object) -> bool:
         return self.set_compare_mode(value)
+    
+    def __str__(self) -> str:
+        return self.__unique_code

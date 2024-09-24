@@ -1,4 +1,4 @@
-from src.abstract_model import abstract_model
+from src.core.abstract_model import abstract_model
 from src.models.group import group_model
 from src.models.range import range_model
 from src.utils.validator import Validator
@@ -36,6 +36,16 @@ class nomenclature_model(abstract_model):
         Validator.validate_type(value, group_model, "group") 
         self.__group = value
 
+    @staticmethod
+    def create_nomenclature_list(names: list[str]) -> list['nomenclature_model']:
+        nomenclature_list = []
+
+        for name in names:
+            nomenclature = nomenclature_model()
+            nomenclature.name = name.strip()
+            nomenclature_list.append(nomenclature)
+
+        return nomenclature_list
 
     def set_compare_mode(self, other_object) -> bool:
         super().set_compare_mode(other_object)

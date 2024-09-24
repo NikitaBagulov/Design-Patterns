@@ -1,7 +1,7 @@
 import json
 import os
 from src.models.settings import settings
-from src.abstract_logic import abstract_logic
+from src.core.abstract_logic import abstract_logic
 from src.utils.validator import Validator
 from src.utils.custom_exceptions import ConversionException, NotFoundException, ArgumentException, LengthException
 

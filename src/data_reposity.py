@@ -1,4 +1,4 @@
-from src.abstract_logic import abstract_logic
+from src.core.abstract_logic import abstract_logic
 
 class data_reposity(abstract_logic):
     __data = {}

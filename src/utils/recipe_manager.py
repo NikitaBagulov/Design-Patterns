@@ -1,7 +1,7 @@
 import os
 import re
 from src.utils.validator import Validator
-from src.abstract_logic import abstract_logic
+from src.core.abstract_logic import abstract_logic
 from src.utils.custom_exceptions import NotFoundException, ArgumentException
 
 class recipe_manager(abstract_logic):
@@ -35,6 +35,22 @@ class recipe_manager(abstract_logic):
                     raise ArgumentException(file_path, f"Ошибка при чтении файла: {str(ex)}")
 
         return file_contents
+
+
+    def extract_nomenclature(self) -> set[str]:
+        """Извлечение номенклатуры из всех рецептов."""
+        nomenclature = set()
+        file_contents = self.read_files()
+
+        for content in file_contents:
+            recipe_ingredients = []
+            self.parse_ingredients(content, recipe_ingredients)
+
+            for ingredient in recipe_ingredients:
+                name, _, _ = ingredient
+                nomenclature.add(name)
+
+        return list(nomenclature)
 
     def extract_ingredients(self) -> list[list[tuple[str, str, str]]]:
         """Извлечение ингредиентов из всех рецептов."""

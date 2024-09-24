@@ -1,4 +1,4 @@
-from src.abstract_model import abstract_model
+from src.core.abstract_model import abstract_model
 
 class group_model(abstract_model):
 
