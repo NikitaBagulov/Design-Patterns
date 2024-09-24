@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 from src.core.format_reporting import format_reporting
+from src.utils.validator import Validator
 
 class abstract_report(ABC):
     __format: format_reporting = format_reporting.CSV
@@ -20,5 +21,5 @@ class abstract_report(ABC):
     
     @result.setter
     def result(self, value:str):
-        # validator.validate(value, str)
+        Validator.validate_type(value, str, "result")
         self.__result = value
