@@ -13,11 +13,18 @@ class markdown_report(abstract_report):
         first_model = data[0]
        
         fields = list(filter(lambda x: not x.startswith("_") and not callable(getattr(first_model.__class__, x)), dir(first_model)))
-        
+
         self.result += "| " + " | ".join(fields) + " |\n"
         self.result += "| " + " | ".join(["---"] * len(fields)) + " |\n"
 
         for row in data:
-            row_values = [str(getattr(row, field)) for field in fields]
+            row_values = [self.serialize_value(getattr(row, field)) for field in fields]
             self.result += "| " + " | ".join(row_values) + " |\n"
-        print(self.result)
+
+    def serialize_value(self, value):
+        if isinstance(value, list):
+            return "[" + ", ".join([self.serialize_value(v) for v in value]) + "]"
+        elif hasattr(value, '__dict__'):
+            return "{" + ", ".join([f"{k}: {self.serialize_value(v)}" for k, v in value.__dict__.items()]) + "}"
+        else:
+            return str(value)

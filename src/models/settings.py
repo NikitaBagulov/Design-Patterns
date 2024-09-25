@@ -1,4 +1,10 @@
 from src.utils.validator import Validator
+from src.core.format_reporting import format_reporting
+from src.reports.csv_report import csv_report
+from src.reports.markdown_report import markdown_report
+from src.reports.json_report import json_report
+from src.reports.xml_report import xml_report
+from src.reports.rtf_report import rtf_report
 
 class settings:
     def __init__(self):
@@ -8,6 +14,7 @@ class settings:
         self.__corr_account = ""
         self.__bik = ""
         self.__ownership_type = ""
+        self.__report_format = format_reporting.CSV
 
     @property
     def organization_name(self):
@@ -64,3 +71,28 @@ class settings:
         Validator.validate_non_empty(value, "ownership_type")
         Validator.validate_length(value, 5, "Форма собственности")
         self.__ownership_type = value
+
+    @property
+    def report_format(self):
+        return self.__report_format
+
+    @report_format.setter
+    def report_format(self, value: str):
+        Validator.validate_enum_value(value, format_reporting, "ReportFormat")
+        self.__report_format = value
+
+    def get_report_instance(self):
+
+        format_to_class_map = {
+            "CSV": csv_report,
+            "Markdown": markdown_report,
+            "Json": json_report,
+            "XML": xml_report,
+            "RTF": rtf_report
+        }
+
+        report_class = format_to_class_map.get(self.__report_format)
+        if report_class:
+            return report_class()
+        else:
+            Validator.validate_enum_value(self.__report_format, format_reporting, "ReportFormat")

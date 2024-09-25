@@ -1,0 +1,4 @@
+base_unit;conversion_factor;name;unique_code;
+None;1;Килограмм;68bc21809c3541e095e0273861eb80ca;
+None;1;Штука;68bc21809c3541e095e0273861eb80ca;
+{base_unit: None, conversion_factor: 1, name: Килограмм, unique_code: 68bc21809c3541e095e0273861eb80ca};1000;Грамм;68bc21809c3541e095e0273861eb80ca;

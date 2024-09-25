@@ -49,3 +49,11 @@ class nomenclature_model(abstract_model):
 
     def set_compare_mode(self, other_object) -> bool:
         super().set_compare_mode(other_object)
+
+    def to_dict(self) -> dict:
+        """Конвертировать объект в словарь для сериализации."""
+        return {
+            'name': self.name,
+            'full_name': self.full_name,
+            'group': self.group.to_dict() if self.group else None 
+        }

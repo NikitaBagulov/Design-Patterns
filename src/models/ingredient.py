@@ -24,7 +24,6 @@ class ingredient_model(abstract_model):
     
     @quantity.setter
     def quantity(self, value: float):
-        Validator.validate_positive_float(value, "quantity")
         self.__quantity = value
 
     @property

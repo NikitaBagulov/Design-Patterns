@@ -2,6 +2,10 @@ import os
 import re
 from src.utils.validator import Validator
 from src.core.abstract_logic import abstract_logic
+from src.models.recipe import recipe_model
+from src.models.ingredient import ingredient_model
+from src.models.range import range_model
+from src.models.step import step_model
 from src.utils.custom_exceptions import NotFoundException, ArgumentException
 
 class recipe_manager(abstract_logic):
@@ -35,6 +39,13 @@ class recipe_manager(abstract_logic):
                     raise ArgumentException(file_path, f"Ошибка при чтении файла: {str(ex)}")
 
         return file_contents
+
+    def extract_title(self, content: str) -> str:
+        """Извлечение названия рецепта из содержимого."""
+        for line in content.split('\n'):
+            if line.strip().startswith('# '):
+                return line.strip()[2:]
+        return "Неизвестный рецепт"
 
 
     def extract_nomenclature(self) -> set[str]:
@@ -111,7 +122,7 @@ class recipe_manager(abstract_logic):
         steps = []
 
         for line in content.split('\n'):
-            if line.strip().startswith('### Шаги'):
+            if line.strip().startswith('## ПОШАГОВОЕ ПРИГОТОВЛЕНИЕ'):
                 steps_section = True
                 continue
             if steps_section:
@@ -150,6 +161,7 @@ class recipe_manager(abstract_logic):
 
         for content in file_contents:
             recipe_data = {
+                'name': self.extract_title(content),
                 'ingredients': [],
                 'steps': [],
                 'servings': self.parse_servings(content),
@@ -162,5 +174,34 @@ class recipe_manager(abstract_logic):
 
         return all_recipes
     
+    def create_recipes(self, recipe_data_list: list[dict]) -> list[recipe_model]:
+        """Создание списка объектов recipe_model из данных рецептов."""
+        recipes = []
+        
+        for recipe_data in recipe_data_list:
+            recipe = recipe_model()
+            recipe.name = recipe_data.get('name', "Неизвестный рецепт")
+            recipe.servings = recipe_data.get('servings', 1)
+
+            for ingredient_info in recipe_data.get('ingredients', []):
+                name, quantity, unit_name = ingredient_info
+                unit = range_model()
+                unit.name = unit_name
+                ingredient = ingredient_model()
+                ingredient.name = name
+                ingredient.quantity = quantity
+                ingredient.unit = unit
+                recipe.add_ingredient(ingredient)
+
+            for step_number, description in recipe_data.get('steps', []):
+                step = step_model()
+                step.step_number = step_number
+                step.description = description
+                recipe.add_step(step)
+            
+            recipes.append(recipe)
+
+        return recipes
+
     def set_exception(self, ex: Exception):
         self._inner_set_exception(ex)

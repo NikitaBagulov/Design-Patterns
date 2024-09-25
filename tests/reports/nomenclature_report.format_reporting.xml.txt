@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<Report>
+  <Row>
+    <full_name/>
+    <group>None</group>
+    <name>Яйца</name>
+    <unique_code>68bc21809c3541e095e0273861eb80ca</unique_code>
+  </Row>
+  <Row>
+    <full_name/>
+    <group>None</group>
+    <name>Креветки</name>
+    <unique_code>68bc21809c3541e095e0273861eb80ca</unique_code>
+  </Row>
+  <Row>
+    <full_name/>
+    <group>None</group>
+    <name>Соль, перец</name>
+    <unique_code>68bc21809c3541e095e0273861eb80ca</unique_code>
+  </Row>
+  <Row>
+    <full_name/>
+    <group>None</group>
+    <name>Сливочное масло</name>
+    <unique_code>68bc21809c3541e095e0273861eb80ca</unique_code>
+  </Row>
+  <Row>
+    <full_name/>
+    <group>None</group>
+    <name>Пшеничная мука</name>
+    <unique_code>68bc21809c3541e095e0273861eb80ca</unique_code>
+  </Row>
+  <Row>
+    <full_name/>
+    <group>None</group>
+    <name>Сахар</name>
+    <unique_code>68bc21809c3541e095e0273861eb80ca</unique_code>
+  </Row>
+  <Row>
+    <full_name/>
+    <group>None</group>
+    <name>Петрушка (для подачи)</name>
+    <unique_code>68bc21809c3541e095e0273861eb80ca</unique_code>
+  </Row>
+  <Row>
+    <full_name/>
+    <group>None</group>
+    <name>Чеснок</name>
+    <unique_code>68bc21809c3541e095e0273861eb80ca</unique_code>
+  </Row>
+  <Row>
+    <full_name/>
+    <group>None</group>
+    <name>Пармезан</name>
+    <unique_code>68bc21809c3541e095e0273861eb80ca</unique_code>
+  </Row>
+  <Row>
+    <full_name/>
+    <group>None</group>
+    <name>Сливки (жирность 20%)</name>
+    <unique_code>68bc21809c3541e095e0273861eb80ca</unique_code>
+  </Row>
+  <Row>
+    <full_name/>
+    <group>None</group>
+    <name>Спагетти</name>
+    <unique_code>68bc21809c3541e095e0273861eb80ca</unique_code>
+  </Row>
+  <Row>
+    <full_name/>
+    <group>None</group>
+    <name>Ванилин(щепотка)</name>
+    <unique_code>68bc21809c3541e095e0273861eb80ca</unique_code>
+  </Row>
+</Report>

@@ -5,8 +5,6 @@ from src.utils.recipe_manager import recipe_manager
 from src.models.group import group_model
 from src.models.range import range_model
 from src.models.nomenclature import nomenclature_model
-from src.models.step import step_model
-from src.models.recipe import recipe_model
 from src.settings_manager import settings_manager
 from src.models import settings
 
@@ -53,8 +51,11 @@ class start_service(abstract_logic):
         self.__reposity.data[data_reposity.range_key()] = list_units
 
     def __create_receipts(self):
-        recipes = self.__recipe_manager.load_all_recipes()
+        recipes_list = self.__recipe_manager.load_all_recipes()
+        print(recipes_list)
+        recipes = self.__recipe_manager.create_recipes(recipes_list)
         self.__reposity.data[data_reposity.recipes_key()] = recipes
+
 
     def create(self):
         self.__create_nomenclature_groups()

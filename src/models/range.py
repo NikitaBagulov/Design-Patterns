@@ -59,4 +59,5 @@ class range_model(abstract_model):
         if not isinstance(other_object, range_model):
             return False
         return self.__name == other_object.__name
+
                 
