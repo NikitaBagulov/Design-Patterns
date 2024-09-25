@@ -11,30 +11,31 @@ from src.utils.custom_exceptions import ArgumentException
 from src.settings_manager import settings_manager
 
 class report_factory(abstract_logic):
-    __reports: dict = {
-        format_reporting.CSV: csv_report,
-        format_reporting.MARKDOWN: markdown_report,
-        format_reporting.JSON: json_report,
-        format_reporting.XML: xml_report,
-        format_reporting.RTF: rtf_report
-    }
+    # __reports: dict = {
+    #     format_reporting.CSV: csv_report,
+    #     format_reporting.MARKDOWN: markdown_report,
+    #     format_reporting.JSON: json_report,
+    #     format_reporting.XML: xml_report,
+    #     format_reporting.RTF: rtf_report
+    # }
 
-    def __init__(self) -> None:
+    __reports: dict = {}
+
+    def __init__(self, manager: settings_manager) -> None:
         super().__init__()
-        self.__report_settings = settings_manager().settings.report_settings
+        self.__reports = manager.settings.report_settings
 
     def create(self, format: format_reporting) -> abstract_report:
         Validator.validate_type(format, format_reporting, "format")
-        if format not in self.__reports.keys():
+        format_str = format.name
+        if format_str not in self.__reports.keys():
             self.set_exception(ArgumentException("format", f"Указанный вариант формата '{format}' не реализован!"))
             return None
-        
-        report_class = self.__reports[format]
-        return report_class()
 
-    def create_default(self) -> abstract_report:
-        default_format = format_reporting.CSV
-        return self.create(default_format)
+        report_class_name = self.__reports[format_str]
+        report_class = getattr(__import__(f'src.reports.{report_class_name}', fromlist=[report_class_name]), report_class_name)
+
+        return report_class()
 
     def set_exception(self, ex: Exception):
         self._inner_set_exception(ex)

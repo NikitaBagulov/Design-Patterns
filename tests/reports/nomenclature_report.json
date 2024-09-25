@@ -3,180 +3,180 @@
         "full_name": "",
         "group": {
             "name": "Сырье",
-            "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+            "unique_code": "9682dff4005e4db28ccc1f8243022138"
         },
         "name": "Пшеничная мука",
         "range": {
             "base_unit": null,
             "conversion_factor": 1,
             "name": "гр",
-            "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+            "unique_code": "9682dff4005e4db28ccc1f8243022138"
         },
-        "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+        "unique_code": "9682dff4005e4db28ccc1f8243022138"
     },
     {
         "full_name": "",
         "group": {
             "name": "Сырье",
-            "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+            "unique_code": "9682dff4005e4db28ccc1f8243022138"
         },
         "name": "Сахар",
         "range": {
             "base_unit": null,
             "conversion_factor": 1,
             "name": "гр",
-            "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+            "unique_code": "9682dff4005e4db28ccc1f8243022138"
         },
-        "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+        "unique_code": "9682dff4005e4db28ccc1f8243022138"
     },
     {
         "full_name": "",
         "group": {
             "name": "Сырье",
-            "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+            "unique_code": "9682dff4005e4db28ccc1f8243022138"
         },
         "name": "Сливочное масло",
         "range": {
             "base_unit": null,
             "conversion_factor": 1,
             "name": "гр",
-            "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+            "unique_code": "9682dff4005e4db28ccc1f8243022138"
         },
-        "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+        "unique_code": "9682dff4005e4db28ccc1f8243022138"
     },
     {
         "full_name": "",
         "group": {
             "name": "Сырье",
-            "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+            "unique_code": "9682dff4005e4db28ccc1f8243022138"
         },
         "name": "Яйца",
         "range": {
             "base_unit": null,
             "conversion_factor": 1,
             "name": "шт",
-            "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+            "unique_code": "9682dff4005e4db28ccc1f8243022138"
         },
-        "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+        "unique_code": "9682dff4005e4db28ccc1f8243022138"
     },
     {
         "full_name": "",
         "group": {
             "name": "Сырье",
-            "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+            "unique_code": "9682dff4005e4db28ccc1f8243022138"
         },
         "name": "Ванилин(щепотка)",
         "range": {
             "base_unit": null,
             "conversion_factor": 1,
             "name": "гр",
-            "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+            "unique_code": "9682dff4005e4db28ccc1f8243022138"
         },
-        "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+        "unique_code": "9682dff4005e4db28ccc1f8243022138"
     },
     {
         "full_name": "",
         "group": {
             "name": "Сырье",
-            "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+            "unique_code": "9682dff4005e4db28ccc1f8243022138"
         },
         "name": "Спагетти",
         "range": {
             "base_unit": null,
             "conversion_factor": 1,
             "name": "гр",
-            "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+            "unique_code": "9682dff4005e4db28ccc1f8243022138"
         },
-        "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+        "unique_code": "9682dff4005e4db28ccc1f8243022138"
     },
     {
         "full_name": "",
         "group": {
             "name": "Сырье",
-            "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+            "unique_code": "9682dff4005e4db28ccc1f8243022138"
         },
         "name": "Креветки",
         "range": {
             "base_unit": null,
             "conversion_factor": 1,
             "name": "гр",
-            "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+            "unique_code": "9682dff4005e4db28ccc1f8243022138"
         },
-        "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+        "unique_code": "9682dff4005e4db28ccc1f8243022138"
     },
     {
         "full_name": "",
         "group": {
             "name": "Сырье",
-            "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+            "unique_code": "9682dff4005e4db28ccc1f8243022138"
         },
         "name": "Сливки (жирность 20%)",
         "range": {
             "base_unit": null,
             "conversion_factor": 1,
             "name": "мл",
-            "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+            "unique_code": "9682dff4005e4db28ccc1f8243022138"
         },
-        "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+        "unique_code": "9682dff4005e4db28ccc1f8243022138"
     },
     {
         "full_name": "",
         "group": {
             "name": "Сырье",
-            "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+            "unique_code": "9682dff4005e4db28ccc1f8243022138"
         },
         "name": "Чеснок",
         "range": {
             "base_unit": null,
             "conversion_factor": 1,
             "name": "зубчика",
-            "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+            "unique_code": "9682dff4005e4db28ccc1f8243022138"
         },
-        "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+        "unique_code": "9682dff4005e4db28ccc1f8243022138"
     },
     {
         "full_name": "",
         "group": {
             "name": "Сырье",
-            "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+            "unique_code": "9682dff4005e4db28ccc1f8243022138"
         },
         "name": "Пармезан",
         "range": {
             "base_unit": null,
             "conversion_factor": 1,
             "name": "гр",
-            "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+            "unique_code": "9682dff4005e4db28ccc1f8243022138"
         },
-        "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+        "unique_code": "9682dff4005e4db28ccc1f8243022138"
     },
     {
         "full_name": "",
         "group": {
             "name": "Сырье",
-            "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+            "unique_code": "9682dff4005e4db28ccc1f8243022138"
         },
         "name": "Соль, перец",
         "range": {
             "base_unit": null,
             "conversion_factor": 1,
             "name": "гр",
-            "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+            "unique_code": "9682dff4005e4db28ccc1f8243022138"
         },
-        "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+        "unique_code": "9682dff4005e4db28ccc1f8243022138"
     },
     {
         "full_name": "",
         "group": {
             "name": "Сырье",
-            "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+            "unique_code": "9682dff4005e4db28ccc1f8243022138"
         },
         "name": "Петрушка (для подачи)",
         "range": {
             "base_unit": null,
             "conversion_factor": 1,
             "name": "гр",
-            "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+            "unique_code": "9682dff4005e4db28ccc1f8243022138"
         },
-        "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
+        "unique_code": "9682dff4005e4db28ccc1f8243022138"
     }
 ]

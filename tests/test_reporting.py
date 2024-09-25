@@ -126,11 +126,9 @@ class test_reporting(unittest.TestCase):
         reposity = data_reposity()
         start = start_service(reposity, manager, rec_manager)
         start.create()        
-       
-        # Действие
-        report = report_factory().create( format_reporting.CSV )
 
-        # Проверка
+        report = report_factory(manager).create( format_reporting.CSV )
+
         assert report is not None
         assert isinstance(report,  csv_report)
 
@@ -140,7 +138,7 @@ class test_reporting(unittest.TestCase):
         reposity = data_reposity()
         start = start_service(reposity, manager, rec_manager)
         start.create()        
-        factory = report_factory()
+        factory = report_factory(manager)
        
         with self.assertRaises(ArgumentException):
             report = factory.create( "jfsojos" )
@@ -191,6 +189,7 @@ class test_reporting_generate_files(unittest.TestCase):
             data = self.reposity.data[data_key]
             
             for report_format in [format_reporting.CSV, format_reporting.MARKDOWN, format_reporting.JSON, format_reporting.XML, format_reporting.RTF]:
-                report = report_factory().create(report_format)
+                
+                report = report_factory(self.manager).create(report_format)
                 report.create(data)
-                self._save_report_to_file(report, f'{report_name}_report.{str(report_format).lower()}')
+                self._save_report_to_file(report, f'{report_name}_report')

@@ -1,7 +1,7 @@
 {
-    "CSV": "src.reports.csv_report.csv_report",
-    "MARKDOWN": "src.reports.markdown_report.markdown_report",
-    "JSON": "src.reports.json_report.json_report",
-    "XML": "src.reports.xml_report.xml_report",
-    "RTF": "src.reports.rtf_report.rtf_report"
+    "CSV": "csv_report",
+    "MARKDOWN": "markdown_report",
+    "JSON": "json_report",
+    "XML": "xml_report",
+    "RTF": "rtf_report"
 }

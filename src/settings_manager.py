@@ -35,7 +35,7 @@ class settings_manager(abstract_logic):
             for key in self.__report_settings.keys():
                 if key not in format_reporting.__members__:
                     raise ValueError(f"Неверный формат в настройках: {key}")
-            self.__settings.__report_settings = self.__report_settings
+            self.settings.report_settings = self.__report_settings
         except json.JSONDecodeError:
             self.set_exception(ArgumentException("settings", "Ошибка декодирования JSON"))
         except Exception as e:
@@ -78,6 +78,10 @@ class settings_manager(abstract_logic):
     @property
     def settings(self):
         return self.__settings
+
+    @property
+    def report_settings(self):
+        return self.__report_settings
 
     def __default_setting(self):
         data = settings()
