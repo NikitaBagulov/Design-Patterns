@@ -4,23 +4,23 @@
     <base_unit>None</base_unit>
     <conversion_factor>1</conversion_factor>
     <name>Килограмм</name>
-    <unique_code>9f4b077b34494cc498e367e5a8bdb2a0</unique_code>
+    <unique_code>55f1377698b84c6d90aedf3a8e443fec</unique_code>
   </Row>
   <Row>
     <base_unit>None</base_unit>
     <conversion_factor>1</conversion_factor>
     <name>Штука</name>
-    <unique_code>9f4b077b34494cc498e367e5a8bdb2a0</unique_code>
+    <unique_code>55f1377698b84c6d90aedf3a8e443fec</unique_code>
   </Row>
   <Row>
     <base_unit>
       <base_unit>None</base_unit>
       <conversion_factor>1</conversion_factor>
       <name>Килограмм</name>
-      <unique_code>9f4b077b34494cc498e367e5a8bdb2a0</unique_code>
+      <unique_code>55f1377698b84c6d90aedf3a8e443fec</unique_code>
     </base_unit>
     <conversion_factor>1000</conversion_factor>
     <name>Грамм</name>
-    <unique_code>9f4b077b34494cc498e367e5a8bdb2a0</unique_code>
+    <unique_code>55f1377698b84c6d90aedf3a8e443fec</unique_code>
   </Row>
 </Report>

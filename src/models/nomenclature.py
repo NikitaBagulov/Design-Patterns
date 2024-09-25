@@ -67,6 +67,6 @@ class nomenclature_model(abstract_model):
         return {
             'name': self.unique_code,
             'full_name': self.full_name,
-            'group': self.group.name if self.group else None,
-            'range': self.range.name if self.range else None
+            'group': self.group,
+            'range': self.range
         }

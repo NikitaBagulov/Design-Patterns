@@ -9,7 +9,6 @@ from src.reports.rtf_report import rtf_report
 from src.utils.validator import Validator
 from src.utils.custom_exceptions import ArgumentException
 from src.settings_manager import settings_manager
-import json
 
 class report_factory(abstract_logic):
     __reports: dict = {

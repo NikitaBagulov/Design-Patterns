@@ -1,3 +1,0 @@
-ingredients;name;servings;steps;unique_code;
-;ВАФЛИ ХРУСТЯЩИЕ В ВАФЕЛЬНИЦЕ;10;;9f4b077b34494cc498e367e5a8bdb2a0;
-;ПАСТА С КРЕВЕТКАМИ В СЛИВОЧНОМ СОУСЕ;2;;9f4b077b34494cc498e367e5a8bdb2a0;

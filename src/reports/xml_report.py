@@ -25,7 +25,6 @@ class xml_report(abstract_report):
 
     def serialize_object(self, obj, xml_element):
         fields = list(filter(lambda x: not x.startswith("_") and not callable(getattr(obj.__class__, x)), dir(obj)))
-        
         for field in fields:
             value = getattr(obj, field)
             if isinstance(value, list):

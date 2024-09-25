@@ -3,23 +3,23 @@
         "base_unit": null,
         "conversion_factor": 1,
         "name": "Килограмм",
-        "unique_code": "9f4b077b34494cc498e367e5a8bdb2a0"
+        "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
     },
     {
         "base_unit": null,
         "conversion_factor": 1,
         "name": "Штука",
-        "unique_code": "9f4b077b34494cc498e367e5a8bdb2a0"
+        "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
     },
     {
         "base_unit": {
             "base_unit": null,
             "conversion_factor": 1,
             "name": "Килограмм",
-            "unique_code": "9f4b077b34494cc498e367e5a8bdb2a0"
+            "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
         },
         "conversion_factor": 1000,
         "name": "Грамм",
-        "unique_code": "9f4b077b34494cc498e367e5a8bdb2a0"
+        "unique_code": "55f1377698b84c6d90aedf3a8e443fec"
     }
 ]

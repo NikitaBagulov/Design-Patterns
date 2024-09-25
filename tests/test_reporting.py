@@ -161,7 +161,22 @@ class test_reporting_generate_files(unittest.TestCase):
         cls.start.create()
 
     def _save_report_to_file(self, report, filename):
-        with open(os.path.join(self.report_dir, filename), 'w', encoding='utf-8') as f:
+        if isinstance(report, json_report):
+            extension = 'json'
+        elif isinstance(report, csv_report):
+            extension = 'csv'
+        elif isinstance(report, markdown_report):
+            extension = 'md'
+        elif isinstance(report, xml_report):
+            extension = 'xml'
+        elif isinstance(report, rtf_report):
+            extension = 'rtf'
+        else:
+            raise ValueError("Unsupported report format")
+
+        full_filename = os.path.join(self.report_dir, f"{filename}.{extension}")
+
+        with open(full_filename, 'w', encoding='utf-8') as f:
             f.write(report.result)
 
     def test_generate_reports_using_factory(self):
@@ -178,4 +193,4 @@ class test_reporting_generate_files(unittest.TestCase):
             for report_format in [format_reporting.CSV, format_reporting.MARKDOWN, format_reporting.JSON, format_reporting.XML, format_reporting.RTF]:
                 report = report_factory().create(report_format)
                 report.create(data)
-                self._save_report_to_file(report, f'{report_name}_report.{str(report_format).lower()}.txt')
+                self._save_report_to_file(report, f'{report_name}_report.{str(report_format).lower()}')
