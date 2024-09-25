@@ -11,7 +11,7 @@ class markdown_report(abstract_report):
     def create(self, data: list):
         Validator.validate_type(data, list, "data")
         first_model = data[0]
-       
+
         fields = list(filter(lambda x: not x.startswith("_") and not callable(getattr(first_model.__class__, x)), dir(first_model)))
 
         self.result += "| " + " | ".join(fields) + " |\n"
@@ -25,6 +25,6 @@ class markdown_report(abstract_report):
         if isinstance(value, list):
             return "[" + ", ".join([self.serialize_value(v) for v in value]) + "]"
         elif hasattr(value, '__dict__'):
-            return "{" + ", ".join([f"{k}: {self.serialize_value(v)}" for k, v in value.__dict__.items()]) + "}"
+            return ", ".join([str(getattr(value, attr)) for attr in dir(value) if not attr.startswith("_") and not callable(getattr(value, attr))])
         else:
             return str(value)

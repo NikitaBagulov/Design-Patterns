@@ -11,16 +11,16 @@ class csv_report(abstract_report):
     def create(self, data: list):
         Validator.validate_type(data, list, "data")
         
+        if not data:
+            return
+
         first_model = data[0]
-        print(first_model)
         fields = self.get_fields(first_model)
 
-        # Формирование заголовков CSV
         for field in fields:
             self.result += f"{str(field)};"
         self.result += "\n"
 
-        # Формирование данных
         for row in data:
             for field in fields:
                 value = getattr(row, field)
@@ -32,11 +32,16 @@ class csv_report(abstract_report):
         return list(filter(lambda x: not x.startswith("_") and not callable(getattr(obj.__class__, x)), dir(obj)))
 
     def serialize_value(self, value):
-        """Рекурсивная сериализация значений, включая вложенные объекты"""
-        if isinstance(value, list):
-            return "[" + ", ".join([self.serialize_value(v) for v in value]) + "]"
-        elif hasattr(value, "__dict__"):  # Объект модели
-            fields = self.get_fields(value)
-            return "{" + ", ".join([f"{field}: {self.serialize_value(getattr(value, field))}" for field in fields]) + "}"
-        else:
+        """Сериализация только простых значений для CSV (без вложенных объектов, списков и словарей)"""
+        if isinstance(value, (int, float, str)):
             return str(value)
+        elif hasattr(value, "__dict__"):
+            fields = self.get_fields(value)
+            simple_values = []
+            for field in fields:
+                field_value = getattr(value, field)
+                if isinstance(field_value, (int, float, str)):
+                    simple_values.append(str(field_value))
+            return "; ".join(simple_values)
+        else:
+            return ""

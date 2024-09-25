@@ -7,6 +7,7 @@ class nomenclature_model(abstract_model):
     __name: str = ""
     __full_name: str = ""
     __group: group_model = None
+    __range: range_model = None
 
 
     @property
@@ -37,15 +38,26 @@ class nomenclature_model(abstract_model):
         self.__group = value
 
     @staticmethod
-    def create_nomenclature_list(names: list[str]) -> list['nomenclature_model']:
+    def create_nomenclature_list(nomenclature_data: dict[str, range_model]) -> list['nomenclature_model']:
         nomenclature_list = []
 
-        for name in names:
+        for name, unit in nomenclature_data.items():
             nomenclature = nomenclature_model()
             nomenclature.name = name.strip()
+            nomenclature.range = unit
+            nomenclature.group = group_model.default_group_source()
             nomenclature_list.append(nomenclature)
 
         return nomenclature_list
+    
+    @property
+    def range(self) -> range_model:
+        return self.__range
+
+    @range.setter
+    def range(self, value: range_model):
+        Validator.validate_type(value, range_model, "range")
+        self.__range = value
 
     def set_compare_mode(self, other_object) -> bool:
         super().set_compare_mode(other_object)
@@ -53,7 +65,8 @@ class nomenclature_model(abstract_model):
     def to_dict(self) -> dict:
         """Конвертировать объект в словарь для сериализации."""
         return {
-            'name': self.name,
+            'name': self.unique_code,
             'full_name': self.full_name,
-            'group': self.group.to_dict() if self.group else None 
+            'group': self.group.name if self.group else None,
+            'range': self.range.name if self.range else None
         }

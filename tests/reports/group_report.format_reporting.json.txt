@@ -1,10 +1,10 @@
 [
     {
-        "name": "\u0417\u0430\u043c\u043e\u0440\u043e\u0437\u043a\u0430",
-        "unique_code": "68bc21809c3541e095e0273861eb80ca"
+        "name": "Заморозка",
+        "unique_code": "9f4b077b34494cc498e367e5a8bdb2a0"
     },
     {
-        "name": "\u0421\u044b\u0440\u044c\u0435",
-        "unique_code": "68bc21809c3541e095e0273861eb80ca"
+        "name": "Сырье",
+        "unique_code": "9f4b077b34494cc498e367e5a8bdb2a0"
     }
 ]

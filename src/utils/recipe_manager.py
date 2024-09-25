@@ -6,6 +6,8 @@ from src.models.recipe import recipe_model
 from src.models.ingredient import ingredient_model
 from src.models.range import range_model
 from src.models.step import step_model
+from src.models.nomenclature import nomenclature_model
+from src.models.group import group_model
 from src.utils.custom_exceptions import NotFoundException, ArgumentException
 
 class recipe_manager(abstract_logic):
@@ -48,9 +50,9 @@ class recipe_manager(abstract_logic):
         return "Неизвестный рецепт"
 
 
-    def extract_nomenclature(self) -> set[str]:
-        """Извлечение номенклатуры из всех рецептов."""
-        nomenclature = set()
+    def extract_nomenclature(self) -> dict[str, range_model]:
+        """Извлечение номенклатуры и их единиц измерения из всех рецептов."""
+        nomenclature_dict = {}
         file_contents = self.read_files()
 
         for content in file_contents:
@@ -58,10 +60,14 @@ class recipe_manager(abstract_logic):
             self.parse_ingredients(content, recipe_ingredients)
 
             for ingredient in recipe_ingredients:
-                name, _, _ = ingredient
-                nomenclature.add(name)
+                name, _, unit_name = ingredient
 
-        return list(nomenclature)
+                unit = range_model()
+                unit.name = unit_name
+
+                nomenclature_dict[name] = unit
+
+        return nomenclature_dict
 
     def extract_ingredients(self) -> list[list[tuple[str, str, str]]]:
         """Извлечение ингредиентов из всех рецептов."""
@@ -175,7 +181,6 @@ class recipe_manager(abstract_logic):
         return all_recipes
     
     def create_recipes(self, recipe_data_list: list[dict]) -> list[recipe_model]:
-        """Создание списка объектов recipe_model из данных рецептов."""
         recipes = []
         
         for recipe_data in recipe_data_list:
@@ -185,12 +190,22 @@ class recipe_manager(abstract_logic):
 
             for ingredient_info in recipe_data.get('ingredients', []):
                 name, quantity, unit_name = ingredient_info
+
                 unit = range_model()
                 unit.name = unit_name
+
+                group = group_model.default_group_source()
+
+                nomenclature = nomenclature_model()
+                nomenclature.name = name
+                nomenclature.full_name = name
+                nomenclature.group = group
+                nomenclature.range = unit
+
                 ingredient = ingredient_model()
-                ingredient.name = name
+                ingredient.nomenclature = nomenclature
                 ingredient.quantity = quantity
-                ingredient.unit = unit
+
                 recipe.add_ingredient(ingredient)
 
             for step_number, description in recipe_data.get('steps', []):
@@ -198,7 +213,7 @@ class recipe_manager(abstract_logic):
                 step.step_number = step_number
                 step.description = description
                 recipe.add_step(step)
-            
+
             recipes.append(recipe)
 
         return recipes

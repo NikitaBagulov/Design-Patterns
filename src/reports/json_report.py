@@ -28,10 +28,5 @@ class json_report(abstract_report):
 
     def create(self, data: list):
         Validator.validate_type(data, list, "data")
-        
-        report_data = []
-        
-        for row in data:
-            row_data = self.serialize_object(row)
-            report_data.append(row_data)
-        self.result = json.dumps(report_data, indent=4)
+        report_data = [self.serialize_object(row) for row in data]
+        self.result = json.dumps(report_data, ensure_ascii=False, indent=4)

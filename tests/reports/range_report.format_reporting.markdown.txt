@@ -1,5 +1,5 @@
 | base_unit | conversion_factor | name | unique_code |
 | --- | --- | --- | --- |
-| None | 1 | Килограмм | 68bc21809c3541e095e0273861eb80ca |
-| None | 1 | Штука | 68bc21809c3541e095e0273861eb80ca |
-| {_range_model__name: Килограмм, _range_model__base_unit: None, _range_model__conversion_factor: 1} | 1000 | Грамм | 68bc21809c3541e095e0273861eb80ca |
+| None | 1 | Килограмм | 9f4b077b34494cc498e367e5a8bdb2a0 |
+| None | 1 | Штука | 9f4b077b34494cc498e367e5a8bdb2a0 |
+| None, 1, Килограмм, 9f4b077b34494cc498e367e5a8bdb2a0 | 1000 | Грамм | 9f4b077b34494cc498e367e5a8bdb2a0 |
