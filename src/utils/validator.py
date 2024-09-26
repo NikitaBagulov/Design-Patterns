@@ -86,4 +86,10 @@ class Validator:
         """Проверяет, что файл имеет ожидаемое расширение."""
         if not file.endswith(expected_extension):
             raise ArgumentException(file, f"Файл должен иметь расширение '{expected_extension}'")
+        
+    @staticmethod
+    def validate_enum_value(value, enum_class, field_name: str):
+        """Проверяет, что значение является членом перечисления Enum."""
+        if value not in enum_class:
+            raise ArgumentException(field_name, f"Неподдерживаемое значение. Ожидалось одно из {list(enum_class)}")
 

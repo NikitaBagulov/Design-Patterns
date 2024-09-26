@@ -1,0 +1,7 @@
+{
+    "CSV": "csv_report",
+    "MARKDOWN": "markdown_report",
+    "JSON": "json_report",
+    "XML": "xml_report",
+    "RTF": "rtf_report"
+}

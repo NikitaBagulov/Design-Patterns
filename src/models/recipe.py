@@ -46,11 +46,4 @@ class recipe_model(abstract_model):
 
     def set_compare_mode(self, other_object) -> bool:
         super().set_compare_mode(other_object)
-
-    def __repr__(self) -> str:
-        return (
-            f"<RecipeModel(name={self.__name}, "
-            f"servings={self.__servings}, "
-            f"ingredients_count={len(self.__ingredients)}, "
-            f"steps_count={len(self.__steps)})>"
-        )
+     

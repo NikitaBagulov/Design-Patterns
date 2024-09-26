@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<Report>
+  <Row>
+    <base_unit>None</base_unit>
+    <conversion_factor>1</conversion_factor>
+    <name>Килограмм</name>
+    <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+  </Row>
+  <Row>
+    <base_unit>None</base_unit>
+    <conversion_factor>1</conversion_factor>
+    <name>Штука</name>
+    <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+  </Row>
+  <Row>
+    <base_unit>
+      <base_unit>None</base_unit>
+      <conversion_factor>1</conversion_factor>
+      <name>Килограмм</name>
+      <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+    </base_unit>
+    <conversion_factor>1000</conversion_factor>
+    <name>Грамм</name>
+    <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+  </Row>
+</Report>

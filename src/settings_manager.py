@@ -2,12 +2,14 @@ import json
 import os
 from src.models.settings import settings
 from src.core.abstract_logic import abstract_logic
+from src.core.format_reporting import format_reporting
 from src.utils.validator import Validator
 from src.utils.custom_exceptions import ConversionException, NotFoundException, ArgumentException, LengthException
 
 class settings_manager(abstract_logic):
     __file_name = "settings.json"
     __settings: settings = None
+    __report_settings = {}
 
     def __new__(cls):
         if not hasattr(cls, 'instance'):
@@ -17,6 +19,27 @@ class settings_manager(abstract_logic):
     def __init__(self) -> None:
         if self.__settings is None:
             self.__settings = self.__default_setting()
+        self.__load_report_settings()
+
+    def __load_report_settings(self):
+        reports_file = 'reports.json'
+        full_path = self.__get_file_path(reports_file)
+
+        if not full_path:
+            self.set_exception(NotFoundException(reports_file))
+            return
+        
+        try:
+            with open(full_path, 'r', encoding='utf-8') as file:
+                self.__report_settings = json.load(file)
+            for key in self.__report_settings.keys():
+                if key not in format_reporting.__members__:
+                    raise ValueError(f"Неверный формат в настройках: {key}")
+            self.settings.report_settings = self.__report_settings
+        except json.JSONDecodeError:
+            self.set_exception(ArgumentException("settings", "Ошибка декодирования JSON"))
+        except Exception as e:
+            self.set_exception(ArgumentException("settings", str(e)))
 
     def convert(self, data: dict):
         for key, value in data.items():
@@ -55,6 +78,10 @@ class settings_manager(abstract_logic):
     @property
     def settings(self):
         return self.__settings
+
+    @property
+    def report_settings(self):
+        return self.__report_settings
 
     def __default_setting(self):
         data = settings()

@@ -1,0 +1,25 @@
+[
+    {
+        "base_unit": null,
+        "conversion_factor": 1,
+        "name": "Килограмм",
+        "unique_code": "9682dff4005e4db28ccc1f8243022138"
+    },
+    {
+        "base_unit": null,
+        "conversion_factor": 1,
+        "name": "Штука",
+        "unique_code": "9682dff4005e4db28ccc1f8243022138"
+    },
+    {
+        "base_unit": {
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Килограмм",
+            "unique_code": "9682dff4005e4db28ccc1f8243022138"
+        },
+        "conversion_factor": 1000,
+        "name": "Грамм",
+        "unique_code": "9682dff4005e4db28ccc1f8243022138"
+    }
+]
