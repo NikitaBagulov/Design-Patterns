@@ -1,10 +1,12 @@
 [
     {
+        "model": "group_model",
         "name": "Заморозка",
-        "unique_code": "9682dff4005e4db28ccc1f8243022138"
+        "unique_code": "af55805d0ce2404eb4e17e90499f44f2"
     },
     {
+        "model": "group_model",
         "name": "Сырье",
-        "unique_code": "9682dff4005e4db28ccc1f8243022138"
+        "unique_code": "7613d587739c45cba16207842649edb1"
     }
 ]

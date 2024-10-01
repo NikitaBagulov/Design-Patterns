@@ -1,25 +1,29 @@
 [
     {
+        "model": "range_model",
         "base_unit": null,
         "conversion_factor": 1,
         "name": "Килограмм",
-        "unique_code": "9682dff4005e4db28ccc1f8243022138"
+        "unique_code": "0cfcc727a8034590b4fc507294394be3"
     },
     {
+        "model": "range_model",
         "base_unit": null,
         "conversion_factor": 1,
         "name": "Штука",
-        "unique_code": "9682dff4005e4db28ccc1f8243022138"
+        "unique_code": "81010b2ee0c14ffe9fa06f01e0d32db0"
     },
     {
+        "model": "range_model",
         "base_unit": {
+            "model": "range_model",
             "base_unit": null,
             "conversion_factor": 1,
             "name": "Килограмм",
-            "unique_code": "9682dff4005e4db28ccc1f8243022138"
+            "unique_code": "02e83ede29a849ba87cd4788560c2b21"
         },
         "conversion_factor": 1000,
         "name": "Грамм",
-        "unique_code": "9682dff4005e4db28ccc1f8243022138"
+        "unique_code": "6371eab8e5ab47848bb5b858638a274c"
     }
 ]

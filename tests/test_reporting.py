@@ -9,9 +9,11 @@ from src.reports.xml_report import xml_report
 from src.reports.rtf_report import rtf_report
 from src.reports.report_factory import report_factory
 from src.core.format_reporting import format_reporting
-from src.reports.csv_report import csv_report
+from src.utils.json_deserializer import json_deserializer
 from src.utils.custom_exceptions import ArgumentException
 
+
+import json
 import os
 import unittest
 
@@ -193,3 +195,52 @@ class test_reporting_generate_files(unittest.TestCase):
                 report = report_factory(self.manager).create(report_format)
                 report.create(data)
                 self._save_report_to_file(report, f'{report_name}_report')
+
+class test_json_report_deserializer(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.report_dir = os.path.join(os.path.dirname(__file__), 'reports')
+        if not os.path.exists(cls.report_dir):
+            os.makedirs(cls.report_dir)
+
+        cls.manager = settings_manager()
+        cls.rec_manager = recipe_manager()
+        cls.reposity = data_reposity()
+        cls.start = start_service(cls.reposity, cls.manager, cls.rec_manager)
+        cls.start.create()
+    def test_json_deserializer(self):
+        for file_name in os.listdir("tests/reports"):
+            if file_name.endswith('.json'):
+                with open(os.path.join("tests/reports", file_name), 'r', encoding="utf-8") as f:
+                    json_data = f.read()
+
+                models = json_deserializer.deserialize_json(json_data)
+
+                for model_instance in models:
+                    model_name = model_instance.__class__.__name__
+
+                    print(f"Файл {file_name} содержит модель: {model_instance}")
+
+                    self.assertIsNotNone(model_name, "Название модели не должно быть пустым")
+    
+    def test_serialization_deserialization(self):
+        data_mapping = {
+            'group': self.reposity.group_key(),
+            'range': self.reposity.range_key(),
+            'nomenclature': self.reposity.nomenclature_key(),
+            'recipes': self.reposity.recipes_key()
+        }
+
+        for report_name, data_key in data_mapping.items():
+            data = self.reposity.data[data_key]
+            
+            report = report_factory(self.manager).create(format_reporting.JSON)
+            report.create(data)
+            json_data = report.result
+
+            deserialized_models = json_deserializer.deserialize_json(json_data)
+            
+            for original_model, deserialized_model in zip(data, deserialized_models):
+                # assert original_model == deserialized_model
+                self.assertEqual(original_model, deserialized_model, 
+                                 f"Оригинальный объект {original_model} не равен десериализованному объекту {deserialized_model}")

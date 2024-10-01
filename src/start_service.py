@@ -52,7 +52,6 @@ class start_service(abstract_logic):
 
     def __create_receipts(self):
         recipes_list = self.__recipe_manager.load_all_recipes()
-        print(recipes_list)
         recipes = self.__recipe_manager.create_recipes(recipes_list)
         self.__reposity.data[data_reposity.recipes_key()] = recipes
 

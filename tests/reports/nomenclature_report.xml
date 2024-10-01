@@ -4,180 +4,180 @@
     <full_name/>
     <group>
       <name>Сырье</name>
-      <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+      <unique_code>85c4078a12f24438b8119bc9f4f7d4a8</unique_code>
     </group>
     <name>Пшеничная мука</name>
     <range>
       <base_unit>None</base_unit>
       <conversion_factor>1</conversion_factor>
       <name>гр</name>
-      <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+      <unique_code>b15e19ec123e46a2a14d53cc9d6a805c</unique_code>
     </range>
-    <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+    <unique_code>566b71e4f61649d6ab92ae58b82efe3c</unique_code>
   </Row>
   <Row>
     <full_name/>
     <group>
       <name>Сырье</name>
-      <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+      <unique_code>85c4078a12f24438b8119bc9f4f7d4a8</unique_code>
     </group>
     <name>Сахар</name>
     <range>
       <base_unit>None</base_unit>
       <conversion_factor>1</conversion_factor>
       <name>гр</name>
-      <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+      <unique_code>b15e19ec123e46a2a14d53cc9d6a805c</unique_code>
     </range>
-    <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+    <unique_code>230fe3581c724a3ba2a574605f78cd43</unique_code>
   </Row>
   <Row>
     <full_name/>
     <group>
       <name>Сырье</name>
-      <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+      <unique_code>85c4078a12f24438b8119bc9f4f7d4a8</unique_code>
     </group>
     <name>Сливочное масло</name>
     <range>
       <base_unit>None</base_unit>
       <conversion_factor>1</conversion_factor>
       <name>гр</name>
-      <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+      <unique_code>b15e19ec123e46a2a14d53cc9d6a805c</unique_code>
     </range>
-    <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+    <unique_code>b44f7264348a4e1aa733abd827d24d25</unique_code>
   </Row>
   <Row>
     <full_name/>
     <group>
       <name>Сырье</name>
-      <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+      <unique_code>85c4078a12f24438b8119bc9f4f7d4a8</unique_code>
     </group>
     <name>Яйца</name>
     <range>
       <base_unit>None</base_unit>
       <conversion_factor>1</conversion_factor>
       <name>шт</name>
-      <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+      <unique_code>a8c1b55839124effa185f5880092fc5e</unique_code>
     </range>
-    <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+    <unique_code>494474523ea840109435cce959d88303</unique_code>
   </Row>
   <Row>
     <full_name/>
     <group>
       <name>Сырье</name>
-      <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+      <unique_code>85c4078a12f24438b8119bc9f4f7d4a8</unique_code>
     </group>
     <name>Ванилин(щепотка)</name>
     <range>
       <base_unit>None</base_unit>
       <conversion_factor>1</conversion_factor>
       <name>гр</name>
-      <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+      <unique_code>b15e19ec123e46a2a14d53cc9d6a805c</unique_code>
     </range>
-    <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+    <unique_code>0afd593ab402499a961b13ac4793177f</unique_code>
   </Row>
   <Row>
     <full_name/>
     <group>
       <name>Сырье</name>
-      <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+      <unique_code>85c4078a12f24438b8119bc9f4f7d4a8</unique_code>
     </group>
     <name>Спагетти</name>
     <range>
       <base_unit>None</base_unit>
       <conversion_factor>1</conversion_factor>
       <name>гр</name>
-      <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+      <unique_code>b15e19ec123e46a2a14d53cc9d6a805c</unique_code>
     </range>
-    <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+    <unique_code>9f3b57a85acc427d951cd67a182551e1</unique_code>
   </Row>
   <Row>
     <full_name/>
     <group>
       <name>Сырье</name>
-      <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+      <unique_code>85c4078a12f24438b8119bc9f4f7d4a8</unique_code>
     </group>
     <name>Креветки</name>
     <range>
       <base_unit>None</base_unit>
       <conversion_factor>1</conversion_factor>
       <name>гр</name>
-      <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+      <unique_code>b15e19ec123e46a2a14d53cc9d6a805c</unique_code>
     </range>
-    <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+    <unique_code>2af7a0d0518e4d24ba91e96daa684787</unique_code>
   </Row>
   <Row>
     <full_name/>
     <group>
       <name>Сырье</name>
-      <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+      <unique_code>85c4078a12f24438b8119bc9f4f7d4a8</unique_code>
     </group>
     <name>Сливки (жирность 20%)</name>
     <range>
       <base_unit>None</base_unit>
       <conversion_factor>1</conversion_factor>
       <name>мл</name>
-      <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+      <unique_code>7d447e077a48430c9d467e542fe97593</unique_code>
     </range>
-    <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+    <unique_code>af41dec9684946d09ee7ae049d58a453</unique_code>
   </Row>
   <Row>
     <full_name/>
     <group>
       <name>Сырье</name>
-      <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+      <unique_code>85c4078a12f24438b8119bc9f4f7d4a8</unique_code>
     </group>
     <name>Чеснок</name>
     <range>
       <base_unit>None</base_unit>
       <conversion_factor>1</conversion_factor>
       <name>зубчика</name>
-      <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+      <unique_code>d6712959f5f44c4f889ffeca63228c88</unique_code>
     </range>
-    <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+    <unique_code>6f283afac7234479a60d8253d37b3589</unique_code>
   </Row>
   <Row>
     <full_name/>
     <group>
       <name>Сырье</name>
-      <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+      <unique_code>85c4078a12f24438b8119bc9f4f7d4a8</unique_code>
     </group>
     <name>Пармезан</name>
     <range>
       <base_unit>None</base_unit>
       <conversion_factor>1</conversion_factor>
       <name>гр</name>
-      <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+      <unique_code>b15e19ec123e46a2a14d53cc9d6a805c</unique_code>
     </range>
-    <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+    <unique_code>782daa33351746358802ce76ce3b7ee8</unique_code>
   </Row>
   <Row>
     <full_name/>
     <group>
       <name>Сырье</name>
-      <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+      <unique_code>85c4078a12f24438b8119bc9f4f7d4a8</unique_code>
     </group>
     <name>Соль, перец</name>
     <range>
       <base_unit>None</base_unit>
       <conversion_factor>1</conversion_factor>
       <name>гр</name>
-      <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+      <unique_code>b15e19ec123e46a2a14d53cc9d6a805c</unique_code>
     </range>
-    <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+    <unique_code>5c6ae593d79e4ec8bbcbe8e107d7e517</unique_code>
   </Row>
   <Row>
     <full_name/>
     <group>
       <name>Сырье</name>
-      <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+      <unique_code>85c4078a12f24438b8119bc9f4f7d4a8</unique_code>
     </group>
     <name>Петрушка (для подачи)</name>
     <range>
       <base_unit>None</base_unit>
       <conversion_factor>1</conversion_factor>
       <name>гр</name>
-      <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+      <unique_code>b15e19ec123e46a2a14d53cc9d6a805c</unique_code>
     </range>
-    <unique_code>9682dff4005e4db28ccc1f8243022138</unique_code>
+    <unique_code>34c8186802774fe88a6b42a479c70db9</unique_code>
   </Row>
 </Report>

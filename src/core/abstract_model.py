@@ -3,8 +3,9 @@ import uuid
 from src.utils.custom_exceptions import LengthException, ArgumentException
 
 class abstract_model(ABC):
-    __unique_code: str = uuid.uuid4().hex
-    __name: str = ""
+    def __init__(self):
+        self.__unique_code: str = uuid.uuid4().hex
+        self.__name: str = ""
 
     @property
     def unique_code(self) -> str:
@@ -25,15 +26,33 @@ class abstract_model(ABC):
 
     @abstractmethod
     def set_compare_mode(self, other_object) -> bool:
-        if other_object is None:
-            return False
-        if not isinstance(other_object, abstract_model):
-            return False
-
-        return self.__unique_code == other_object.unique_code
+        pass
 
     def __eq__(self, value: object) -> bool:
         return self.set_compare_mode(value)
     
     def __str__(self) -> str:
         return self.__unique_code
+    
+    def deserialize(self, data: dict):
+        """
+        Десериализует объект из словаря данных.
+        """
+        if not isinstance(data, dict):
+            raise ArgumentException("data", "Ожидается словарь для десериализации")
+
+        if "unique_code" in data and data["unique_code"]:
+            self.__unique_code = data["unique_code"]
+
+        if "name" in data:
+            self.name = data["name"]
+
+        self._deserialize_additional_fields(data)
+
+    @abstractmethod
+    def _deserialize_additional_fields(self, data: dict):
+        """
+        Абстрактный метод для десериализации дополнительных полей.
+        """
+        pass
+

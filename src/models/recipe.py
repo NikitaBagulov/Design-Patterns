@@ -45,5 +45,40 @@ class recipe_model(abstract_model):
         self.__steps.append(step)
 
     def set_compare_mode(self, other_object) -> bool:
-        super().set_compare_mode(other_object)
+        if other_object is None:
+            return False
+        if not isinstance(other_object, abstract_model):
+            return False
+
+        return self.unique_code == other_object.unique_code
      
+    def __str__(self) -> str:
+        ingredients_str = ', '.join(str(ingredient) for ingredient in self.__ingredients)
+        steps_str = ', '.join(str(step) for step in self.__steps)
+        return (
+            f"<RecipeModel(name='{self.__name}', "
+            f"servings={self.__servings}, "
+            f"ingredients=[{ingredients_str}], "
+            f"steps=[{steps_str}])>"
+        )
+
+    def _deserialize_additional_fields(self, data: dict):
+        """
+        Десериализация дополнительных полей для recipe_model.
+        """
+        if 'servings' in data:
+            servings = data['servings']
+            Validator.validate_positive_integer(servings, "servings")
+            self.servings = servings
+
+        if 'ingredients' in data and isinstance(data['ingredients'], list):
+            for ingredient_data in data['ingredients']:
+                ingredient_instance = ingredient_model()
+                ingredient_instance.deserialize(ingredient_data)
+                self.add_ingredient(ingredient_instance)
+
+        if 'steps' in data and isinstance(data['steps'], list):
+            for step_data in data['steps']:
+                step_instance = step_model()
+                step_instance.deserialize(step_data) 
+                self.add_step(step_instance)

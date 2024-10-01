@@ -17,6 +17,8 @@ class recipe_manager(abstract_logic):
         Validator.validate_non_empty(file_extension, "file_extension")
         self.docs_directory = docs_directory
         self.file_extension = file_extension
+        self.nomenclature_cache = {}
+        self.unit_cache = {}
 
     def read_files(self) -> list[str]:
         """Чтение всех файлов с рецептами из директории с тщательной проверкой ошибок."""
@@ -50,6 +52,7 @@ class recipe_manager(abstract_logic):
         return "Неизвестный рецепт"
 
 
+
     def extract_nomenclature(self) -> dict[str, range_model]:
         """Извлечение номенклатуры и их единиц измерения из всех рецептов."""
         nomenclature_dict = {}
@@ -62,8 +65,19 @@ class recipe_manager(abstract_logic):
             for ingredient in recipe_ingredients:
                 name, _, unit_name = ingredient
 
-                unit = range_model()
-                unit.name = unit_name
+                if name not in self.nomenclature_cache:
+                    nomenclature = nomenclature_model()
+                    nomenclature.name = name
+                    self.nomenclature_cache[name] = nomenclature
+                else:
+                    nomenclature = self.nomenclature_cache[name]
+
+                if unit_name not in self.unit_cache:
+                    unit = range_model()
+                    unit.name = unit_name
+                    self.unit_cache[unit_name] = unit
+                else:
+                    unit = self.unit_cache[unit_name]
 
                 nomenclature_dict[name] = unit
 
@@ -182,7 +196,7 @@ class recipe_manager(abstract_logic):
     
     def create_recipes(self, recipe_data_list: list[dict]) -> list[recipe_model]:
         recipes = []
-        
+
         for recipe_data in recipe_data_list:
             recipe = recipe_model()
             recipe.name = recipe_data.get('name', "Неизвестный рецепт")
@@ -191,16 +205,17 @@ class recipe_manager(abstract_logic):
             for ingredient_info in recipe_data.get('ingredients', []):
                 name, quantity, unit_name = ingredient_info
 
-                unit = range_model()
-                unit.name = unit_name
+                nomenclature = self.nomenclature_cache.get(name)
+                if not nomenclature:
+                    nomenclature = nomenclature_model()
+                    nomenclature.name = name
+                    self.nomenclature_cache[name] = nomenclature
 
-                group = group_model.default_group_source()
-
-                nomenclature = nomenclature_model()
-                nomenclature.name = name
-                nomenclature.full_name = name
-                nomenclature.group = group
-                nomenclature.range = unit
+                unit = self.unit_cache.get(unit_name)
+                if not unit:
+                    unit = range_model()
+                    unit.name = unit_name
+                    self.unit_cache[unit_name] = unit
 
                 ingredient = ingredient_model()
                 ingredient.nomenclature = nomenclature

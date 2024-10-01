@@ -60,3 +60,6 @@ class company_model(abstract_model):
                 self.bik == other_object.bik and
                 self.account == other_object.account and
                 self.ownership_type == other_object.ownership_type)
+    
+    def _deserialize_additional_fields(self):
+        pass
