@@ -7,7 +7,6 @@ from src.models.ingredient import ingredient_model
 from src.models.range import range_model
 from src.models.step import step_model
 from src.models.nomenclature import nomenclature_model
-from src.models.group import group_model
 from src.utils.custom_exceptions import NotFoundException, ArgumentException
 
 class recipe_manager(abstract_logic):
@@ -17,8 +16,6 @@ class recipe_manager(abstract_logic):
         Validator.validate_non_empty(file_extension, "file_extension")
         self.docs_directory = docs_directory
         self.file_extension = file_extension
-        self.nomenclature_cache = {}
-        self.unit_cache = {}
 
     def read_files(self) -> list[str]:
         """Чтение всех файлов с рецептами из директории с тщательной проверкой ошибок."""
@@ -65,23 +62,17 @@ class recipe_manager(abstract_logic):
             for ingredient in recipe_ingredients:
                 name, _, unit_name = ingredient
 
-                if name not in self.nomenclature_cache:
+                if name not in nomenclature_dict:
                     nomenclature = nomenclature_model()
                     nomenclature.name = name
-                    self.nomenclature_cache[name] = nomenclature
-                else:
-                    nomenclature = self.nomenclature_cache[name]
+                    nomenclature_dict[name] = {'nomenclature': nomenclature, 'unit': None}
 
-                if unit_name not in self.unit_cache:
+                if nomenclature_dict[name]['unit'] is None or nomenclature_dict[name]['unit'].name != unit_name:
                     unit = range_model()
                     unit.name = unit_name
-                    self.unit_cache[unit_name] = unit
-                else:
-                    unit = self.unit_cache[unit_name]
+                    nomenclature_dict[name]['unit'] = unit
 
-                nomenclature_dict[name] = unit
-
-        return nomenclature_dict
+        return {name: data['unit'] for name, data in nomenclature_dict.items()}
 
     def extract_ingredients(self) -> list[list[tuple[str, str, str]]]:
         """Извлечение ингредиентов из всех рецептов."""
@@ -205,17 +196,13 @@ class recipe_manager(abstract_logic):
             for ingredient_info in recipe_data.get('ingredients', []):
                 name, quantity, unit_name = ingredient_info
 
-                nomenclature = self.nomenclature_cache.get(name)
-                if not nomenclature:
-                    nomenclature = nomenclature_model()
-                    nomenclature.name = name
-                    self.nomenclature_cache[name] = nomenclature
+                unit = range_model()
+                unit.name = unit_name
 
-                unit = self.unit_cache.get(unit_name)
-                if not unit:
-                    unit = range_model()
-                    unit.name = unit_name
-                    self.unit_cache[unit_name] = unit
+                nomenclature = nomenclature_model()
+                nomenclature.name = name
+                nomenclature.full_name = name
+                nomenclature.range = unit
 
                 ingredient = ingredient_model()
                 ingredient.nomenclature = nomenclature

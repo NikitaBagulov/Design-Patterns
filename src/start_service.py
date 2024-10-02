@@ -40,6 +40,12 @@ class start_service(abstract_logic):
 
     def __create_nomenclature(self):
         list_nomenclature_str = self.__recipe_manager.extract_nomenclature()
+        unique_nomenclature_names = set()
+        for name in list_nomenclature_str.keys():
+            if name in unique_nomenclature_names:
+                continue
+            unique_nomenclature_names.add(name)
+
         nomenclature = nomenclature_model.create_nomenclature_list(list_nomenclature_str)
         self.__reposity.data[data_reposity.nomenclature_key()] = nomenclature
 

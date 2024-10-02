@@ -1,14 +1,14 @@
 | full_name | group | name | range | unique_code |
 | --- | --- | --- | --- | --- |
-|  | Сырье, 85c4078a12f24438b8119bc9f4f7d4a8 | Пшеничная мука | None, 1, гр, b15e19ec123e46a2a14d53cc9d6a805c | 566b71e4f61649d6ab92ae58b82efe3c |
-|  | Сырье, 85c4078a12f24438b8119bc9f4f7d4a8 | Сахар | None, 1, гр, b15e19ec123e46a2a14d53cc9d6a805c | 230fe3581c724a3ba2a574605f78cd43 |
-|  | Сырье, 85c4078a12f24438b8119bc9f4f7d4a8 | Сливочное масло | None, 1, гр, b15e19ec123e46a2a14d53cc9d6a805c | b44f7264348a4e1aa733abd827d24d25 |
-|  | Сырье, 85c4078a12f24438b8119bc9f4f7d4a8 | Яйца | None, 1, шт, a8c1b55839124effa185f5880092fc5e | 494474523ea840109435cce959d88303 |
-|  | Сырье, 85c4078a12f24438b8119bc9f4f7d4a8 | Ванилин(щепотка) | None, 1, гр, b15e19ec123e46a2a14d53cc9d6a805c | 0afd593ab402499a961b13ac4793177f |
-|  | Сырье, 85c4078a12f24438b8119bc9f4f7d4a8 | Спагетти | None, 1, гр, b15e19ec123e46a2a14d53cc9d6a805c | 9f3b57a85acc427d951cd67a182551e1 |
-|  | Сырье, 85c4078a12f24438b8119bc9f4f7d4a8 | Креветки | None, 1, гр, b15e19ec123e46a2a14d53cc9d6a805c | 2af7a0d0518e4d24ba91e96daa684787 |
-|  | Сырье, 85c4078a12f24438b8119bc9f4f7d4a8 | Сливки (жирность 20%) | None, 1, мл, 7d447e077a48430c9d467e542fe97593 | af41dec9684946d09ee7ae049d58a453 |
-|  | Сырье, 85c4078a12f24438b8119bc9f4f7d4a8 | Чеснок | None, 1, зубчика, d6712959f5f44c4f889ffeca63228c88 | 6f283afac7234479a60d8253d37b3589 |
-|  | Сырье, 85c4078a12f24438b8119bc9f4f7d4a8 | Пармезан | None, 1, гр, b15e19ec123e46a2a14d53cc9d6a805c | 782daa33351746358802ce76ce3b7ee8 |
-|  | Сырье, 85c4078a12f24438b8119bc9f4f7d4a8 | Соль, перец | None, 1, гр, b15e19ec123e46a2a14d53cc9d6a805c | 5c6ae593d79e4ec8bbcbe8e107d7e517 |
-|  | Сырье, 85c4078a12f24438b8119bc9f4f7d4a8 | Петрушка (для подачи) | None, 1, гр, b15e19ec123e46a2a14d53cc9d6a805c | 34c8186802774fe88a6b42a479c70db9 |
+|  | Сырье, 2ed324c716e74a92b8e7e4afeff1ee74 | Пшеничная мука | None, 1, гр, b9615de3383b4590a5d586a676fe78a1 | 997745cca02f4342ae848072668e6524 |
+|  | Сырье, 2ed324c716e74a92b8e7e4afeff1ee74 | Сахар | None, 1, гр, 4ead6a42565b49bb8cdaf91400c37011 | d44903e98cec4aadb5e5d04801bc5cad |
+|  | Сырье, 2ed324c716e74a92b8e7e4afeff1ee74 | Сливочное масло | None, 1, гр, 49a8500849d0462f9e29f93f58ab77b6 | f96270579a294024a3f8a87ee796db36 |
+|  | Сырье, 2ed324c716e74a92b8e7e4afeff1ee74 | Яйца | None, 1, шт, 1b675e79db8d4c498b2240141ce5decf | 85a7af0198294db5b886ea48144efe03 |
+|  | Сырье, 2ed324c716e74a92b8e7e4afeff1ee74 | Ванилин(щепотка) | None, 1, гр, 058f3665bd1e4d2499da0bc23c1d1b29 | 0ae2f3dfece5436ab8f7e086af715770 |
+|  | Сырье, 2ed324c716e74a92b8e7e4afeff1ee74 | Спагетти | None, 1, гр, bf59a23d0903497cb06035738c3dbcd7 | ab5a686084db4ba48145f1b42098fdc0 |
+|  | Сырье, 2ed324c716e74a92b8e7e4afeff1ee74 | Креветки | None, 1, гр, 246a6cd638f249d49d5bfa0744c92ec2 | 64645cc4015b48e6ad94be668494ca5f |
+|  | Сырье, 2ed324c716e74a92b8e7e4afeff1ee74 | Сливки (жирность 20%) | None, 1, мл, 04bbd64fb27d432696e14973d43d51de | 87d4d65b3da349b48c7971abb86a0a46 |
+|  | Сырье, 2ed324c716e74a92b8e7e4afeff1ee74 | Чеснок | None, 1, зубчика, 2bc81bcb2b9f4c4e8da17377a51a5a17 | 3fb159cb7c4c40a6b78a3487987b768e |
+|  | Сырье, 2ed324c716e74a92b8e7e4afeff1ee74 | Пармезан | None, 1, гр, 4f59235437f746a88af2150b36a75b59 | 81d23b28720a4dd4bf210e905487d159 |
+|  | Сырье, 2ed324c716e74a92b8e7e4afeff1ee74 | Соль, перец | None, 1, гр, 94d6b34cf6b54fa6952940ff8933231e | 5f7a41f38ee34c0eacfbc945db42481d |
+|  | Сырье, 2ed324c716e74a92b8e7e4afeff1ee74 | Петрушка (для подачи) | None, 1, гр, 4360f34d657f4fdc8505c444e636a789 | 7f02d7f45a7e44beaaf0fe193ce78927 |
