@@ -199,10 +199,8 @@ class recipe_manager(abstract_logic):
                 unit = range_model()
                 unit.name = unit_name
 
-                nomenclature = nomenclature_model()
-                nomenclature.name = name
-                nomenclature.full_name = name
-                nomenclature.range = unit
+                # Используем фабричный метод для создания объекта nomenclature_model
+                nomenclature = nomenclature_model.create(name, name, range=unit)
 
                 ingredient = ingredient_model()
                 ingredient.nomenclature = nomenclature
@@ -219,6 +217,7 @@ class recipe_manager(abstract_logic):
             recipes.append(recipe)
 
         return recipes
+
 
     def set_exception(self, ex: Exception):
         self._inner_set_exception(ex)

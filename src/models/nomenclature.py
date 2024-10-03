@@ -49,6 +49,31 @@ class nomenclature_model(abstract_model):
 
         return nomenclature_list
     
+    @staticmethod
+    def create(name: str, full_name: str, group: group_model = None, range: range_model = None) -> 'nomenclature_model':
+        """
+        Фабричный метод для создания объекта nomenclature_model.
+        """
+        Validator.validate_length(name, 50, "name")
+        Validator.validate_length(full_name, 255, "full_name")
+        
+        if group is not None:
+            Validator.validate_type(group, group_model, "group")
+        else:
+            group = group_model.default_group_source()
+
+        if range is not None:
+            Validator.validate_type(range, range_model, "range")
+
+        item = nomenclature_model()
+        item.name = name.strip()
+        item.full_name = full_name.strip()
+        item.group = group
+        item.range = range
+
+        return item
+        
+
     @property
     def range(self) -> range_model:
         return self.__range
