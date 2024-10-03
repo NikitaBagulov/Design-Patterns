@@ -11,7 +11,9 @@ class json_report(abstract_report):
 
     @staticmethod
     def serialize_object(obj):
-        row_data = {}
+        row_data = {
+            "model": obj.__class__.__name__
+        }
         fields = list(filter(lambda x: not x.startswith("_") and not callable(getattr(obj.__class__, x)), dir(obj)))
         for field in fields:
             value = getattr(obj, field)

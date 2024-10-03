@@ -30,3 +30,6 @@ class warehouse_model(abstract_model):
             return False
         return (self.__name == other_object.__name and
                 self.__address == other_object.__address)
+    
+    def _deserialize_additional_fields(self):
+        pass

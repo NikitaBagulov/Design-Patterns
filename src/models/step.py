@@ -27,8 +27,23 @@ class step_model(abstract_model):
     def set_compare_mode(self, other_object) -> bool:
         super().set_compare_mode(other_object)
 
-    def __repr__(self) -> str:
+    def __str__(self) -> str:
         return (
             f"<StepModel(step_number={self.__step_number}, "
             f"description='{self.__description}')>"
         )
+    
+    def _deserialize_additional_fields(self, data: dict):
+        """
+        Десериализация дополнительных полей для step_model.
+        """
+        if 'step_number' in data:
+            step_number = data['step_number']
+            Validator.validate_positive_integer(step_number, "step_number")
+            self.step_number = step_number
+
+        if 'description' in data:
+            description = data['description']
+            Validator.validate_type(description, str, "description")
+            Validator.validate_non_empty(description, "description")
+            self.description = description.strip()

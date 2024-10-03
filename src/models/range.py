@@ -61,3 +61,20 @@ class range_model(abstract_model):
         return self.__name == other_object.__name
 
                 
+    def _deserialize_additional_fields(self, data: dict):
+        """
+        Десериализация дополнительных полей для range_model.
+        """
+        if 'base_unit' in data and isinstance(data['base_unit'], dict):
+            base_unit_data = data['base_unit']
+            base_unit_instance = range_model()
+            base_unit_instance.deserialize(base_unit_data)
+            self.set_base_unit(base_unit_instance, data.get("conversion_factor", 1))
+
+        if 'conversion_factor' in data:
+            conversion_factor = data['conversion_factor']
+            Validator.validate_positive_integer(conversion_factor, "conversion_factor")
+            self.__conversion_factor = conversion_factor
+
+        if 'name' in data:
+            self.name = data['name']

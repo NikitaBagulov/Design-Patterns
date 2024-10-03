@@ -19,4 +19,10 @@ class group_model(abstract_model):
             return False
         if not isinstance(other_object, group_model):
             return False
-        return self.__name == other_object.__name
+        return self.name == other_object.name
+    
+    def __str__(self) -> str:
+        return f"<GroupModel(name='{self.name}')>"
+
+    def _deserialize_additional_fields(self, data: dict):
+        pass

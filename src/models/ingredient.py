@@ -15,6 +15,7 @@ class ingredient_model(abstract_model):
     def nomenclature(self, value: nomenclature_model):
         Validator.validate_type(value, nomenclature_model, "nomenclature")
         self.__nomenclature = value
+        self.name = self.__nomenclature.name
 
     @property
     def quantity(self) -> float:
@@ -28,3 +29,24 @@ class ingredient_model(abstract_model):
 
     def set_compare_mode(self, other_object) -> bool:
         super().set_compare_mode(other_object)
+
+    def __str__(self) -> str:
+        return (
+            f"<IngredientModel(nomenclature={self.__nomenclature.name}, "
+            f"quantity={self.__quantity})>"
+        )
+
+    def _deserialize_additional_fields(self, data: dict):
+        """
+        Десериализация дополнительных полей для ingredient_model.
+        """
+        if 'nomenclature' in data:
+            nomenclature_data = data['nomenclature']
+            nomenclature = nomenclature_model()
+            nomenclature.deserialize(nomenclature_data)
+            self.nomenclature = nomenclature
+
+        if 'quantity' in data:
+            quantity = data['quantity']
+            Validator.validate_positive_float(quantity, "quantity")
+            self.quantity = quantity

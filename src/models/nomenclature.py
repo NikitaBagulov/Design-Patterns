@@ -6,7 +6,7 @@ from src.utils.validator import Validator
 class nomenclature_model(abstract_model):
     __name: str = ""
     __full_name: str = ""
-    __group: group_model = None
+    __group: group_model = group_model.default_group_source()
     __range: range_model = None
 
 
@@ -45,11 +45,35 @@ class nomenclature_model(abstract_model):
             nomenclature = nomenclature_model()
             nomenclature.name = name.strip()
             nomenclature.range = unit
-            nomenclature.group = group_model.default_group_source()
             nomenclature_list.append(nomenclature)
 
         return nomenclature_list
     
+    @staticmethod
+    def create(name: str, full_name: str, group: group_model = None, range: range_model = None) -> 'nomenclature_model':
+        """
+        Фабричный метод для создания объекта nomenclature_model.
+        """
+        Validator.validate_length(name, 50, "name")
+        Validator.validate_length(full_name, 255, "full_name")
+        
+        if group is not None:
+            Validator.validate_type(group, group_model, "group")
+        else:
+            group = group_model.default_group_source()
+
+        if range is not None:
+            Validator.validate_type(range, range_model, "range")
+
+        item = nomenclature_model()
+        item.name = name.strip()
+        item.full_name = full_name.strip()
+        item.group = group
+        item.range = range
+
+        return item
+        
+
     @property
     def range(self) -> range_model:
         return self.__range
@@ -60,13 +84,38 @@ class nomenclature_model(abstract_model):
         self.__range = value
 
     def set_compare_mode(self, other_object) -> bool:
-        super().set_compare_mode(other_object)
+        if other_object is None:
+            return False
+        if not isinstance(other_object, nomenclature_model):
+            return False
 
-    def to_dict(self) -> dict:
-        """Конвертировать объект в словарь для сериализации."""
-        return {
-            'name': self.unique_code,
-            'full_name': self.full_name,
-            'group': self.group,
-            'range': self.range
-        }
+        return self.unique_code == other_object.unique_code
+
+
+    def __str__(self) -> str:
+        return (
+            f"<NomenclatureModel(name='{self.__name}', "
+            f"full_name='{self.__full_name}', "
+            f"range={self.__range}, "
+            f"group={self.__group}),"
+            f"unique_code={self.unique_code})>"
+        )
+
+    def _deserialize_additional_fields(self, data: dict):
+        """
+        Десериализация дополнительных полей для nomenclature_model.
+        """
+        if 'full_name' in data:
+            self.full_name = data['full_name']
+
+        if 'group' in data and isinstance(data['group'], dict):
+            group_data = data['group']
+            group_instance = group_model()  
+            group_instance.deserialize(group_data)
+            self.group = group_instance 
+
+        if 'range' in data and isinstance(data['range'], dict):
+            range_data = data['range']
+            range_instance = range_model()
+            range_instance.deserialize(range_data)
+            self.range = range_instance

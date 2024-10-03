@@ -7,7 +7,6 @@ from src.models.ingredient import ingredient_model
 from src.models.range import range_model
 from src.models.step import step_model
 from src.models.nomenclature import nomenclature_model
-from src.models.group import group_model
 from src.utils.custom_exceptions import NotFoundException, ArgumentException
 
 class recipe_manager(abstract_logic):
@@ -50,6 +49,7 @@ class recipe_manager(abstract_logic):
         return "Неизвестный рецепт"
 
 
+
     def extract_nomenclature(self) -> dict[str, range_model]:
         """Извлечение номенклатуры и их единиц измерения из всех рецептов."""
         nomenclature_dict = {}
@@ -62,12 +62,17 @@ class recipe_manager(abstract_logic):
             for ingredient in recipe_ingredients:
                 name, _, unit_name = ingredient
 
-                unit = range_model()
-                unit.name = unit_name
+                if name not in nomenclature_dict:
+                    nomenclature = nomenclature_model()
+                    nomenclature.name = name
+                    nomenclature_dict[name] = {'nomenclature': nomenclature, 'unit': None}
 
-                nomenclature_dict[name] = unit
+                if nomenclature_dict[name]['unit'] is None or nomenclature_dict[name]['unit'].name != unit_name:
+                    unit = range_model()
+                    unit.name = unit_name
+                    nomenclature_dict[name]['unit'] = unit
 
-        return nomenclature_dict
+        return {name: data['unit'] for name, data in nomenclature_dict.items()}
 
     def extract_ingredients(self) -> list[list[tuple[str, str, str]]]:
         """Извлечение ингредиентов из всех рецептов."""
@@ -182,7 +187,7 @@ class recipe_manager(abstract_logic):
     
     def create_recipes(self, recipe_data_list: list[dict]) -> list[recipe_model]:
         recipes = []
-        
+
         for recipe_data in recipe_data_list:
             recipe = recipe_model()
             recipe.name = recipe_data.get('name', "Неизвестный рецепт")
@@ -194,13 +199,8 @@ class recipe_manager(abstract_logic):
                 unit = range_model()
                 unit.name = unit_name
 
-                group = group_model.default_group_source()
-
-                nomenclature = nomenclature_model()
-                nomenclature.name = name
-                nomenclature.full_name = name
-                nomenclature.group = group
-                nomenclature.range = unit
+                # Используем фабричный метод для создания объекта nomenclature_model
+                nomenclature = nomenclature_model.create(name, name, range=unit)
 
                 ingredient = ingredient_model()
                 ingredient.nomenclature = nomenclature
@@ -217,6 +217,7 @@ class recipe_manager(abstract_logic):
             recipes.append(recipe)
 
         return recipes
+
 
     def set_exception(self, ex: Exception):
         self._inner_set_exception(ex)
