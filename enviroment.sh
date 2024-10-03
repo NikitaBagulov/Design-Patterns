@@ -1,12 +1,12 @@
 #!/bin/bash
 
-if ! command -v python3 &> /dev/null
+if ! command -v python &> /dev/null
 then
     echo "Python3 не найден. Пожалуйста, установите Python3 перед запуском этого скрипта."
     exit 1
 fi
 
-python3 -m venv .venv
+python -m venv .venv
 
 pip install --upgrade pip
 
