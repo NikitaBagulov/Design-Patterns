@@ -1,7 +1,10 @@
-from src.settings_manager import settings_manager
-manager1 = settings_manager()
-if not manager1.open("settings.json"):
-    print("Настройки не загружены!")
+import connexion
+app = connexion.FlaskApp(__name__)
 
-print(f"settings1: {manager1.settings.organization_name}")
+@app.route("/api/reports/formats", methods=["GET"])
+def formats():
+    return [{"name":"CSV", "value": 1}]
 
+if __name__ == '__main__':
+    # app.add_api("swagger.yaml")
+    app.run(port = 8080)
