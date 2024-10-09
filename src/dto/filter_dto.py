@@ -1,6 +1,6 @@
 from src.dto.filter_type import filter_type
 
-class filter:
+class filter_dto:
     def __init__(self, name: str = "", unique_code: str = "", type: filter_type = filter_type.EQUALS):
         self.__name:str = name
         self.__unique_code:str = unique_code
@@ -29,3 +29,15 @@ class filter:
     @type.setter
     def type(self, value: filter_type):
         self.__type = value
+
+    @staticmethod
+    def from_dict(data):
+        type_str = data.get('type', 'EQUALS').upper()
+        type_enum = getattr(filter_type, type_str, filter_type.EQUALS)
+        print(type_enum)
+
+        return filter_dto(
+            name=data.get('name'),
+            unique_code=data.get('unique_code'),
+            type=type_enum
+        )

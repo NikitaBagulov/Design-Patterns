@@ -1,6 +1,6 @@
 import unittest
 from src.logics.domain_prototype import domain_prototype
-from src.dto.filter import filter
+from src.dto.filter_dto import filter_dto
 from src.data_reposity import data_reposity
 from src.settings_manager import settings_manager
 from src.utils.recipe_manager import recipe_manager
@@ -32,12 +32,11 @@ class test_prototype(unittest.TestCase):
         item = data[0]
 
         # Настройка фильтра
-        filter_dto = filter(name=item.name, type = filter_type.EQUALS)
+        filt = filter_dto(name=item.name, type = filter_type.EQUALS)
         prototype = domain_prototype(data)
 
         # Действие
-        result = prototype.create(data, filter_dto)
-        print(result.data)
+        result = prototype.create(data, filt)
         # Проверка
         assert len(result.data) == 1
         assert result.data[0] == item
@@ -50,12 +49,11 @@ class test_prototype(unittest.TestCase):
         item = data[0]
 
         # Настройка фильтра
-        filter_dto = filter(unique_code=item.unique_code)
-        print(item.unique_code)
+        filt = filter_dto(unique_code=item.unique_code)
         prototype = domain_prototype(data)
 
         # Действие
-        result = prototype.create(data, filter_dto)
+        result = prototype.create(data, filt)
 
         # Проверка
         assert len(result.data) == 1
@@ -69,11 +67,11 @@ class test_prototype(unittest.TestCase):
         item = data[0]
 
         # Настройка фильтра с частичным совпадением
-        filter_dto = filter(name=item.name[:3], type=filter_type.LIKE)
+        filt = filter_dto(name=item.name[:3], type=filter_type.LIKE)
         prototype = domain_prototype(data)
 
         # Действие
-        result = prototype.create(data, filter_dto)
+        result = prototype.create(data, filt)
 
         # Проверка
         assert len(result.data) > 0
@@ -87,12 +85,12 @@ class test_prototype(unittest.TestCase):
         item = data[0]
 
         # Настройка фильтра
-        filter_dto = filter(name=item.name, type=filter_type.EQUALS)
+        filt = filter_dto(name=item.name, type=filter_type.EQUALS)
         print(item.name)
         prototype = domain_prototype(data)
 
         # Действие
-        result = prototype.create(data, filter_dto)
+        result = prototype.create(data, filt)
         print(result.data)
 
         # Проверка
@@ -107,11 +105,11 @@ class test_prototype(unittest.TestCase):
         item = data[0]
 
         # Настройка фильтра с частичным совпадением
-        filter_dto = filter(name=item.name[:3], type=filter_type.LIKE)
+        filt = filter_dto(name=item.name[:3], type=filter_type.LIKE)
         prototype = domain_prototype(data)
 
         # Действие
-        result = prototype.create(data, filter_dto)
+        result = prototype.create(data, filt)
 
         # Проверка
         assert len(result.data) > 0
@@ -125,11 +123,11 @@ class test_prototype(unittest.TestCase):
         item = data[0]
 
         # Настройка фильтра
-        filter_dto = filter(name=item.name, type=filter_type.EQUALS)
+        filt = filter_dto(name=item.name, type=filter_type.EQUALS)
         prototype = domain_prototype(data)
 
         # Действие
-        result = prototype.create(data, filter_dto)
+        result = prototype.create(data, filt)
 
         # Проверка
         assert len(result.data) == 1
@@ -143,11 +141,11 @@ class test_prototype(unittest.TestCase):
         item = data[0]
 
         # Настройка фильтра с частичным совпадением
-        filter_dto = filter(name=item.name[:3], type=filter_type.LIKE)
+        filt = filter_dto(name=item.name[:3], type=filter_type.LIKE)
         prototype = domain_prototype(data)
 
         # Действие
-        result = prototype.create(data, filter_dto)
+        result = prototype.create(data, filt)
 
         # Проверка
         assert len(result.data) > 0
@@ -161,11 +159,11 @@ class test_prototype(unittest.TestCase):
         item = data[0]
 
         # Настройка фильтра
-        filter_dto = filter(name=item.name, type=filter_type.EQUALS)
+        filt = filter_dto(name=item.name, type=filter_type.EQUALS)
         prototype = domain_prototype(data)
 
         # Действие
-        result = prototype.create(data, filter_dto)
+        result = prototype.create(data, filt)
 
         # Проверка
         assert len(result.data) == 1
@@ -179,11 +177,11 @@ class test_prototype(unittest.TestCase):
         item = data[0]
 
         # Настройка фильтра
-        filter_dto = filter(unique_code=item.unique_code, type=filter_type.EQUALS)
+        filt = filter_dto(unique_code=item.unique_code, type=filter_type.EQUALS)
         prototype = domain_prototype(data)
 
         # Действие
-        result = prototype.create(data, filter_dto)
+        result = prototype.create(data, filt)
 
         # Проверка
         assert len(result.data) == 1
