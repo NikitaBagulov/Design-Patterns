@@ -16,12 +16,7 @@ rec_manager = recipe_manager()
 start = start_service(reposity, manager, rec_manager)
 start.create()
 
-data_mapping = {
-        'range': reposity.range_key(),
-        'group': reposity.group_key(),
-        'nomenclature': reposity.nomenclature_key(),
-        'recipes': reposity.recipes_key()
-    }
+data_mapping = reposity.keys()
 
 @app.route("/api/reports/formats", methods=["GET"])
 def formats():
@@ -46,23 +41,22 @@ def get_report(category, format_type):
 
 @app.route("/api/filter/<domain_type>", methods=["POST"])
 def filter_data(domain_type):
-
     if domain_type not in data_mapping:
         return jsonify({"error": "Invalid domain type"}), 400
 
     filter_data = request.get_json()
-    print(filter_data)
-    filt = filter_dto.from_dict(filter_data)
-
+    try:
+        filt = filter_dto.from_dict(filter_data)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400
     data = reposity.data[data_mapping[domain_type]]
     if not data:
         return jsonify({"error": "No data available"}), 404
-    print(data)
     prototype = domain_prototype(data)
     filtered_data = prototype.create(data, filt)
-    print(filtered_data.data)
     if not filtered_data.data:
         return jsonify({"message": "No data found"}), 404
+        
     report = report_factory(manager).create(format_reporting.JSON)
     report.create(filtered_data.data)
 

@@ -79,7 +79,7 @@ paths:
               unique_code:
                 type: string
               type:
-                type: string
+                type: integer
       responses:
         200:
           description: Успешная фильтрация данных
