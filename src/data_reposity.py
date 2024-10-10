@@ -28,5 +28,18 @@ class data_reposity(abstract_logic):
     def recipes_key() -> str:
         return "recipes"
     
+    @staticmethod
+    def keys() -> dict:
+        result = {}
+        methods = [method for method in dir(data_reposity) if
+                callable(getattr(data_reposity, method)) and method.endswith('_key')]
+        
+        for method in methods:
+            key_name = method.replace('_key', '')
+            key_value = getattr(data_reposity, method)() 
+            result[key_name] = key_value 
+        
+        return result
+    
     def set_exception(self, ex: Exception):
         self._inner_set_exception(ex)   

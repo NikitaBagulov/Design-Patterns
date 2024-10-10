@@ -53,3 +53,43 @@ paths:
           description: Ошибка на сервере
         default:
           description: Неизвестная ошибка        
+  /filter/{domain_type}:
+    post:
+      summary: Фильтрация данных по указанной модели
+      operationId: main.filter_data
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: domain_type
+          in: path
+          required: true
+          type: string
+          description: Тип модели для фильтрации (range, group, nomenclature, recipes)
+        - in: body
+          name: filter_dto
+          description: DTO модель для фильтрации данных
+          required: true
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              unique_code:
+                type: string
+              type:
+                type: integer
+      responses:
+        200:
+          description: Успешная фильтрация данных
+          schema:
+            type: array
+            items:
+              type: object
+        400:
+          description: Неверные параметры фильтрации или тип данных
+        404:
+          description: Данные не найдены
+        500:
+          description: Ошибка на сервере

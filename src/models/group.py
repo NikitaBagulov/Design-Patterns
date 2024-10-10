@@ -3,6 +3,12 @@ from src.core.abstract_model import abstract_model
 class group_model(abstract_model):
 
     @staticmethod
+    def create(name:str):
+        item = group_model()
+        item.name = name
+        return item
+
+    @staticmethod
     def default_group_source():
         item = group_model()
         item.name = "Сырье"
