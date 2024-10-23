@@ -1,0 +1,134 @@
+[
+    {
+        "model": "warehouse_transaction_model",
+        "is_incoming": true,
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "7ccd5f59d8cc440fa18f7ea30276d1f3"
+            },
+            "name": "Петрушка (для подачи)",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "b45751cb76714924b1580c63e78f6126"
+            },
+            "unique_code": "ef075ab4d2314748a754bf60ab369abe"
+        },
+        "period": "2024-10-23T18:25:48.798543",
+        "quantity": 3.03,
+        "range": {
+            "model": "range_model",
+            "base_unit": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "Килограмм",
+                "unique_code": "2a9d7183878241818a19712e428865c9"
+            },
+            "conversion_factor": 1000,
+            "name": "Грамм",
+            "unique_code": "57969d042b39436b8a289014cee0669c"
+        },
+        "transaction_type": "Расход",
+        "unique_code": "e30a474055e74e18be99cd4e6668bb90",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "3c37cf8044424579b4c4cc2edba60088"
+        }
+    },
+    {
+        "model": "warehouse_transaction_model",
+        "is_incoming": false,
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "7ccd5f59d8cc440fa18f7ea30276d1f3"
+            },
+            "name": "Петрушка (для подачи)",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "b45751cb76714924b1580c63e78f6126"
+            },
+            "unique_code": "ef075ab4d2314748a754bf60ab369abe"
+        },
+        "period": "2024-10-23T18:25:48.798543",
+        "quantity": 18.05,
+        "range": {
+            "model": "range_model",
+            "base_unit": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "Килограмм",
+                "unique_code": "2a9d7183878241818a19712e428865c9"
+            },
+            "conversion_factor": 1000,
+            "name": "Грамм",
+            "unique_code": "57969d042b39436b8a289014cee0669c"
+        },
+        "transaction_type": "Приход",
+        "unique_code": "9a2ff684b404437b8c6fd0c5e022dd87",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "3c37cf8044424579b4c4cc2edba60088"
+        }
+    },
+    {
+        "model": "warehouse_transaction_model",
+        "is_incoming": true,
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "7ccd5f59d8cc440fa18f7ea30276d1f3"
+            },
+            "name": "Петрушка (для подачи)",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "b45751cb76714924b1580c63e78f6126"
+            },
+            "unique_code": "ef075ab4d2314748a754bf60ab369abe"
+        },
+        "period": "2024-10-23T18:25:48.800577",
+        "quantity": 25.16,
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Килограмм",
+            "unique_code": "8de9270f167b4756ba836eecb89a8208"
+        },
+        "transaction_type": "Приход",
+        "unique_code": "64907962aa5143c3811d1554636d1485",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "3c37cf8044424579b4c4cc2edba60088"
+        }
+    }
+]

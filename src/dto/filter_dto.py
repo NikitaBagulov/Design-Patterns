@@ -47,7 +47,7 @@ class filter_dto(abstract_logic):
             self.set_exception(ex)
 
     @staticmethod
-    def from_dict(data):
+    def create(data):
         try:
             name = data.get('name', "")
             unique_code = data.get('unique_code', "")

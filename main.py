@@ -8,6 +8,8 @@ from src.start_service import start_service
 from src.utils.recipe_manager import recipe_manager
 from src.logics.domain_prototype import domain_prototype
 from src.dto.filter_dto import filter_dto
+from datetime import datetime
+from src.processors.warehouse_turnover_process import warehouse_turnover_process
 
 app = connexion.FlaskApp(__name__)
 manager = settings_manager()
@@ -46,7 +48,7 @@ def filter_data(domain_type):
 
     filter_data = request.get_json()
     try:
-        filt = filter_dto.from_dict(filter_data)
+        filt = filter_dto.create(filter_data)
     except Exception as e:
         return jsonify({"error": str(e)}), 400
     data = reposity.data[data_mapping[domain_type]]
@@ -59,8 +61,64 @@ def filter_data(domain_type):
         
     report = report_factory(manager).create(format_reporting.JSON)
     report.create(filtered_data.data)
-
     return report.result
+
+@app.route("/api/filter/transactions", methods=["POST"])
+def get_transactions():
+    filter_data = request.get_json()
+    
+    warehouse_filter = filter_data.get("warehouse", {})
+    nomenclature_filter = filter_data.get("nomenclature", {})
+    warehouse_filt = filter_dto.create(warehouse_filter)
+    nomenclature_filt = filter_dto.create(nomenclature_filter)
+    data = reposity.data[data_mapping[data_reposity.transactions_key()]]
+    if not data:
+        return jsonify({"error": "No data available"}), 404
+
+    prototype = domain_prototype(data)
+
+    filtered_data = prototype.create(data, warehouse_filt)
+    filtered_data = prototype.create(filtered_data.data, nomenclature_filt)
+
+    if not filtered_data.data:
+        return jsonify({"message": "No transactions found"}), 404
+
+    report = report_factory(manager).create(format_reporting.JSON)
+    report.create(filtered_data.data)
+    return report.result
+
+@app.route("/api/filter/turnover", methods=["POST"])
+def get_turnover():
+    try:
+        # Получение фильтров из тела запроса
+        filter_data = request.get_json()
+        warehouse_filter = filter_data.get("warehouse", None)
+        nomenclature_filter = filter_data.get("nomenclature", None)
+        start_period_str = filter_data.get("start_period", None)
+        end_period_str = filter_data.get("end_period", None)
+
+        start_period = datetime.strptime(start_period_str, "%Y-%m-%d") if start_period_str else None
+        end_period = datetime.strptime(end_period_str, "%Y-%m-%d") if end_period_str else None
+
+        transactions = reposity.data[data_reposity.transactions_key()]
+
+        if not transactions:
+            return jsonify({"error": "No transactions available"}), 404
+
+        process = warehouse_turnover_process()
+
+        turnovers = process.process(transactions=transactions, warehouse=warehouse_filter, nomenclature=nomenclature_filter, start_period=start_period, end_period=end_period)
+
+        if not turnovers:
+            return jsonify({"message": "No turnovers found"}), 404
+
+        report = report_factory(manager).create(format_reporting.JSON)
+        report.create(turnovers)
+
+        return report.result
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 
 
 if __name__ == '__main__':
