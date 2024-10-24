@@ -151,7 +151,7 @@ paths:
       consumes:
         - application/json
       produces:
-        - text/html
+        - application/json
       summary: Получение складских оборотов
       description: Позволяет получить складские обороты с фильтрацией по складу, номенклатуре и периоду.
       parameters:
@@ -163,11 +163,33 @@ paths:
             type: object
             properties:
               warehouse:
-                type: string
-                description: Код или имя склада
+                type: object
+                description: Фильтры для склада
+                properties:
+                  name:
+                    type: string
+                    description: Имя склада
+                  unique_code:
+                    type: string
+                    description: Код склада
+                  type:
+                    type: integer
+                    description: Тип фильтрации
+                    enum: [1, 2]  # 0 - EQUALS, 1 - LIKE
               nomenclature:
-                type: string
-                description: Код или имя номенклатуры
+                type: object
+                description: Фильтры для номенклатуры
+                properties:
+                  name:
+                    type: string
+                    description: Имя номенклатуры
+                  unique_code:
+                    type: string
+                    description: Код номенклатуры
+                  type:
+                    type: integer
+                    description: Тип фильтрации
+                    enum: [1, 2]  # 1 - EQUALS, 2 - LIKE
               start_period:
                 type: string
                 format: date

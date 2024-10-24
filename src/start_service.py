@@ -84,7 +84,6 @@ class start_service(abstract_logic):
             transaction.warehouse = choice(warehouses)
             transaction.nomenclature = choice(nomenclature_list)
             transaction.quantity = round(uniform(1.0, 100.0), 2)
-            transaction.transaction_type = choice(["Приход", "Расход"])
             transaction.range = choice(ranges)
             transaction.period = datetime.now()
             transaction.is_incoming = choice([True, False])

@@ -26,7 +26,6 @@ class warehouse_turnover_model(abstract_model):
 
     @turnover.setter
     def turnover(self, value: float):
-        # Validator.validate_positive_float(value, "turnover")
         self.__turnover = value
 
     @property
@@ -54,3 +53,24 @@ class warehouse_turnover_model(abstract_model):
 
     def _deserialize_additional_fields(self):
         pass
+
+    @staticmethod
+    def create(warehouse: warehouse_model, nomenclature: nomenclature_model, range: range_model, turnover: float = 0.0):
+        """
+        Статический фабричный метод для создания экземпляра warehouse_turnover_model.
+        """
+        Validator.validate_not_none(warehouse, "warehouse")
+        Validator.validate_type(warehouse, warehouse_model, "warehouse")
+        
+        Validator.validate_not_none(nomenclature, "nomenclature")
+        Validator.validate_type(nomenclature, nomenclature_model, "nomenclature")
+        
+        Validator.validate_not_none(range, "range")
+        Validator.validate_type(range, range_model, "range")
+
+        instance = warehouse_turnover_model()
+        instance.warehouse = warehouse
+        instance.nomenclature = nomenclature
+        instance.range = range
+        instance.turnover = turnover
+        return instance
