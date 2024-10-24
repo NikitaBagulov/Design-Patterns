@@ -26,12 +26,16 @@ class domain_prototype(abstract_prototype):
         Validator.validate_not_none(filt, 'filt')
         Validator.validate_non_empty(field, 'field')
 
-        if not getattr(filt, field, None):
+        # Убедимся, что фильтр имеет значение для указанного поля
+        filter_value = getattr(filt, field, None)
+        if filter_value is None:
             return source
 
         result = []
         for item in source:
-            if self.match_field(getattr(item, field, None), getattr(filt, field), filt.type):
+            # Проверяем на соответствие полям в item и фильтре
+            item_field_value = getattr(item, field, None)
+            if self.match_field(item_field_value, filter_value, filt.type):
                 result.append(item)
             elif self.filter_nested(item, filt, field):
                 result.append(item)
@@ -49,12 +53,16 @@ class domain_prototype(abstract_prototype):
 
         for attr_name in dir(item):
             attr_value = getattr(item, attr_name)
-            if isinstance(attr_value, abstract_model) and self.match_field(getattr(attr_value, field, None), getattr(filt, field), filt.type):
-                return True
+            if isinstance(attr_value, abstract_model):
+                nested_field_value = getattr(attr_value, field, None)
+                if self.match_field(nested_field_value, getattr(filt, field), filt.type):
+                    return True
             elif isinstance(attr_value, list):
                 for nested_item in attr_value:
-                    if isinstance(nested_item, abstract_model) and self.match_field(getattr(nested_item, field, None), getattr(filt, field), filt.type):
-                        return True
+                    if isinstance(nested_item, abstract_model):
+                        nested_field_value = getattr(nested_item, field, None)
+                        if self.match_field(nested_field_value, getattr(filt, field), filt.type):
+                            return True
         return False
 
     def match_field(self, field_value: str, filter_value: str, filter_type: filter_type) -> bool:
