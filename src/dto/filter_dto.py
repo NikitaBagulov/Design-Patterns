@@ -47,7 +47,7 @@ class filter_dto(abstract_logic):
             self.set_exception(ex)
 
     @staticmethod
-    def from_dict(data):
+    def create(data):
         try:
             name = data.get('name', "")
             unique_code = data.get('unique_code', "")
@@ -68,6 +68,75 @@ class filter_dto(abstract_logic):
             filter_dto().set_exception(ex)
         except Exception as ex:
             filter_dto().set_exception(ex)
+
+    def set_exception(self, ex: Exception):
+        self._inner_set_exception(ex)
+
+class warehouse_nomenclature_filter_dto(abstract_logic):
+    def __init__(self, warehouse: filter_dto = None, nomenclature: filter_dto = None, period: dict = None):
+        self.__warehouse: filter_dto = warehouse
+        self.__nomenclature: filter_dto = nomenclature
+        self.__period: dict = period
+
+    @property
+    def warehouse(self) -> filter_dto:
+        return self.__warehouse
+
+    @warehouse.setter
+    def warehouse(self, value: filter_dto):
+        self.__warehouse = value
+
+    @property
+    def nomenclature(self) -> filter_dto:
+        return self.__nomenclature
+
+    @nomenclature.setter
+    def nomenclature(self, value: filter_dto):
+        self.__nomenclature = value
+
+    @property
+    def period(self) -> dict:
+        return self.__period
+
+    @period.setter
+    def period(self, value: dict):
+        try:
+            start = value.get('start')
+            end = value.get('end')
+            if start and end:
+                Validator.validate_non_empty(start, "period start")
+                Validator.validate_non_empty(end, "period end")
+            self.__period = value
+        except ArgumentException as ex:
+            self.set_exception(ex)
+
+    @staticmethod
+    def create(data):
+        try:
+            warehouse_data = data.get('warehouse', {})
+            nomenclature_data = data.get('nomenclature', {})
+            start_period = data.get('start_period', None)
+            end_period = data.get('end_period', None)
+
+            warehouse = filter_dto.create(warehouse_data)
+            nomenclature = filter_dto.create(nomenclature_data)
+
+            period_data = {}
+            if start_period and end_period:
+                period_data = {
+                    'start': start_period,
+                    'end': end_period
+                }
+
+            return warehouse_nomenclature_filter_dto(
+                warehouse=warehouse,
+                nomenclature=nomenclature,
+                period=period_data
+            )
+        except ArgumentException as ex:
+            warehouse_nomenclature_filter_dto().set_exception(ex)
+        except Exception as ex:
+            warehouse_nomenclature_filter_dto().set_exception(ex)
 
     def set_exception(self, ex: Exception):
         self._inner_set_exception(ex)

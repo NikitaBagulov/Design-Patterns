@@ -23,13 +23,19 @@ class warehouse_model(abstract_model):
         Validator.validate_length(value, 100, "address")
         self.__address = value.strip()
 
+    @staticmethod
+    def create(name, address):
+        item = warehouse_model()
+        item.name = name
+        item.address = address
+        return item
+
     def set_compare_mode(self, other_object) -> bool:
         if other_object is None:
             return False
         if not isinstance(other_object, warehouse_model):
             return False
-        return (self.__name == other_object.__name and
-                self.__address == other_object.__address)
+        return self.__name == other_object.__name
     
     def _deserialize_additional_fields(self):
         pass

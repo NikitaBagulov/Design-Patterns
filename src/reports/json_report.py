@@ -2,6 +2,7 @@ import json
 from src.core.abstract_report import abstract_report
 from src.core.format_reporting import format_reporting
 from src.utils.validator import Validator
+from datetime import datetime
 
 class json_report(abstract_report):
     
@@ -19,6 +20,8 @@ class json_report(abstract_report):
             value = getattr(obj, field)
             if isinstance(value, list):
                 row_data[field] = [json_report.serialize_object(v) for v in value]
+            elif isinstance(value, datetime):
+                row_data[field] = value.isoformat()
             elif hasattr(value, '__dict__'):
                 row_data[field] = json_report.serialize_object(value)
             else:

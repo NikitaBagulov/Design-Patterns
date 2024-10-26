@@ -8,6 +8,7 @@ produces:
   - application/json
   - application/xml
   - application/text
+  - text/html
 
 basePath: "/api"
 
@@ -60,7 +61,7 @@ paths:
       consumes:
         - application/json
       produces:
-        - application/json
+        - text/html
       parameters:
         - name: domain_type
           in: path
@@ -91,5 +92,130 @@ paths:
           description: Неверные параметры фильтрации или тип данных
         404:
           description: Данные не найдены
+        500:
+          description: Ошибка на сервере
+  /get/transactions:
+    post:
+      summary: Фильтрация складских транзакций по складу и номенклатуре
+      tags:
+        - Warehouse
+      operationId: main.get_transactions
+      consumes:
+        - application/json
+      produces:
+        - text/html
+      parameters:
+        - in: body
+          name: filter_data
+          description: DTO модель для фильтрации складских транзакций
+          required: true
+          schema:
+            type: object
+            properties:
+              warehouse:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  unique_code:
+                    type: string
+                  type:
+                    type: integer
+              nomenclature:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  unique_code:
+                    type: string
+                  type:
+                    type: integer
+      responses:
+        200:
+          description: Успешная фильтрация транзакций
+          schema:
+            type: array
+            items:
+              type: object
+        400:
+          description: Неверные параметры фильтрации
+        404:
+          description: Транзакции не найдены
+        500:
+          description: Ошибка на сервере
+  /filter/turnover:
+    post:
+      tags:
+        - Warehouse
+      operationId: main.get_turnover
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      summary: Получение складских оборотов
+      description: Позволяет получить складские обороты с фильтрацией по складу, номенклатуре и периоду.
+      parameters:
+        - in: body
+          name: body
+          description: Фильтры для складских оборотов
+          required: true
+          schema:
+            type: object
+            properties:
+              warehouse:
+                type: object
+                description: Фильтры для склада
+                properties:
+                  name:
+                    type: string
+                    description: Имя склада
+                  unique_code:
+                    type: string
+                    description: Код склада
+                  type:
+                    type: integer
+                    description: Тип фильтрации
+                    enum: [1, 2]  # 0 - EQUALS, 1 - LIKE
+              nomenclature:
+                type: object
+                description: Фильтры для номенклатуры
+                properties:
+                  name:
+                    type: string
+                    description: Имя номенклатуры
+                  unique_code:
+                    type: string
+                    description: Код номенклатуры
+                  type:
+                    type: integer
+                    description: Тип фильтрации
+                    enum: [1, 2]  # 1 - EQUALS, 2 - LIKE
+              start_period:
+                type: string
+                format: date
+                description: Начало периода (YYYY-MM-DD)
+              end_period:
+                type: string
+                format: date
+                description: Конец периода (YYYY-MM-DD)
+      responses:
+        200:
+          description: Успешный ответ с данными оборотов
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                warehouse:
+                  type: string
+                  description: Код склада
+                nomenclature:
+                  type: string
+                  description: Код номенклатуры
+                turnover:
+                  type: number
+                  description: Количество оборота
+        404:
+          description: Транзакции или обороты не найдены
         500:
           description: Ошибка на сервере
