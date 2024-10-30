@@ -5,14 +5,14 @@ from src.settings_manager import settings_manager
 from datetime import datetime
 class warehouse_turnover_process(abstract_process):
 
-    def __init__(self, manager:settings_manager = None):
+    def __init__(self, manager:settings_manager = None, blocked_turnovers: dict = {}):
         self.block_period = manager.settings.block_period if manager else datetime.now()
-
+        self.blocked_turnovers = blocked_turnovers
     def process(self, transactions) -> list:
         """
         Вычисляет складские обороты по транзакциям с учетом даты блокировки.
         """
-        turnovers = self.load_saved_turnovers()
+        turnovers = self.blocked_turnovers
         new_turnovers = {}
 
         for transaction in transactions:
@@ -52,21 +52,3 @@ class warehouse_turnover_process(abstract_process):
                 turnovers[key] = turnover
 
         return list(turnovers.values())
-
-    def load_saved_turnovers(self) -> dict:
-        """
-        Загружает сохраненные обороты из warehouse_turnover.json.
-        """
-        try:
-            full_filename = "blocked_turnovers.json"
-            with open(f"src/processors/{full_filename}", 'r', encoding='utf-8') as file:
-                data = json.load(file)
-                turnovers = {}
-                for item in data:
-                    turnover = warehouse_turnover_model()
-                    turnover.deserialize(item)
-                    key = (turnover.warehouse.unique_code, turnover.nomenclature.unique_code, turnover.range.unique_code)
-                    turnovers[key] = turnover
-                return turnovers
-        except FileNotFoundError:
-            return {}

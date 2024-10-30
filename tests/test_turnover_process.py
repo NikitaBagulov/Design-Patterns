@@ -187,9 +187,9 @@ class TestWarehouseTurnoverLoad(unittest.TestCase):
     def measure_time(self, block_period):
         blocked_process = warehouse_turnover_blocked_process(manager=self.manager)
         blocked_process.block_period = block_period
-        blocked_process.process(transactions=self.transactions)
+        self.reposity.data[data_reposity.turnovers_key()] = blocked_process.process(transactions=self.transactions)
         
-        process = warehouse_turnover_process(manager=self.manager)
+        process = warehouse_turnover_process(manager=self.manager, blocked_turnovers=self.reposity.data[data_reposity.turnovers_key()])
         
         
         start_time = datetime.now()
@@ -201,8 +201,8 @@ class TestWarehouseTurnoverLoad(unittest.TestCase):
     def test_load_turnover_calculation(self):
         block_periods = [
             datetime(2024, 2, 1),
-            datetime(2024, 5, 1),
-            datetime(2024, 12, 1),
+            datetime(2024, 6, 1),
+            datetime(2024, 11, 1),
         ]
 
         results = {}

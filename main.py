@@ -126,6 +126,7 @@ def set_block_period():
 
         settings = manager.settings 
         settings.block_period = block_period_str
+        manager.save()
         return jsonify({"message": "Дата блокировки обновлена успешно."}), 200
     except (ValueError, AttributeError) as e:
         return jsonify({"error": "Неправильный формат даты или ошибка запроса.", "details": str(e)}), 400
