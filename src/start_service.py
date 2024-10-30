@@ -11,7 +11,9 @@ from src.settings_manager import settings_manager
 from src.models import settings
 
 from random import choice, uniform
-from datetime import datetime, timedelta
+from datetime import datetime
+import random
+import calendar
 
 class start_service(abstract_logic):
     __reposity: data_reposity = None
@@ -79,19 +81,29 @@ class start_service(abstract_logic):
         
         transactions = []
 
-        for _ in range(100):
+        for _ in range(2000000):
             transaction = warehouse_transaction_model()
             transaction.warehouse = choice(warehouses)
             transaction.nomenclature = choice(nomenclature_list)
             transaction.quantity = round(uniform(1.0, 100.0), 2)
             transaction.range = choice(ranges)
-            transaction.period = datetime.now()
+            transaction.period = self.__random_date()
             transaction.is_incoming = choice([True, False])
 
             
             transactions.append(transaction)
 
         self.__reposity.data[data_reposity.transactions_key()] = transactions
+
+    def __random_date(self, year=2024, month=10):
+        # Получаем случайный день в зависимости от количества дней в указанном месяце и году
+        days_in_month = calendar.monthrange(year, month)[1]
+        day = random.randint(1, days_in_month)
+        hour = random.randint(0, 23)
+        minute = random.randint(0, 59)
+        second = random.randint(0, 59)
+
+        return datetime(year, month, day, hour, minute, second)
 
     def create(self):
         self.__create_nomenclature_groups()

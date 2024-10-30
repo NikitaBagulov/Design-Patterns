@@ -92,13 +92,14 @@ class settings_manager(abstract_logic):
             Validator.validate_digits("09876543211", 11, "corr_account")
             Validator.validate_digits("123456789", 9, "bik")
             Validator.validate_length("Частн", 5, "ownership_type")
-
+            
             data.organization_name = "Рога и копыта (default)"
             data.inn = "380080920202"
             data.account = "12345678901"
             data.corr_account = "09876543211"
             data.bik = "123456789"
             data.ownership_type = "Частн"
+            data.block_period = "2024-01-01"
         except (ValueError, ArgumentException, LengthException) as e:
             self.set_exception(e)
             raise ConversionException("Ошибка при установке значений по умолчанию.") from e
