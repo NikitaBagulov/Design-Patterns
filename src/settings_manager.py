@@ -117,25 +117,36 @@ class settings_manager(abstract_logic):
         self._inner_set_exception(ex)
 
     def save(self):
-        if not hasattr(self.__settings, 'block_period'):
-            raise AttributeError("Свойство block_period не найдено в настройках.")
+
+        required_attributes = [
+            'organization_name', 'inn', 'account', 'corr_account', 
+            'bik', 'ownership_type', 'block_period'
+        ]
         
+        for attr in required_attributes:
+            if not hasattr(self.__settings, attr):
+                raise AttributeError(f"Свойство {attr} не найдено в настройках.")
+
         full_path = self.__get_file_path(self.__file_name)
         
         if not full_path:
             raise NotFoundException(self.__file_name)
-        
+
+        data_to_save = {
+            "organization_name": self.__settings.organization_name,
+            "inn": self.__settings.inn,
+            "account": self.__settings.account,
+            "corr_account": self.__settings.corr_account,
+            "bik": self.__settings.bik,
+            "ownership_type": self.__settings.ownership_type,
+            "block_period": self.__settings.block_period
+        }
+
         try:
-            with open(full_path, 'r+', encoding='utf-8') as file:
-                data = json.load(file)
-
-                if data.get("block_period") != self.__settings.block_period:
-                    data["block_period"] = self.__settings.block_period
-
-                    file.seek(0)
-                    json.dump(data, file, ensure_ascii=False, indent=4)
-                    file.truncate()
+            with open(full_path, 'w', encoding='utf-8') as file:
+                json.dump(data_to_save, file, ensure_ascii=False, indent=4)
 
         except (FileNotFoundError, json.JSONDecodeError) as e:
             self.set_exception(e)
-            raise ConversionException("Ошибка при сохранении block_period.") from e
+            raise ConversionException("Ошибка при сохранении данных в файл.") from e
+
