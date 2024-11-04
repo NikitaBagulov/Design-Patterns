@@ -219,3 +219,65 @@ paths:
           description: Транзакции или обороты не найдены
         500:
           description: Ошибка на сервере
+  /settings/set_block_period:
+    post:
+      tags:
+        - Settings
+      summary: Изменение даты блокировки
+      description: Устанавливает новую дату блокировки в настройках.
+      operationId: main.set_block_period
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: JSON с датой блокировки в формате YYYY-MM-DD.
+          required: true
+          schema:
+            type: object
+            properties:
+              block_period:
+                type: string
+                format: date
+                example: "2024-01-01"
+      responses:
+        200:
+          description: Дата блокировки обновлена успешно.
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "Дата блокировки обновлена успешно."
+        400:
+          description: Неправильный формат даты или ошибка запроса.
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "Неправильный формат даты или ошибка запроса."
+              details:
+                type: string
+
+  /settings/get_block_period:
+    get:
+      tags:
+        - Settings
+      summary: Получение текущей даты блокировки
+      description: Возвращает текущую дату блокировки.
+      operationId: main.get_block_period
+      produces:
+        - application/json
+      responses:
+        200:
+          description: Текущая дата блокировки.
+          schema:
+            type: object
+            properties:
+              block_period:
+                type: string
+                format: date
+                example: "2024-01-01"

@@ -74,3 +74,27 @@ class warehouse_turnover_model(abstract_model):
         instance.range = range
         instance.turnover = turnover
         return instance
+    
+    def _deserialize_additional_fields(self, data: dict):
+        """
+        Десериализация дополнительных полей для warehouse_turnover_model.
+        """
+        if 'warehouse' in data:
+            self.warehouse = warehouse_model()
+            self.warehouse.deserialize(data['warehouse'])
+
+        if 'nomenclature' in data:
+            self.nomenclature = nomenclature_model()
+            self.nomenclature.deserialize(data['nomenclature'])
+
+        if 'range' in data:
+            self.range = range_model()
+            self.range.deserialize(data['range'])
+
+        if 'turnover' in data:
+            self.turnover = data['turnover']
+
+    
+
+    
+    

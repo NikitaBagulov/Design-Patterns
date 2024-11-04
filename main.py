@@ -117,7 +117,25 @@ def get_turnover():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/api/settings/block_period', methods=['POST'])
+def set_block_period():
+    data = request.get_json()
+    block_period_str = data.get('block_period')
 
+    try:
+
+        settings = manager.settings 
+        settings.block_period = block_period_str
+        manager.save()
+        return jsonify({"message": "Дата блокировки обновлена успешно."}), 200
+    except (ValueError, AttributeError) as e:
+        return jsonify({"error": "Неправильный формат даты или ошибка запроса.", "details": str(e)}), 400
+
+@app.route('/settings/block_period', methods=['GET'])
+def get_block_period():
+    settings = manager.settings
+    block_period_str = settings.block_period.strftime("%Y-%m-%d") if settings.block_period else None
+    return jsonify({"block_period": block_period_str}), 200
 
 if __name__ == '__main__':
     app.add_api("swagger.yaml")

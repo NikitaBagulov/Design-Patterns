@@ -1,5 +1,6 @@
 from src.utils.validator import Validator
 from src.core.format_reporting import format_reporting
+from datetime import datetime
 
 class settings:
     def __init__(self):
@@ -11,6 +12,7 @@ class settings:
         self.__ownership_type = ""
         self.__report_format = format_reporting.CSV
         self.__report_settings: dict = None
+        self.block_period: datetime
 
     @property
     def organization_name(self):
@@ -84,5 +86,14 @@ class settings:
     @report_settings.setter
     def report_settings(self, value: str):
         self.__report_settings = value
+
+    @property
+    def block_period(self):
+        return self.__block_period
+    
+    @block_period.setter
+    def block_period(self, value: str):
+        Validator.validate_length(value, 12, "block_period")
+        self.__block_period = datetime.strptime(value, "%Y-%m-%d")
 
 

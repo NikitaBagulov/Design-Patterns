@@ -1,0 +1,2810 @@
+[
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Креветки",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "b8ddd03e2df743008cb05b969edc4843"
+            },
+            "unique_code": "bd8a6c17618e447ba6f442d38ac62416"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Килограмм",
+            "unique_code": "d86bb1a4927b4f0a8df80bd961ae6a5d"
+        },
+        "turnover": -220.970000000014,
+        "unique_code": "48bb2c1defd64b089d13183f3b2c5692",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Яйца",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "шт",
+                "unique_code": "179a9476a7084c2995b4d7b0f3e7b77f"
+            },
+            "unique_code": "a2d8d42ac3b741a0b10337cc9847cab7"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Штука",
+            "unique_code": "03e6ae6aecf74f7c936ca06f99ec263f"
+        },
+        "turnover": -5269.10999999999,
+        "unique_code": "42c2a3ffa7ec401c87fc086444d82346",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Сахар",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "85dc34787c444cc1a76b41f24d548a24"
+            },
+            "unique_code": "894829cc483742798c9e851c730a38a4"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "Килограмм",
+                "unique_code": "3e23ca83c6dc42ea971326ffc799b1f3"
+            },
+            "conversion_factor": 1000,
+            "name": "Грамм",
+            "unique_code": "9d933344776f498ea391f1e9bad37225"
+        },
+        "turnover": -4381.570000000016,
+        "unique_code": "f026be7efb874d69b0e655c41cd6d518",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Сливочное масло",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "45e30783fcb6415e9b36de0990efdf58"
+            },
+            "unique_code": "24b373f868bc49648e9a5112c78734df"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "Килограмм",
+                "unique_code": "3e23ca83c6dc42ea971326ffc799b1f3"
+            },
+            "conversion_factor": 1000,
+            "name": "Грамм",
+            "unique_code": "9d933344776f498ea391f1e9bad37225"
+        },
+        "turnover": 15324.89999999997,
+        "unique_code": "0cb92944ae234fe4b893b8cdbb25f876",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Сливочное масло",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "45e30783fcb6415e9b36de0990efdf58"
+            },
+            "unique_code": "24b373f868bc49648e9a5112c78734df"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Килограмм",
+            "unique_code": "d86bb1a4927b4f0a8df80bd961ae6a5d"
+        },
+        "turnover": -11768.050000000037,
+        "unique_code": "ab36761cade6486d9a8bac03f5bb43fe",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Пшеничная мука",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "88fd3d722e004e7aa8d0cf2a87f793d9"
+            },
+            "unique_code": "4e6f58554a2d459bbd529d1f4f567f96"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Штука",
+            "unique_code": "03e6ae6aecf74f7c936ca06f99ec263f"
+        },
+        "turnover": 9589.52999999996,
+        "unique_code": "163897965dd54602a7c724d1e1020e03",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Соль, перец",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "86a405dd4d8d4f9e86e239971eea1dec"
+            },
+            "unique_code": "c675a69b850844aba35a84058c9d327f"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "Килограмм",
+                "unique_code": "3e23ca83c6dc42ea971326ffc799b1f3"
+            },
+            "conversion_factor": 1000,
+            "name": "Грамм",
+            "unique_code": "9d933344776f498ea391f1e9bad37225"
+        },
+        "turnover": 4823.83000000001,
+        "unique_code": "acaa1572f71349e6a90ffd18c4825186",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Пшеничная мука",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "88fd3d722e004e7aa8d0cf2a87f793d9"
+            },
+            "unique_code": "4e6f58554a2d459bbd529d1f4f567f96"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "Килограмм",
+                "unique_code": "3e23ca83c6dc42ea971326ffc799b1f3"
+            },
+            "conversion_factor": 1000,
+            "name": "Грамм",
+            "unique_code": "9d933344776f498ea391f1e9bad37225"
+        },
+        "turnover": -10.610000000004685,
+        "unique_code": "ce2a18762bdb4744bbc54b38b3c68cda",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Спагетти",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "dbcab5dc9b5440629e2ab3b60695f9c2"
+            },
+            "unique_code": "4c8a96cf590f4ef2b321a3ad18521136"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Килограмм",
+            "unique_code": "d86bb1a4927b4f0a8df80bd961ae6a5d"
+        },
+        "turnover": -1152.2299999999518,
+        "unique_code": "5af756462a9b4fc9bad4e8a1ee65f755",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Петрушка (для подачи)",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "d34ea75a3bad4e93ac9fd767a4915cc9"
+            },
+            "unique_code": "ed0e374122b84950ab641f9d5a46ec65"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "Килограмм",
+                "unique_code": "3e23ca83c6dc42ea971326ffc799b1f3"
+            },
+            "conversion_factor": 1000,
+            "name": "Грамм",
+            "unique_code": "9d933344776f498ea391f1e9bad37225"
+        },
+        "turnover": 15442.13000000011,
+        "unique_code": "30217796b04649a29783409a0475c7e5",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Сливки (жирность 20%)",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "мл",
+                "unique_code": "c0b14a7f677f4a92a7a1d6c116102304"
+            },
+            "unique_code": "7f3ca70973bb4e088e2cc3a28a42e798"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Килограмм",
+            "unique_code": "d86bb1a4927b4f0a8df80bd961ae6a5d"
+        },
+        "turnover": -5157.4499999999825,
+        "unique_code": "38b89f90a97148eba7afea9404f3bb57",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Пшеничная мука",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "88fd3d722e004e7aa8d0cf2a87f793d9"
+            },
+            "unique_code": "4e6f58554a2d459bbd529d1f4f567f96"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Килограмм",
+            "unique_code": "d86bb1a4927b4f0a8df80bd961ae6a5d"
+        },
+        "turnover": 8771.499999999995,
+        "unique_code": "fa59a75f0e1b461dab7b4d6831d8df3f",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Яйца",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "шт",
+                "unique_code": "179a9476a7084c2995b4d7b0f3e7b77f"
+            },
+            "unique_code": "a2d8d42ac3b741a0b10337cc9847cab7"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Килограмм",
+            "unique_code": "d86bb1a4927b4f0a8df80bd961ae6a5d"
+        },
+        "turnover": -7363.079999999955,
+        "unique_code": "4f5776e350604cc3bb3bc6f2561b3b69",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Спагетти",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "dbcab5dc9b5440629e2ab3b60695f9c2"
+            },
+            "unique_code": "4c8a96cf590f4ef2b321a3ad18521136"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "Килограмм",
+                "unique_code": "3e23ca83c6dc42ea971326ffc799b1f3"
+            },
+            "conversion_factor": 1000,
+            "name": "Грамм",
+            "unique_code": "9d933344776f498ea391f1e9bad37225"
+        },
+        "turnover": -4895.139999999939,
+        "unique_code": "c8d9213e6a01494d932a2d568233d2fe",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Соль, перец",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "86a405dd4d8d4f9e86e239971eea1dec"
+            },
+            "unique_code": "c675a69b850844aba35a84058c9d327f"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Штука",
+            "unique_code": "03e6ae6aecf74f7c936ca06f99ec263f"
+        },
+        "turnover": 3193.059999999977,
+        "unique_code": "2fef15d7d6fa4e18ae1722008f7a0d54",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Яйца",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "шт",
+                "unique_code": "179a9476a7084c2995b4d7b0f3e7b77f"
+            },
+            "unique_code": "a2d8d42ac3b741a0b10337cc9847cab7"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "Килограмм",
+                "unique_code": "3e23ca83c6dc42ea971326ffc799b1f3"
+            },
+            "conversion_factor": 1000,
+            "name": "Грамм",
+            "unique_code": "9d933344776f498ea391f1e9bad37225"
+        },
+        "turnover": 839.559999999974,
+        "unique_code": "70f826473b6d49b1b450663a4c8fda75",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Чеснок",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "зубчика",
+                "unique_code": "cc9f827dd36b4d0196c9cce6645bc41e"
+            },
+            "unique_code": "23e0f54bff3c4bce9578529f1254f70a"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Килограмм",
+            "unique_code": "d86bb1a4927b4f0a8df80bd961ae6a5d"
+        },
+        "turnover": 12893.06999999998,
+        "unique_code": "32ff28ca49414ae880a86c3828bfeac1",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Петрушка (для подачи)",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "d34ea75a3bad4e93ac9fd767a4915cc9"
+            },
+            "unique_code": "ed0e374122b84950ab641f9d5a46ec65"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Килограмм",
+            "unique_code": "d86bb1a4927b4f0a8df80bd961ae6a5d"
+        },
+        "turnover": -12429.770000000062,
+        "unique_code": "521c60c0a3dc4d5aaf31856679a6930e",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Петрушка (для подачи)",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "d34ea75a3bad4e93ac9fd767a4915cc9"
+            },
+            "unique_code": "ed0e374122b84950ab641f9d5a46ec65"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Штука",
+            "unique_code": "03e6ae6aecf74f7c936ca06f99ec263f"
+        },
+        "turnover": -12271.110000000006,
+        "unique_code": "dd69d851419b4e959d2213bbcd8c2910",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Сливки (жирность 20%)",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "мл",
+                "unique_code": "c0b14a7f677f4a92a7a1d6c116102304"
+            },
+            "unique_code": "7f3ca70973bb4e088e2cc3a28a42e798"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Штука",
+            "unique_code": "03e6ae6aecf74f7c936ca06f99ec263f"
+        },
+        "turnover": -7535.300000000026,
+        "unique_code": "000febba1dd04855a2d516f074214dc2",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Ванилин(щепотка)",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "417102b9301d475b9ed61157ed2c6510"
+            },
+            "unique_code": "4ab6910f447144808f2aff007d64b40b"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "Килограмм",
+                "unique_code": "3e23ca83c6dc42ea971326ffc799b1f3"
+            },
+            "conversion_factor": 1000,
+            "name": "Грамм",
+            "unique_code": "9d933344776f498ea391f1e9bad37225"
+        },
+        "turnover": 13599.399999999916,
+        "unique_code": "2989ff68713b4384b849fc01a489ca8b",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Соль, перец",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "86a405dd4d8d4f9e86e239971eea1dec"
+            },
+            "unique_code": "c675a69b850844aba35a84058c9d327f"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Килограмм",
+            "unique_code": "d86bb1a4927b4f0a8df80bd961ae6a5d"
+        },
+        "turnover": 3975.5400000000036,
+        "unique_code": "af73e6894e4a49a5b928c9f6fe013798",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Чеснок",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "зубчика",
+                "unique_code": "cc9f827dd36b4d0196c9cce6645bc41e"
+            },
+            "unique_code": "23e0f54bff3c4bce9578529f1254f70a"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Штука",
+            "unique_code": "03e6ae6aecf74f7c936ca06f99ec263f"
+        },
+        "turnover": -9192.760000000026,
+        "unique_code": "0d537f2e5f0e468ebf7d0ef90c963ca9",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Пармезан",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "b17ae88127654678a0f641f941285458"
+            },
+            "unique_code": "a01bf84f37ff44e599089c51e15b744b"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "Килограмм",
+                "unique_code": "3e23ca83c6dc42ea971326ffc799b1f3"
+            },
+            "conversion_factor": 1000,
+            "name": "Грамм",
+            "unique_code": "9d933344776f498ea391f1e9bad37225"
+        },
+        "turnover": -8352.79000000013,
+        "unique_code": "be4f2446c9bf4cf284bfa83984b12d29",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Сахар",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "85dc34787c444cc1a76b41f24d548a24"
+            },
+            "unique_code": "894829cc483742798c9e851c730a38a4"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Штука",
+            "unique_code": "03e6ae6aecf74f7c936ca06f99ec263f"
+        },
+        "turnover": -16806.67999999992,
+        "unique_code": "c3a788ad71c445cf8165be06ffa700d1",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Соль, перец",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "86a405dd4d8d4f9e86e239971eea1dec"
+            },
+            "unique_code": "c675a69b850844aba35a84058c9d327f"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "Килограмм",
+                "unique_code": "3e23ca83c6dc42ea971326ffc799b1f3"
+            },
+            "conversion_factor": 1000,
+            "name": "Грамм",
+            "unique_code": "9d933344776f498ea391f1e9bad37225"
+        },
+        "turnover": -4939.189999999996,
+        "unique_code": "77ef4d6910a647268a25c20b02a9b126",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Креветки",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "b8ddd03e2df743008cb05b969edc4843"
+            },
+            "unique_code": "bd8a6c17618e447ba6f442d38ac62416"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "Килограмм",
+                "unique_code": "3e23ca83c6dc42ea971326ffc799b1f3"
+            },
+            "conversion_factor": 1000,
+            "name": "Грамм",
+            "unique_code": "9d933344776f498ea391f1e9bad37225"
+        },
+        "turnover": -12816.76999999984,
+        "unique_code": "1c59df430cf6408ca920d142817910f0",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Пшеничная мука",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "88fd3d722e004e7aa8d0cf2a87f793d9"
+            },
+            "unique_code": "4e6f58554a2d459bbd529d1f4f567f96"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "Килограмм",
+                "unique_code": "3e23ca83c6dc42ea971326ffc799b1f3"
+            },
+            "conversion_factor": 1000,
+            "name": "Грамм",
+            "unique_code": "9d933344776f498ea391f1e9bad37225"
+        },
+        "turnover": 12210.459999999875,
+        "unique_code": "d69e158252e540678d72bf1a2fd26b0b",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Пармезан",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "b17ae88127654678a0f641f941285458"
+            },
+            "unique_code": "a01bf84f37ff44e599089c51e15b744b"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Штука",
+            "unique_code": "03e6ae6aecf74f7c936ca06f99ec263f"
+        },
+        "turnover": 5032.57999999997,
+        "unique_code": "d272ce31475e48de9fc72e1d2c1423eb",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Сливочное масло",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "45e30783fcb6415e9b36de0990efdf58"
+            },
+            "unique_code": "24b373f868bc49648e9a5112c78734df"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "Килограмм",
+                "unique_code": "3e23ca83c6dc42ea971326ffc799b1f3"
+            },
+            "conversion_factor": 1000,
+            "name": "Грамм",
+            "unique_code": "9d933344776f498ea391f1e9bad37225"
+        },
+        "turnover": -13188.429999999918,
+        "unique_code": "2c513e343a2f4e1cb70e80a974396a2f",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Яйца",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "шт",
+                "unique_code": "179a9476a7084c2995b4d7b0f3e7b77f"
+            },
+            "unique_code": "a2d8d42ac3b741a0b10337cc9847cab7"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Штука",
+            "unique_code": "03e6ae6aecf74f7c936ca06f99ec263f"
+        },
+        "turnover": -7941.429999999985,
+        "unique_code": "531ba4b7673b466f89429280ab2c6177",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Сахар",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "85dc34787c444cc1a76b41f24d548a24"
+            },
+            "unique_code": "894829cc483742798c9e851c730a38a4"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Штука",
+            "unique_code": "03e6ae6aecf74f7c936ca06f99ec263f"
+        },
+        "turnover": -723.2799999999928,
+        "unique_code": "933cc397d38b45ec91d08f4673835d0e",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Сливки (жирность 20%)",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "мл",
+                "unique_code": "c0b14a7f677f4a92a7a1d6c116102304"
+            },
+            "unique_code": "7f3ca70973bb4e088e2cc3a28a42e798"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "Килограмм",
+                "unique_code": "3e23ca83c6dc42ea971326ffc799b1f3"
+            },
+            "conversion_factor": 1000,
+            "name": "Грамм",
+            "unique_code": "9d933344776f498ea391f1e9bad37225"
+        },
+        "turnover": 7731.63000000005,
+        "unique_code": "405dd13610e44c32accdfe372a7ec798",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Чеснок",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "зубчика",
+                "unique_code": "cc9f827dd36b4d0196c9cce6645bc41e"
+            },
+            "unique_code": "23e0f54bff3c4bce9578529f1254f70a"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "Килограмм",
+                "unique_code": "3e23ca83c6dc42ea971326ffc799b1f3"
+            },
+            "conversion_factor": 1000,
+            "name": "Грамм",
+            "unique_code": "9d933344776f498ea391f1e9bad37225"
+        },
+        "turnover": 806.8799999999927,
+        "unique_code": "bd9bbd1a83a946759dd3daed63a8562a",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Сахар",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "85dc34787c444cc1a76b41f24d548a24"
+            },
+            "unique_code": "894829cc483742798c9e851c730a38a4"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Килограмм",
+            "unique_code": "d86bb1a4927b4f0a8df80bd961ae6a5d"
+        },
+        "turnover": -6887.780000000027,
+        "unique_code": "4dfd6df678a345789b903ad6265e1119",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Ванилин(щепотка)",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "417102b9301d475b9ed61157ed2c6510"
+            },
+            "unique_code": "4ab6910f447144808f2aff007d64b40b"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Килограмм",
+            "unique_code": "d86bb1a4927b4f0a8df80bd961ae6a5d"
+        },
+        "turnover": -10868.540000000019,
+        "unique_code": "ef73c159177e44c08eb2ec36a6a716aa",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Петрушка (для подачи)",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "d34ea75a3bad4e93ac9fd767a4915cc9"
+            },
+            "unique_code": "ed0e374122b84950ab641f9d5a46ec65"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Килограмм",
+            "unique_code": "d86bb1a4927b4f0a8df80bd961ae6a5d"
+        },
+        "turnover": 3841.7300000000546,
+        "unique_code": "3f6082bfc2364651b57c6794b788b154",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Креветки",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "b8ddd03e2df743008cb05b969edc4843"
+            },
+            "unique_code": "bd8a6c17618e447ba6f442d38ac62416"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "Килограмм",
+                "unique_code": "3e23ca83c6dc42ea971326ffc799b1f3"
+            },
+            "conversion_factor": 1000,
+            "name": "Грамм",
+            "unique_code": "9d933344776f498ea391f1e9bad37225"
+        },
+        "turnover": -7546.589999999911,
+        "unique_code": "8e58d6edd19948d4aa637fe02871ea8e",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Пармезан",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "b17ae88127654678a0f641f941285458"
+            },
+            "unique_code": "a01bf84f37ff44e599089c51e15b744b"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "Килограмм",
+                "unique_code": "3e23ca83c6dc42ea971326ffc799b1f3"
+            },
+            "conversion_factor": 1000,
+            "name": "Грамм",
+            "unique_code": "9d933344776f498ea391f1e9bad37225"
+        },
+        "turnover": 2293.130000000003,
+        "unique_code": "79a8ebf4c7ce4cbb877c3e03afe4da42",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Креветки",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "b8ddd03e2df743008cb05b969edc4843"
+            },
+            "unique_code": "bd8a6c17618e447ba6f442d38ac62416"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Штука",
+            "unique_code": "03e6ae6aecf74f7c936ca06f99ec263f"
+        },
+        "turnover": 7783.909999999988,
+        "unique_code": "dc1e54964c8e48809d651b06bf4c1b7f",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Спагетти",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "dbcab5dc9b5440629e2ab3b60695f9c2"
+            },
+            "unique_code": "4c8a96cf590f4ef2b321a3ad18521136"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Килограмм",
+            "unique_code": "d86bb1a4927b4f0a8df80bd961ae6a5d"
+        },
+        "turnover": -3712.8100000000054,
+        "unique_code": "b2e2723ad15247b685b94b0a4ca22da0",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Спагетти",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "dbcab5dc9b5440629e2ab3b60695f9c2"
+            },
+            "unique_code": "4c8a96cf590f4ef2b321a3ad18521136"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Штука",
+            "unique_code": "03e6ae6aecf74f7c936ca06f99ec263f"
+        },
+        "turnover": -15280.310000000121,
+        "unique_code": "5edf1699e743420d867b2bc8426cbaec",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Пармезан",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "b17ae88127654678a0f641f941285458"
+            },
+            "unique_code": "a01bf84f37ff44e599089c51e15b744b"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Штука",
+            "unique_code": "03e6ae6aecf74f7c936ca06f99ec263f"
+        },
+        "turnover": 13762.58000000002,
+        "unique_code": "49568123ab2a4936a94c00cf36459a78",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Чеснок",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "зубчика",
+                "unique_code": "cc9f827dd36b4d0196c9cce6645bc41e"
+            },
+            "unique_code": "23e0f54bff3c4bce9578529f1254f70a"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "Килограмм",
+                "unique_code": "3e23ca83c6dc42ea971326ffc799b1f3"
+            },
+            "conversion_factor": 1000,
+            "name": "Грамм",
+            "unique_code": "9d933344776f498ea391f1e9bad37225"
+        },
+        "turnover": 11334.899999999952,
+        "unique_code": "eca992f263c14f2ba733ef6a1845e8eb",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Сливочное масло",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "45e30783fcb6415e9b36de0990efdf58"
+            },
+            "unique_code": "24b373f868bc49648e9a5112c78734df"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Штука",
+            "unique_code": "03e6ae6aecf74f7c936ca06f99ec263f"
+        },
+        "turnover": -4277.990000000057,
+        "unique_code": "ee76ae84739b4100895b48ddfbd86cb7",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Спагетти",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "dbcab5dc9b5440629e2ab3b60695f9c2"
+            },
+            "unique_code": "4c8a96cf590f4ef2b321a3ad18521136"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "Килограмм",
+                "unique_code": "3e23ca83c6dc42ea971326ffc799b1f3"
+            },
+            "conversion_factor": 1000,
+            "name": "Грамм",
+            "unique_code": "9d933344776f498ea391f1e9bad37225"
+        },
+        "turnover": 4821.500000000036,
+        "unique_code": "8bb88785a403412e9790bdcadd82abb6",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Ванилин(щепотка)",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "417102b9301d475b9ed61157ed2c6510"
+            },
+            "unique_code": "4ab6910f447144808f2aff007d64b40b"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Штука",
+            "unique_code": "03e6ae6aecf74f7c936ca06f99ec263f"
+        },
+        "turnover": 3539.4899999999802,
+        "unique_code": "eead9e830b6d44e4802df4e24aa642f0",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Чеснок",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "зубчика",
+                "unique_code": "cc9f827dd36b4d0196c9cce6645bc41e"
+            },
+            "unique_code": "23e0f54bff3c4bce9578529f1254f70a"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Штука",
+            "unique_code": "03e6ae6aecf74f7c936ca06f99ec263f"
+        },
+        "turnover": 13843.710000000025,
+        "unique_code": "5fd907f643d54230b539125e8e89f014",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Пармезан",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "b17ae88127654678a0f641f941285458"
+            },
+            "unique_code": "a01bf84f37ff44e599089c51e15b744b"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Килограмм",
+            "unique_code": "d86bb1a4927b4f0a8df80bd961ae6a5d"
+        },
+        "turnover": 2716.8199999999542,
+        "unique_code": "a78e557d2c0d495cb9553b38897ac454",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Соль, перец",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "86a405dd4d8d4f9e86e239971eea1dec"
+            },
+            "unique_code": "c675a69b850844aba35a84058c9d327f"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Килограмм",
+            "unique_code": "d86bb1a4927b4f0a8df80bd961ae6a5d"
+        },
+        "turnover": 16265.840000000066,
+        "unique_code": "45bc382834a8464baf53559cb0316962",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Яйца",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "шт",
+                "unique_code": "179a9476a7084c2995b4d7b0f3e7b77f"
+            },
+            "unique_code": "a2d8d42ac3b741a0b10337cc9847cab7"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Килограмм",
+            "unique_code": "d86bb1a4927b4f0a8df80bd961ae6a5d"
+        },
+        "turnover": 3034.989999999989,
+        "unique_code": "3a5e366ea2a94ac49eeca17e8775f8f2",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Сливки (жирность 20%)",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "мл",
+                "unique_code": "c0b14a7f677f4a92a7a1d6c116102304"
+            },
+            "unique_code": "7f3ca70973bb4e088e2cc3a28a42e798"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Штука",
+            "unique_code": "03e6ae6aecf74f7c936ca06f99ec263f"
+        },
+        "turnover": 5783.100000000043,
+        "unique_code": "8e7728290dcc4a5fb211b5b72a2fb23d",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Яйца",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "шт",
+                "unique_code": "179a9476a7084c2995b4d7b0f3e7b77f"
+            },
+            "unique_code": "a2d8d42ac3b741a0b10337cc9847cab7"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "Килограмм",
+                "unique_code": "3e23ca83c6dc42ea971326ffc799b1f3"
+            },
+            "conversion_factor": 1000,
+            "name": "Грамм",
+            "unique_code": "9d933344776f498ea391f1e9bad37225"
+        },
+        "turnover": -2059.3600000000015,
+        "unique_code": "9bf17bf0a3f7443584e325f37505eb05",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Ванилин(щепотка)",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "417102b9301d475b9ed61157ed2c6510"
+            },
+            "unique_code": "4ab6910f447144808f2aff007d64b40b"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Килограмм",
+            "unique_code": "d86bb1a4927b4f0a8df80bd961ae6a5d"
+        },
+        "turnover": -4383.689999999994,
+        "unique_code": "858e367d54bf41259ad571576f15a691",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Соль, перец",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "86a405dd4d8d4f9e86e239971eea1dec"
+            },
+            "unique_code": "c675a69b850844aba35a84058c9d327f"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Штука",
+            "unique_code": "03e6ae6aecf74f7c936ca06f99ec263f"
+        },
+        "turnover": -5384.229999999982,
+        "unique_code": "121c89528ccf4b6d9c0c6fe9c5af6fe9",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Сахар",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "85dc34787c444cc1a76b41f24d548a24"
+            },
+            "unique_code": "894829cc483742798c9e851c730a38a4"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Килограмм",
+            "unique_code": "d86bb1a4927b4f0a8df80bd961ae6a5d"
+        },
+        "turnover": -7125.810000000003,
+        "unique_code": "77ff960d30074e49ac202a3cb0dbbf8a",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Чеснок",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "зубчика",
+                "unique_code": "cc9f827dd36b4d0196c9cce6645bc41e"
+            },
+            "unique_code": "23e0f54bff3c4bce9578529f1254f70a"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Килограмм",
+            "unique_code": "d86bb1a4927b4f0a8df80bd961ae6a5d"
+        },
+        "turnover": 10151.010000000033,
+        "unique_code": "39f03f739aba4edc84e849987e96881c",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Сливки (жирность 20%)",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "мл",
+                "unique_code": "c0b14a7f677f4a92a7a1d6c116102304"
+            },
+            "unique_code": "7f3ca70973bb4e088e2cc3a28a42e798"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "Килограмм",
+                "unique_code": "3e23ca83c6dc42ea971326ffc799b1f3"
+            },
+            "conversion_factor": 1000,
+            "name": "Грамм",
+            "unique_code": "9d933344776f498ea391f1e9bad37225"
+        },
+        "turnover": -12713.76999999992,
+        "unique_code": "f9635c67ed4f475c85e02bd72fedd689",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Пшеничная мука",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "88fd3d722e004e7aa8d0cf2a87f793d9"
+            },
+            "unique_code": "4e6f58554a2d459bbd529d1f4f567f96"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Килограмм",
+            "unique_code": "d86bb1a4927b4f0a8df80bd961ae6a5d"
+        },
+        "turnover": 7274.439999999973,
+        "unique_code": "46d40c8dda514019b8a8a54aa69b8eff",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Ванилин(щепотка)",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "417102b9301d475b9ed61157ed2c6510"
+            },
+            "unique_code": "4ab6910f447144808f2aff007d64b40b"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "Килограмм",
+                "unique_code": "3e23ca83c6dc42ea971326ffc799b1f3"
+            },
+            "conversion_factor": 1000,
+            "name": "Грамм",
+            "unique_code": "9d933344776f498ea391f1e9bad37225"
+        },
+        "turnover": 5947.440000000001,
+        "unique_code": "e1e6df9a98a6483c8b4b8b76eaa76017",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Петрушка (для подачи)",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "d34ea75a3bad4e93ac9fd767a4915cc9"
+            },
+            "unique_code": "ed0e374122b84950ab641f9d5a46ec65"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "Килограмм",
+                "unique_code": "3e23ca83c6dc42ea971326ffc799b1f3"
+            },
+            "conversion_factor": 1000,
+            "name": "Грамм",
+            "unique_code": "9d933344776f498ea391f1e9bad37225"
+        },
+        "turnover": -10035.930000000022,
+        "unique_code": "38cd20bcc90d4e20bbba29b3864bef9a",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Пшеничная мука",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "88fd3d722e004e7aa8d0cf2a87f793d9"
+            },
+            "unique_code": "4e6f58554a2d459bbd529d1f4f567f96"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Штука",
+            "unique_code": "03e6ae6aecf74f7c936ca06f99ec263f"
+        },
+        "turnover": -3126.8299999999936,
+        "unique_code": "92079986b4454222927ab0f1256941ab",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Сливочное масло",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "45e30783fcb6415e9b36de0990efdf58"
+            },
+            "unique_code": "24b373f868bc49648e9a5112c78734df"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Штука",
+            "unique_code": "03e6ae6aecf74f7c936ca06f99ec263f"
+        },
+        "turnover": 5274.740000000047,
+        "unique_code": "a64f46f07cb3440e8a2517d8967dfebe",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Ванилин(щепотка)",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "417102b9301d475b9ed61157ed2c6510"
+            },
+            "unique_code": "4ab6910f447144808f2aff007d64b40b"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Штука",
+            "unique_code": "03e6ae6aecf74f7c936ca06f99ec263f"
+        },
+        "turnover": -4742.790000000009,
+        "unique_code": "f9041254fd434d1cb46909490646cbfd",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Креветки",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "b8ddd03e2df743008cb05b969edc4843"
+            },
+            "unique_code": "bd8a6c17618e447ba6f442d38ac62416"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Штука",
+            "unique_code": "03e6ae6aecf74f7c936ca06f99ec263f"
+        },
+        "turnover": -2419.340000000011,
+        "unique_code": "0712e35a2c364b3aa2d12f076df3ff4b",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Спагетти",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "dbcab5dc9b5440629e2ab3b60695f9c2"
+            },
+            "unique_code": "4c8a96cf590f4ef2b321a3ad18521136"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Штука",
+            "unique_code": "03e6ae6aecf74f7c936ca06f99ec263f"
+        },
+        "turnover": 11427.289999999995,
+        "unique_code": "174c66738383414fab0bf26a7df2f68d",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Пармезан",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "b17ae88127654678a0f641f941285458"
+            },
+            "unique_code": "a01bf84f37ff44e599089c51e15b744b"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Килограмм",
+            "unique_code": "d86bb1a4927b4f0a8df80bd961ae6a5d"
+        },
+        "turnover": 4025.4400000000355,
+        "unique_code": "555cf8c71dc04798bf42aca48fb54e97",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Петрушка (для подачи)",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "d34ea75a3bad4e93ac9fd767a4915cc9"
+            },
+            "unique_code": "ed0e374122b84950ab641f9d5a46ec65"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Штука",
+            "unique_code": "03e6ae6aecf74f7c936ca06f99ec263f"
+        },
+        "turnover": 8450.670000000004,
+        "unique_code": "63fa7edc57a345cf9556ac4c1b1f4f84",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Сливки (жирность 20%)",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "мл",
+                "unique_code": "c0b14a7f677f4a92a7a1d6c116102304"
+            },
+            "unique_code": "7f3ca70973bb4e088e2cc3a28a42e798"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Килограмм",
+            "unique_code": "d86bb1a4927b4f0a8df80bd961ae6a5d"
+        },
+        "turnover": 7706.019999999935,
+        "unique_code": "47d54141b49449f391c3364a3d0e5e8e",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Креветки",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "b8ddd03e2df743008cb05b969edc4843"
+            },
+            "unique_code": "bd8a6c17618e447ba6f442d38ac62416"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Килограмм",
+            "unique_code": "d86bb1a4927b4f0a8df80bd961ae6a5d"
+        },
+        "turnover": 5754.909999999978,
+        "unique_code": "343fee0c78ed44f3a7668d28fe0bfc4f",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Тилиньтилинь, ул. Тссс, 5",
+            "name": "Склад кормушка",
+            "unique_code": "82b85b8c3d0d4d31889a1ac215d9e5ba"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Сахар",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "85dc34787c444cc1a76b41f24d548a24"
+            },
+            "unique_code": "894829cc483742798c9e851c730a38a4"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "Килограмм",
+                "unique_code": "3e23ca83c6dc42ea971326ffc799b1f3"
+            },
+            "conversion_factor": 1000,
+            "name": "Грамм",
+            "unique_code": "9d933344776f498ea391f1e9bad37225"
+        },
+        "turnover": 7255.070000000022,
+        "unique_code": "9ec1fc8825224b83964b936be710e49e",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    },
+    {
+        "model": "warehouse_turnover_model",
+        "name": "",
+        "nomenclature": {
+            "model": "nomenclature_model",
+            "full_name": "",
+            "group": {
+                "model": "group_model",
+                "name": "Сырье",
+                "unique_code": "e9122edc6d3e4808b686317ab11664ac"
+            },
+            "name": "Сливочное масло",
+            "range": {
+                "model": "range_model",
+                "base_unit": null,
+                "conversion_factor": 1,
+                "name": "гр",
+                "unique_code": "45e30783fcb6415e9b36de0990efdf58"
+            },
+            "unique_code": "24b373f868bc49648e9a5112c78734df"
+        },
+        "range": {
+            "model": "range_model",
+            "base_unit": null,
+            "conversion_factor": 1,
+            "name": "Килограмм",
+            "unique_code": "d86bb1a4927b4f0a8df80bd961ae6a5d"
+        },
+        "turnover": -8404.670000000013,
+        "unique_code": "59adf51ffeeb47bd8e71e293e45faf8a",
+        "warehouse": {
+            "model": "warehouse_model",
+            "address": "Ляляляндия, г. Труляля, ул. Бимбам, 12",
+            "name": "BEST WAREHOUSE",
+            "unique_code": "b4655adf8c794fdaba9690a7c1a4eac5"
+        }
+    }
+]

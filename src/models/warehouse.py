@@ -37,5 +37,12 @@ class warehouse_model(abstract_model):
             return False
         return self.__name == other_object.__name
     
-    def _deserialize_additional_fields(self):
-        pass
+    def _deserialize_additional_fields(self, data: dict):
+        """
+        Десериализация дополнительных полей для warehouse_model.
+        """
+        if 'name' in data:
+            self.name = data['name']
+
+        if 'address' in data:
+            self.address = data['address']
