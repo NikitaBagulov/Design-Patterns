@@ -1,4 +1,6 @@
 from abc import ABC, abstractmethod
+from src.core.event_type import event_type
+from src.utils.validator import Validator
 
 class abstract_logic(ABC):
     __error_text:str = ""
@@ -22,3 +24,10 @@ class abstract_logic(ABC):
     @abstractmethod
     def set_exception(self, ex: Exception):
         pass
+
+    """
+    Обработка
+    """
+    @abstractmethod
+    def handle_event(self, type: event_type, params ):
+        Validator.validate_type(type, event_type, "type")

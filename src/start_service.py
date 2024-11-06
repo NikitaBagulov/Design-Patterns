@@ -9,6 +9,7 @@ from src.models.warehouse import warehouse_model
 from src.models.warehouse_transaction import warehouse_transaction_model
 from src.settings_manager import settings_manager
 from src.models import settings
+from src.core.event_type import event_type
 
 from random import choice, uniform
 from datetime import datetime
@@ -81,7 +82,7 @@ class start_service(abstract_logic):
         
         transactions = []
 
-        for _ in range(5000000):
+        for _ in range(500):
             transaction = warehouse_transaction_model()
             transaction.warehouse = choice(warehouses)
             transaction.nomenclature = choice(nomenclature_list)
@@ -115,3 +116,8 @@ class start_service(abstract_logic):
 
     def set_exception(self, ex: Exception):
         self._inner_set_exception(ex)
+
+    def handle_event(self, type: event_type, params ):
+        super().handle_event(type, params)
+
+    

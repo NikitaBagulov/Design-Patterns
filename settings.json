@@ -1,9 +1,9 @@
 {
-    "organization_name": "Компания Тест",
-    "inn": "123456789012",
+    "organization_name": "Рога и копыта (default)",
+    "inn": "380080920202",
     "account": "12345678901",
     "corr_account": "09876543211",
     "bik": "123456789",
     "ownership_type": "Частн",
-    "block_period": "2024-10-01"
+    "block_period": "2024-10-01T00:00:00"
 }

@@ -1,4 +1,5 @@
 from src.core.abstract_logic import abstract_logic
+from src.core.event_type import event_type
 
 class data_reposity(abstract_logic):
     __data = {}
@@ -55,3 +56,7 @@ class data_reposity(abstract_logic):
     
     def set_exception(self, ex: Exception):
         self._inner_set_exception(ex)   
+
+    
+    def handle_event(self, type: event_type, params ):
+        super().handle_event(type, params)

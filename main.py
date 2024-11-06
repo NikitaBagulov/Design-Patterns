@@ -9,15 +9,21 @@ from src.utils.recipe_manager import recipe_manager
 from src.logics.domain_prototype import domain_prototype
 from src.logics.warehouse_transaction_prototype import warehouse_transaction_prototype
 from src.dto.filter_dto import filter_dto, warehouse_nomenclature_filter_dto
-from datetime import datetime
+from src.logics.nomenclature_service import nomenclature_service
 from src.processors.process_factory import process_factory
 from src.processors.warehouse_turnover_process import warehouse_turnover_process
+
+from src.logics.observe_service import observe_service
+from src.core.event_type import event_type
+
 
 app = connexion.FlaskApp(__name__)
 manager = settings_manager()
 reposity = data_reposity()
 rec_manager = recipe_manager()
 start = start_service(reposity, manager, rec_manager)
+nomenclature_service_instance = nomenclature_service(reposity)
+
 start.create()
 
 data_mapping = reposity.keys()
@@ -60,7 +66,6 @@ def filter_data(domain_type):
     filtered_data = prototype.create(data, filt)
     if not filtered_data.data:
         return jsonify({"message": "No data found"}), 404
-        
     report = report_factory(manager).create(format_reporting.JSON)
     report.create(filtered_data.data)
     return report.result
@@ -126,7 +131,7 @@ def set_block_period():
 
         settings = manager.settings 
         settings.block_period = block_period_str
-        manager.save()
+        observe_service.raise_event( event_type.CHANGE_BLOCK_PERIOD , None)
         return jsonify({"message": "Дата блокировки обновлена успешно."}), 200
     except (ValueError, AttributeError) as e:
         return jsonify({"error": "Неправильный формат даты или ошибка запроса.", "details": str(e)}), 400
@@ -136,6 +141,45 @@ def get_block_period():
     settings = manager.settings
     block_period_str = settings.block_period.strftime("%Y-%m-%d") if settings.block_period else None
     return jsonify({"block_period": block_period_str}), 200
+
+@app.route('/api/nomenclature', methods=['GET'])
+def get_nomenclature():
+    result = nomenclature_service_instance.get_nomenclature(request.args)
+    if "error" in result or "status" in result:
+        return jsonify(result), 404 if "error" in result else 200
+    
+    report = report_factory(manager).create(format_reporting.JSON)
+    report.create(list(result))
+    return report.result, 200
+
+@app.route('/api/nomenclature', methods=['PUT'])
+def add_nomenclature():
+    result = nomenclature_service_instance.add_nomenclature(request.args)
+    if "status" in result:
+        return jsonify(result), 400
+
+    report = report_factory(manager).create(format_reporting.JSON)
+    report.create([result])
+    return report.result, 201
+
+
+@app.route('/api/nomenclature', methods=['PATCH'])
+def update_nomenclature():
+    statuses = observe_service.raise_event(event_type.CHANGE_NOMENCLATURE, request.json)
+    status = statuses[type(nomenclature_service_instance).__name__]
+    return jsonify(status), 200
+
+@app.route('/api/nomenclature', methods=['DELETE'])
+def delete_nomenclature():
+    try:
+        statuses = observe_service.raise_event(event_type.DELETE_NOMENCLATURE, request.json)
+        status = statuses[type(nomenclature_service_instance).__name__]
+        # result = nomenclature_service_instance.delete_nomenclature(request.args)
+        return jsonify(status), 200
+    except ValueError as e:
+        return jsonify({"error": str(e)}), 400
+
+
 
 if __name__ == '__main__':
     app.add_api("swagger.yaml")

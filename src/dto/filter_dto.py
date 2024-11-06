@@ -2,6 +2,7 @@ from src.dto.filter_type import filter_type
 from src.utils.validator import Validator
 from src.utils.custom_exceptions import ArgumentException
 from src.core.abstract_logic import abstract_logic
+from src.core.event_type import event_type
 
 class filter_dto(abstract_logic):
     def __init__(self, name: str = "", unique_code: str = "", type: filter_type = filter_type.EQUALS):
@@ -72,6 +73,9 @@ class filter_dto(abstract_logic):
     def set_exception(self, ex: Exception):
         self._inner_set_exception(ex)
 
+    def handle_event(self, type: event_type, params ):
+        super().handle_event(type, params)
+
 class warehouse_nomenclature_filter_dto(abstract_logic):
     def __init__(self, warehouse: filter_dto = None, nomenclature: filter_dto = None, period: dict = None):
         self.__warehouse: filter_dto = warehouse
@@ -140,3 +144,6 @@ class warehouse_nomenclature_filter_dto(abstract_logic):
 
     def set_exception(self, ex: Exception):
         self._inner_set_exception(ex)
+
+    def handle_event(self, type: event_type, params ):
+        super().handle_event(type, params)
