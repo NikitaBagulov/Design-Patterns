@@ -12,6 +12,7 @@ from src.dto.filter_dto import filter_dto, warehouse_nomenclature_filter_dto
 from src.logics.nomenclature_service import nomenclature_service
 from src.processors.process_factory import process_factory
 from src.processors.warehouse_turnover_process import warehouse_turnover_process
+from src.models.nomenclature import nomenclature_model
 
 from src.logics.observe_service import observe_service
 from src.core.event_type import event_type
@@ -154,8 +155,8 @@ def get_nomenclature():
 
 @app.route('/api/nomenclature', methods=['PUT'])
 def add_nomenclature():
-    result = nomenclature_service_instance.add_nomenclature(request.args)
-    if "status" in result:
+    result = nomenclature_service_instance.add_nomenclature(request.json)
+    if not isinstance(result, nomenclature_model):
         return jsonify(result), 400
 
     report = report_factory(manager).create(format_reporting.JSON)
@@ -174,8 +175,8 @@ def delete_nomenclature():
     try:
         statuses = observe_service.raise_event(event_type.DELETE_NOMENCLATURE, request.json)
         status = statuses[type(nomenclature_service_instance).__name__]
-        # result = nomenclature_service_instance.delete_nomenclature(request.args)
         return jsonify(status), 200
+
     except ValueError as e:
         return jsonify({"error": str(e)}), 400
 

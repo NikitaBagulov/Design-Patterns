@@ -26,13 +26,11 @@ class nomenclature_service(abstract_logic):
         
         return existing_nomenclatures
 
-    # Обновленный метод add_nomenclature
     def add_nomenclature(self, request) -> nomenclature_model:
         name = request.get('name')
         full_name = request.get('full_name')
         group_id = request.get('group_id')
         range_id = request.get('range_id')
-
         group_filt = filter_dto(unique_code=group_id, type=filter_type.EQUALS)
         group = next(iter(self.filter_model(group_filt, data_reposity.group_key())), None)
         
@@ -64,13 +62,6 @@ class nomenclature_service(abstract_logic):
         if not nomenclature:
             return {"status": f"Номенклатура с уникальным кодом '{unique_code}' не найдена."}
 
-        old_values = {
-            'name': nomenclature.name,
-            'full_name': nomenclature.full_name,
-            'group': nomenclature.group,
-            'range': nomenclature.range
-        }
-
         if 'name' in request:
             nomenclature.name = request['name']
         if 'full_name' in request:
@@ -90,39 +81,17 @@ class nomenclature_service(abstract_logic):
                 return {"status": f"Диапазон с ID '{request['range_id']}' не найден."}
             nomenclature.range = range_
 
-        self.update_related_recipes(unique_code, request)
-        self.update_saved_turnovers(unique_code, request)
+        observe_service.raise_event(event_type.CHANGE_NOMENCLATURE_FROM_RECIPE, request)
+        observe_service.raise_event(event_type.CHANGE_NOMENCLATURE_FROM_TRANSACTION, request)
 
         return {"status": "Номенклатура успешно обновлена"}
         
-    def update_related_recipes(self, unique_code, request):
-        """
-        Обновляет все рецепты, связанные с данной номенклатурой, включая вложенные данные.
-        """
-        recipes = self.__reposity.data.get(data_reposity.recipes_key(), [])
-        for recipe in recipes:
-            if self.find_and_update_nomenclature(recipe, unique_code, request):
-                continue
-        return {"status": "Связанные рецепты успешно обновлены"}
 
-    def update_saved_turnovers(self, unique_code, request):
-        """
-        Обновляет сохраненные обороты и транзакции, связанные с данной номенклатурой, включая вложенные данные.
-        """
-        transactions = self.__reposity.data.get(data_reposity.transactions_key(), [])
-        for transaction in transactions:
-            self.find_and_update_nomenclature(transaction, unique_code, request)
-
-        turnovers = self.__reposity.data.get(data_reposity.turnovers_key(), [])
-        for turnover in turnovers:
-            self.find_and_update_nomenclature(turnover, unique_code, request)
-
-        return {"status": "Связанные обороты и транзакции успешно обновлены"}
-
-    def find_and_update_nomenclature(self, obj, unique_code, request):
+    def find_and_update_nomenclature(self, obj, request):
         """
         Рекурсивно ищет номенклатуру по уникальному коду и обновляет ее данные на основе запроса.
         """
+        unique_code = request.get('unique_code')
         if hasattr(obj, 'unique_code') and obj.unique_code == unique_code:
             if 'name' in request:
                 obj.name = request['name']
@@ -178,7 +147,6 @@ class nomenclature_service(abstract_logic):
         self.__reposity.data[data_reposity.nomenclature_key()] = [
             n for n in self.__reposity.data[data_reposity.nomenclature_key()] if n.unique_code != unique_code
         ]
-        observe_service.raise_event(event_type.DELETE_NOMENCLATURE, {'unique_code': unique_code})
         return {"status": "Номенклатура успешно удалена"}
 
     def filter_model(self, filt: filter_dto, key=data_reposity.nomenclature_key()) -> list[nomenclature_model]:
@@ -195,8 +163,7 @@ class nomenclature_service(abstract_logic):
     def is_nomenclature_in_saved_data(self, nomenclature: nomenclature_model) -> bool:
         filt = filter_dto(unique_code=nomenclature.unique_code, type=filter_type.EQUALS)
         filtered_transactions = self.filter_model(filt, data_reposity.transactions_key())
-        filtered_turnovers = self.filter_model(filt, data_reposity.turnovers_key())
-        return len(filtered_transactions) != 0 or len(filtered_turnovers) != 0
+        return len(filtered_transactions) != 0
     
     def set_exception(self, ex: Exception):
         super().set_exception(ex)
