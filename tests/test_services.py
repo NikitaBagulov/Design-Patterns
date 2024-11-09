@@ -1,9 +1,6 @@
 import unittest
-from main import app  # Импортируйте приложение Flask из main.py
-from src.logics.nomenclature_service import nomenclature_service
-from src.core.event_type import event_type
+from main import app  
 from src.data_reposity import data_reposity
-from src.models.nomenclature import nomenclature_model
 from src.settings_manager import settings_manager
 from src.utils.recipe_manager import recipe_manager
 from src.start_service import start_service
