@@ -8,6 +8,7 @@ from src.models.range import range_model
 from src.models.step import step_model
 from src.models.nomenclature import nomenclature_model
 from src.utils.custom_exceptions import NotFoundException, ArgumentException
+from src.core.event_type import event_type
 
 class recipe_manager(abstract_logic):
     def __init__(self, docs_directory: str = 'docs', file_extension: str = '.md'):
@@ -221,3 +222,6 @@ class recipe_manager(abstract_logic):
 
     def set_exception(self, ex: Exception):
         self._inner_set_exception(ex)
+
+    def handle_event(self, type: event_type, params ):
+        super().handle_event(type, params)

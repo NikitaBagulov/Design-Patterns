@@ -281,3 +281,116 @@ paths:
                 type: string
                 format: date
                 example: "2024-01-01"
+
+  /api/nomenclature:
+    get:
+      summary: Получить номенклатуру
+      tags:
+        - Nomenclature
+      produces:
+        - text/html
+      operationId: main.get_nomenclature
+      description: Возвращает информацию о номенклатуре по уникальному коду.
+      parameters:
+        - name: unique_code
+          in: query
+          description: Уникальный код номенклатуры
+          required: true
+          type: string
+      responses:
+        200:
+          description: Информация о номенклатуре
+        400:
+          description: Неверные параметры запроса
+        404:
+          description: Номенклатура не найдена
+
+    put:
+      summary: Добавить номенклатуру
+      tags:
+        - Nomenclature
+      produces:
+        - text/html
+      operationId: main.add_nomenclature
+      description: Создает новую номенклатуру.
+      parameters:
+        - in: body
+          name: body
+          description: Данные новой номенклатуры
+          required: true
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              full_name:
+                type: string
+              group_id:
+                type: string
+              range_id:
+                type: string
+      responses:
+        201:
+          description: Номенклатура успешно создана
+        400:
+          description: Неверные параметры запроса
+
+    patch:
+      summary: Обновить номенклатуру
+      tags:
+        - Nomenclature
+      produces:
+        - text/html
+      operationId: main.update_nomenclature
+      description: Обновляет существующую номенклатуру.
+      parameters:
+        - in: body
+          name: body
+          description: Данные для обновления номенклатуры
+          required: true
+          schema:
+            type: object
+            properties:
+              unique_code:
+                type: string
+              name:
+                type: string
+              full_name:
+                type: string
+              group_id:
+                type: string
+              range_id:
+                type: string
+      responses:
+        200:
+          description: Номенклатура успешно обновлена
+        400:
+          description: Неверные параметры запроса
+        404:
+          description: Номенклатура не найдена
+
+    delete:
+      summary: Удалить номенклатуру
+      tags:
+        - Nomenclature
+      produces:
+        - text/html
+      operationId: main.delete_nomenclature
+      description: Удаляет номенклатуру по уникальному коду.
+      parameters:
+        - in: body
+          name: body
+          description: Уникальный код номенклатуры
+          required: true
+          schema:
+            type: object
+            properties:
+              unique_code:
+                type: string
+      responses:
+        200:
+          description: Номенклатура успешно удалена
+        400:
+          description: Ошибка при удалении номенклатуры
+        404:
+          description: Номенклатура не найдена

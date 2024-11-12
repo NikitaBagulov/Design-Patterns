@@ -28,7 +28,7 @@ class domain_prototype(abstract_prototype):
 
         # Убедимся, что фильтр имеет значение для указанного поля
         filter_value = getattr(filt, field, None)
-        if filter_value is None:
+        if filter_value is None or filter_value == "":
             return source
 
         result = []

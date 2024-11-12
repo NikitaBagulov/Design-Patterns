@@ -4,6 +4,7 @@ from src.core.format_reporting import format_reporting
 from src.utils.validator import Validator
 from src.utils.custom_exceptions import ArgumentException
 from src.settings_manager import settings_manager
+from src.core.event_type import event_type
 
 class report_factory(abstract_logic):
 
@@ -27,3 +28,6 @@ class report_factory(abstract_logic):
 
     def set_exception(self, ex: Exception):
         self._inner_set_exception(ex)
+
+    def handle_event(self, type: event_type, params ):
+        super().handle_event(type, params)

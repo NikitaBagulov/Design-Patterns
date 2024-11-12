@@ -5,11 +5,14 @@ from src.core.abstract_logic import abstract_logic
 from src.core.format_reporting import format_reporting
 from src.utils.validator import Validator
 from src.utils.custom_exceptions import ConversionException, NotFoundException, ArgumentException, LengthException
+from src.core.event_type import event_type
+from src.logics.observe_service import observe_service
 
 class settings_manager(abstract_logic):
     __file_name = "settings.json"
     __settings: settings = None
     __report_settings = {}
+    
 
     def __new__(cls):
         if not hasattr(cls, 'instance'):
@@ -17,6 +20,7 @@ class settings_manager(abstract_logic):
         return cls.instance 
 
     def __init__(self) -> None:
+        observe_service.append(self)
         if self.__settings is None:
             self.__settings = self.__default_setting()
         self.__load_report_settings()
@@ -139,7 +143,7 @@ class settings_manager(abstract_logic):
             "corr_account": self.__settings.corr_account,
             "bik": self.__settings.bik,
             "ownership_type": self.__settings.ownership_type,
-            "block_period": self.__settings.block_period
+            "block_period": self.__settings.block_period.isoformat()
         }
 
         try:
@@ -149,4 +153,9 @@ class settings_manager(abstract_logic):
         except (FileNotFoundError, json.JSONDecodeError) as e:
             self.set_exception(e)
             raise ConversionException("Ошибка при сохранении данных в файл.") from e
+        
+    def handle_event(self, type: event_type, params ):
+        super().handle_event(type, params)
+        if type == event_type.CHANGE_BLOCK_PERIOD:
+            self.save()
 
