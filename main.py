@@ -28,12 +28,13 @@ reposity_manager = reposity_manager(reposity, manager)
 rec_manager = recipe_manager()
 start = start_service(reposity, manager, rec_manager)
 nomenclature_service_instance = nomenclature_service(reposity)
-balance_sheet = turnover_balance_sheet(reposity)
+
 
 
 start.create()
 
 data_mapping = reposity.keys()
+balance_sheet = turnover_balance_sheet(reposity.data[data_reposity.transactions_key()], manager)
 
 @app.route("/api/reports/formats", methods=["GET"])
 def formats():
@@ -198,11 +199,12 @@ def get_osv_report():
 
         if not start_date_str or not end_date_str or not warehouse:
             return jsonify({"error": "Отсутствуют обязательные параметры: 'start_date', 'end_date', or 'warehouse'"}), 400
-        balance_sheet.start_date = start_date_str
-        balance_sheet.end_date = end_date_str
-        balance_sheet.warehouse = warehouse
-        statuses = observe_service.raise_event(event_type.CREATE_OSV, {})
+        # balance_sheet.start_date = start_date_str
+        # balance_sheet.end_date = end_date_str
+        # balance_sheet.warehouse = warehouse
+        statuses = observe_service.raise_event(event_type.CREATE_OSV, request.args)
         status = statuses[type(balance_sheet).__name__]
+        
         return jsonify(status), 200
 
     except Exception as e:
