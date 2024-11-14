@@ -35,10 +35,10 @@ class test_osv(unittest.TestCase):
         print(response.text)
         self.assertEqual(response.status_code, 200)
         data = response.json()
-        self.assertIn("final_balance", data)
-        self.assertIn("inflow", data)
-        self.assertIn("initial_balance", data)
-        self.assertIn("outflow", data)
+        self.assertIn("Remainders", data)
+        self.assertIn("Receipts", data)
+        self.assertIn("Opening remainders", data)
+        self.assertIn("Consumptions", data)
     
     def test_get_osv_report_missing_parameters(self):
 
