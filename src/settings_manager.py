@@ -23,6 +23,8 @@ class settings_manager(abstract_logic):
         observe_service.append(self)
         if self.__settings is None:
             self.__settings = self.__default_setting()
+        if not self.__settings.first_start:
+            observe_service.raise_event(event_type.LOAD_REPOSITY, {})
         self.__load_report_settings()
 
     def __load_report_settings(self):
@@ -104,6 +106,7 @@ class settings_manager(abstract_logic):
             data.bik = "123456789"
             data.ownership_type = "Частн"
             data.block_period = "2024-01-01"
+            data.first_start = True
         except (ValueError, ArgumentException, LengthException) as e:
             self.set_exception(e)
             raise ConversionException("Ошибка при установке значений по умолчанию.") from e
@@ -121,10 +124,11 @@ class settings_manager(abstract_logic):
         self._inner_set_exception(ex)
 
     def save(self):
-
+        if self.__settings.first_start:
+            self.__settings.first_start = False
         required_attributes = [
             'organization_name', 'inn', 'account', 'corr_account', 
-            'bik', 'ownership_type', 'block_period'
+            'bik', 'ownership_type', 'block_period', 'first_start'
         ]
         
         for attr in required_attributes:
@@ -143,7 +147,8 @@ class settings_manager(abstract_logic):
             "corr_account": self.__settings.corr_account,
             "bik": self.__settings.bik,
             "ownership_type": self.__settings.ownership_type,
-            "block_period": self.__settings.block_period.isoformat()
+            "block_period": self.__settings.block_period.isoformat(),
+            "first_start": self.__settings.first_start
         }
 
         try:

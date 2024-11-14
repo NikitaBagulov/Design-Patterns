@@ -13,6 +13,7 @@ class settings:
         self.__report_format = format_reporting.CSV
         self.__report_settings: dict = None
         self.block_period: datetime
+        self.__first_start: bool = True
 
     @property
     def organization_name(self):
@@ -95,5 +96,14 @@ class settings:
     def block_period(self, value: str):
         Validator.validate_length(value, 12, "block_period")
         self.__block_period = datetime.strptime(value, "%Y-%m-%d")
+
+    @property
+    def first_start(self):
+        return self.__first_start
+
+    @first_start.setter
+    def first_start(self, value: bool):
+        Validator.validate_type(value, bool, "first_start")
+        self.__first_start = value 
 
 

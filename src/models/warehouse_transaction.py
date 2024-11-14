@@ -86,5 +86,35 @@ class warehouse_transaction_model(abstract_model):
     def set_compare_mode(self, other_object) -> bool:
         super().set_compare_mode(other_object)
 
-    def _deserialize_additional_fields(self):
-        pass
+    def _deserialize_additional_fields(self, data: dict):
+        """
+        Десериализует дополнительные поля объекта, если они представлены в виде словарей.
+
+        :param data: dict - словарь с данными для десериализации
+        """
+        if 'warehouse' in data:
+            warehouse_data = data['warehouse']
+            if isinstance(warehouse_data, dict):
+                warehouse_instance = warehouse_model()
+                warehouse_instance.deserialize(warehouse_data)
+                self.__warehouse = warehouse_instance
+
+        if 'nomenclature' in data:
+            nomenclature_data = data['nomenclature']
+            if isinstance(nomenclature_data, dict):
+                nomenclature_instance = nomenclature_model()
+                nomenclature_instance.deserialize(nomenclature_data)
+                self.__nomenclature = nomenclature_instance
+
+        if 'range' in data:
+            range_data = data['range']
+            if isinstance(range_data, dict):
+                range_instance = range_model()
+                range_instance.deserialize(range_data)
+                self.__range = range_instance
+
+        if 'period' in data:
+            self.__period = datetime.fromisoformat(data['period'])
+
+        if 'is_incoming' in data:
+            self.__is_incoming = bool(data['is_incoming'])
