@@ -82,7 +82,7 @@ class start_service(abstract_logic):
         
         transactions = []
 
-        for _ in range(5000):
+        for _ in range(500):
             transaction = warehouse_transaction_model()
             transaction.warehouse = choice(warehouses)
             transaction.nomenclature = choice(nomenclature_list)
