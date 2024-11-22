@@ -17,17 +17,24 @@ from src.models.nomenclature import nomenclature_model
 from src.logics.observe_service import observe_service
 from src.core.event_type import event_type
 
+from src.reports.turnover_balance_sheet import turnover_balance_sheet
+from src.reposity_manager import reposity_manager
+
 
 app = connexion.FlaskApp(__name__)
 manager = settings_manager()
 reposity = data_reposity()
+reposity_manager = reposity_manager(reposity, manager)
 rec_manager = recipe_manager()
 start = start_service(reposity, manager, rec_manager)
 nomenclature_service_instance = nomenclature_service(reposity)
 
+
+
 start.create()
 
 data_mapping = reposity.keys()
+balance_sheet = turnover_balance_sheet(reposity.data[data_reposity.transactions_key()], manager)
 
 @app.route("/api/reports/formats", methods=["GET"])
 def formats():
@@ -161,6 +168,7 @@ def add_nomenclature():
 
     report = report_factory(manager).create(format_reporting.JSON)
     report.create([result])
+    observe_service.raise_event(event_type.CREATE_OSV, {})
     return report.result, 201
 
 
@@ -168,6 +176,7 @@ def add_nomenclature():
 def update_nomenclature():
     statuses = observe_service.raise_event(event_type.CHANGE_NOMENCLATURE, request.json)
     status = statuses[type(nomenclature_service_instance).__name__]
+    observe_service.raise_event(event_type.CREATE_OSV, {})
     return jsonify(status), 200
 
 @app.route('/api/nomenclature', methods=['DELETE'])
@@ -175,12 +184,49 @@ def delete_nomenclature():
     try:
         statuses = observe_service.raise_event(event_type.DELETE_NOMENCLATURE, request.json)
         status = statuses[type(nomenclature_service_instance).__name__]
+        observe_service.raise_event(event_type.CREATE_OSV, {})
         return jsonify(status), 200
 
     except ValueError as e:
         return jsonify({"error": str(e)}), 400
 
+@app.route("/api/report/osv", methods=["GET"])
+def get_osv_report():
+    try:
+        start_date_str = request.args.get("start_date")
+        end_date_str = request.args.get("end_date")
+        warehouse = request.args.get("warehouse")
 
+        if not start_date_str or not end_date_str or not warehouse:
+            return jsonify({"error": "Отсутствуют обязательные параметры: 'start_date', 'end_date', or 'warehouse'"}), 400
+        # balance_sheet.start_date = start_date_str
+        # balance_sheet.end_date = end_date_str
+        # balance_sheet.warehouse = warehouse
+        statuses = observe_service.raise_event(event_type.CREATE_OSV, request.args)
+        status = statuses[type(balance_sheet).__name__]
+        
+        return jsonify(status), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+
+@app.route("/api/repository/save", methods=["POST"])
+def save_repository():
+    try:
+        observe_service.raise_event(event_type.SAVE_REPOSITY,{})
+        return jsonify({"message": "Данные успешно сохранены в файл."}), 200
+    except Exception as e:
+        return jsonify({"error": f"Ошибка при сохранении данных в файл: {str(e)}"}), 500
+
+@app.route("/api/repository/restore", methods=["POST"])
+def restore_repository():
+    try:
+        observe_service.raise_event(event_type.LOAD_REPOSITY, {})
+        return jsonify({"message": "Данные успешно восстановлены из файла."}), 200
+    except Exception as e:
+        return jsonify({"error": f"Ошибка при восстановлении данных из файла: {str(e)}"}), 500
 
 if __name__ == '__main__':
     app.add_api("swagger.yaml")

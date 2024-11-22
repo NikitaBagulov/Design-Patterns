@@ -82,7 +82,7 @@ class start_service(abstract_logic):
         
         transactions = []
 
-        for _ in range(500):
+        for _ in range(5000):
             transaction = warehouse_transaction_model()
             transaction.warehouse = choice(warehouses)
             transaction.nomenclature = choice(nomenclature_list)
@@ -96,8 +96,9 @@ class start_service(abstract_logic):
 
         self.__reposity.data[data_reposity.transactions_key()] = transactions
 
-    def __random_date(self, year=2024, month=10):
+    def __random_date(self, year=2024, month=random.randint(0, 11)):
         # Получаем случайный день в зависимости от количества дней в указанном месяце и году
+        month = random.randint(1, 12)
         days_in_month = calendar.monthrange(year, month)[1]
         day = random.randint(1, days_in_month)
         hour = random.randint(0, 23)

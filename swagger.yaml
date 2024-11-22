@@ -394,3 +394,123 @@ paths:
           description: Ошибка при удалении номенклатуры
         404:
           description: Номенклатура не найдена
+  /api/report/osv:
+    get:
+      summary: Получить отчет по оборотно-сальдовой ведомости (ОСВ)
+      description: Получить отчет по оборотно-сальдовой ведомости за указанный период и склад.
+      operationId: main.get_osv_report
+      produces:
+        - application/json
+      parameters:
+        - in: query
+          name: start_date
+          required: true
+          type: string
+          format: date
+          description: Начальная дата отчетного периода в формате `YYYY-MM-DD`.
+        - in: query
+          name: end_date
+          required: true
+          type: string
+          format: date
+          description: Конечная дата отчетного периода в формате `YYYY-MM-DD`.
+        - in: query
+          name: warehouse
+          required: true
+          type: string
+          description: Идентификатор склада, для которого составляется отчет.
+      responses:
+        200:
+          description: Отчет по оборотно-сальдовой ведомости за указанный период и склад.
+          schema:
+            type: object
+            properties:
+              initial_balance:
+                type: number
+                description: Начальный остаток на начало периода.
+              inflow:
+                type: number
+                description: Общий приход за указанный период.
+              outflow:
+                type: number
+                description: Общий расход за указанный период.
+              final_balance:
+                type: number
+                description: Итоговый остаток на конец периода.
+            example:
+              initial_balance: 1000.0
+              inflow: 500.0
+              outflow: 300.0
+              final_balance: 1200.0
+        400:
+          description: Некорректный запрос из-за отсутствия обязательных параметров.
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "Отсутствуют обязательные параметры: 'start_date', 'end_date' или 'warehouse'."
+        500:
+          description: Внутренняя ошибка сервера.
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "Произошла ошибка при обработке запроса."
+      tags:
+        - Отчеты
+  /api/repository/save:
+    post:
+      summary: Сохранить данные репозитория в файл
+      description: Сохраняет все данные из репозитория в файл.
+      operationId: main.save_repository
+      tags:
+        - Repository
+      produces:
+        - application/json
+      responses:
+        200:
+          description: Данные успешно сохранены в файл
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "Данные успешно сохранены в файл."
+        500:
+          description: Ошибка при сохранении данных
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "Ошибка при сохранении данных в файл."
+
+  /api/repository/restore:
+    post:
+      summary: Восстановить данные репозитория из файла
+      description: Восстанавливает все данные из файла в репозиторий.
+      operationId: main.restore_repository
+      tags:
+        - Repository
+      produces:
+        - application/json
+      responses:
+        200:
+          description: Данные успешно восстановлены из файла
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "Данные успешно восстановлены из файла."
+        500:
+          description: Ошибка при восстановлении данных
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "Ошибка при восстановлении данных из файла."
+
