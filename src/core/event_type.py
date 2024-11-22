@@ -15,3 +15,8 @@ class event_type(Enum):
     LOAD_REPOSITY = 9
 
     CREATE_OSV = 10
+
+    INFO = "INFO"
+    WARNING = "WARNING"
+    DEBUG = "DEBUG"
+    ERROR = "ERROR"

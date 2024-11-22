@@ -107,6 +107,9 @@ class settings_manager(abstract_logic):
             data.ownership_type = "Частн"
             data.block_period = "2024-01-01"
             data.first_start = True
+            data.min_log_level = "INFO"
+            data.log_to_file = True
+            data.log_file_path = "log.txt"
         except (ValueError, ArgumentException, LengthException) as e:
             self.set_exception(e)
             raise ConversionException("Ошибка при установке значений по умолчанию.") from e
@@ -128,7 +131,7 @@ class settings_manager(abstract_logic):
             self.__settings.first_start = False
         required_attributes = [
             'organization_name', 'inn', 'account', 'corr_account', 
-            'bik', 'ownership_type', 'block_period', 'first_start'
+            'bik', 'ownership_type', 'block_period', 'first_start', 'min_log_level', 'log_to_file', 'log_file_path'
         ]
         
         for attr in required_attributes:
@@ -148,7 +151,10 @@ class settings_manager(abstract_logic):
             "bik": self.__settings.bik,
             "ownership_type": self.__settings.ownership_type,
             "block_period": self.__settings.block_period.isoformat(),
-            "first_start": self.__settings.first_start
+            "first_start": self.__settings.first_start,
+            "min_log_level": self.__settings.min_log_level,
+            "log_to_file": self.__settings.log_to_file,
+            "log_file_path": self.__settings.log_file_path
         }
 
         try:

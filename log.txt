@@ -1,0 +1,34 @@
+
+=== Logging started at 2024-11-22T17:59:58.343362 ===
+
+=== Logging started at 2024-11-22T18:00:05.162411 ===
+
+=== Logging started at 2024-11-22T18:01:35.281682 ===
+
+=== Logging started at 2024-11-22T18:01:40.034188 ===
+
+=== Logging started at 2024-11-22T18:01:40.364343 ===
+[2024-11-22T18:01:49.079356] INFO: Event: INFO, Message: Fetching available report formats.
+[2024-11-22T18:03:33.354934] INFO: Event: INFO, Message: Filtering data for domain type: range.
+[2024-11-22T18:03:34.596370] INFO: Event: INFO, Message: Filtered data successfully processed.
+[2024-11-22T18:03:48.658436] INFO: Event: INFO, Message: Received filter request for transactions.
+[2024-11-22T18:03:51.297820] INFO: Event: INFO, Message: Transactions successfully filtered and report created.
+[2024-11-22T18:05:38.019552] INFO: Event: INFO, Message: Received filter request for turnover.
+[2024-11-22T18:05:39.432296] WARNING: Event: WARNING, Message: No turnovers found after processing.
+[2024-11-22T18:05:59.146590] INFO: Event: INFO, Message: Attempting to save repository data.
+[2024-11-22T18:06:01.679892] ERROR: Event: ERROR, Message: Error in save_repository: 8
+[2024-11-22T18:06:16.317513] INFO: Event: INFO, Message: Setting block period to 2024-11-01.
+[2024-11-22T18:06:17.782353] INFO: Event: INFO, Message: Block period set to: 2024-11-01
+[2024-11-22T18:06:19.340321] INFO: Event: INFO, Message: First start set to: False
+[2024-11-22T18:06:20.789798] ERROR: Event: ERROR, Message: Error in set_block_period: Свойство log_file_peth не найдено в настройках.
+
+=== Logging started at 2024-11-22T18:07:14.919375 ===
+
+=== Logging started at 2024-11-22T18:07:16.525843 ===
+
+=== Logging started at 2024-11-22T18:07:16.828944 ===
+[2024-11-22T18:07:21.981891] INFO: Event: INFO, Message: Setting block period to 2024-11-01.
+[2024-11-22T18:07:23.584021] INFO: Event: INFO, Message: Block period set to: 2024-11-01
+[2024-11-22T18:07:24.866961] INFO: Event: INFO, Message: First start set to: False
+
+=== Logging started at 2024-11-22T18:08:36.735572 ===
